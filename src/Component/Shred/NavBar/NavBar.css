@@ -1,0 +1,26 @@
+.brand_name {
+    background: -webkit-linear-gradient(#2bde8c, #49e575);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700 !important;
+    font-size: 2.5rem !important;
+}
+
+.btn_list {
+    font-weight: 700 !important;
+    color: black !important;
+}
+
+.signUp_btn {
+    border: none;
+    outline: none;
+    font-weight: 600;
+    border-radius: 1.5rem;
+    -webkit-border-radius: 1.5rem;
+    -moz-border-radius: 1.5rem;
+    -ms-border-radius: 1.5rem;
+    -o-border-radius: 1.5rem;
+    color: white;
+    background: linear-gradient(45deg, rgb(45, 231, 147) 65%, rgb(73, 229, 117) 35%);
+
+}
