@@ -6,8 +6,22 @@
     -o-border-radius: 15px;
 }
 
-::placeholder{
+::placeholder {
     color: #e9e3e3 !important;
+}
+
+.search_input {
+    font-weight: 500 !important;
+    color: rgba(0, 0, 0, 0.685) !important;
+    font-family: 'Secular One', sans-serif;
+}
+
+.btn_items {
+    padding-left: 18rem !important;
+}
+
+.btn_item {
+    padding-left: 16.1rem !important;
 }
 
 .item {
@@ -17,4 +31,38 @@
 .fw_bold {
     font-size: 19px;
     font-weight: 600;
+}
+
+.count_content div h5 {
+    font-weight: 700;
+}
+
+.label_item {
+    font-weight: 800;
+}
+
+.apply_btn {
+    border: 3px solid #2de793;
+    float: right;
+    font-weight: 700 !important;
+    border-radius: 13px;
+    background: -webkit-linear-gradient(#2de793, #74ee52);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -o-border-radius: 13px;
+}
+
+#search_btn {
+    width: 34rem;
+    font-weight: 600;
+    font-size: 22px;
+    background: linear-gradient(89deg, rgb(45, 231, 147) 40%, rgb(116, 238, 82));
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }
