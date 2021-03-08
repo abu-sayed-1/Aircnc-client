@@ -21,7 +21,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/5543257/pexels-photo-5543257.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - bangladesh",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '43',
 //                 person: 'per person',
 //                 review: '7'
@@ -30,7 +30,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/2888108/pexels-photo-2888108.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - bangladesh",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '13',
 //                 person: 'per person',
 //                 review: '9'
@@ -39,7 +39,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/1477535/pexels-photo-1477535.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - bangladesh",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '19',
 //                 person: 'per person',
 //                 review: '12'
@@ -48,7 +48,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 4,
 //                 img: "https://images.pexels.com/photos/448754/pexels-photo-448754.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - bangladesh",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '50',
 //                 person: 'per person',
 //                 review: '33'
@@ -59,7 +59,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/2157404/pexels-photo-2157404.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - bangladesh",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '188',
 //                 person: 'per person',
 //                 review: '64'
@@ -68,7 +68,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - bangladesh",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '129',
 //                 person: 'per person',
 //                 review: '44'
@@ -77,7 +77,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - bangladesh",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '210',
 //                 person: 'per person',
 //                 review: '90'
@@ -93,7 +93,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/2260784/pexels-photo-2260784.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - new york",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '40',
 //                 person: 'per person',
 //                 review: '27'
@@ -102,7 +102,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/2888108/pexels-photo-2888108.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - new york",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '10',
 //                 person: 'per person',
 //                 review: '9'
@@ -111,7 +111,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/3889867/pexels-photo-3889867.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - new york",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '28',
 //                 person: 'per person',
 //                 review: '12'
@@ -120,7 +120,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 4,
 //                 img: "https://images.pexels.com/photos/237697/pexels-photo-237697.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 //                 place: "nightlife - new york",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '100',
 //                 person: 'per person',
 //                 review: '66'
@@ -131,7 +131,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/2187605/pexels-photo-2187605.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - new york",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '300',
 //                 person: 'per person',
 //                 review: '22'
@@ -140,7 +140,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/221506/pexels-photo-221506.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - new york",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '128',
 //                 person: 'per person',
 //                 review: '55'
@@ -149,7 +149,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/314937/pexels-photo-314937.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - new york",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '240',
 //                 person: 'per person',
 //                 review: '77'
@@ -165,7 +165,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/6062501/pexels-photo-6062501.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 //                 place: "nightlife - france",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '49',
 //                 person: 'per person',
 //                 review: '13'
@@ -174,7 +174,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/207920/pexels-photo-207920.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 //                 place: "nightlife - france",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '43',
 //                 person: 'per person',
 //                 review: '17'
@@ -183,7 +183,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/1272392/pexels-photo-1272392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - france",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '80',
 //                 person: 'per person',
 //                 review: '39'
@@ -192,7 +192,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 4,
 //                 img: "https://images.pexels.com/photos/448754/pexels-photo-448754.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - france",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '70',
 //                 person: 'per person',
 //                 review: '33'
@@ -203,7 +203,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - france",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '166',
 //                 person: 'per person',
 //                 review: '69'
@@ -212,7 +212,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/3958954/pexels-photo-3958954.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - france",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '187',
 //                 person: 'per person',
 //                 review: '22'
@@ -221,7 +221,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 //                 place: "nightlife - france",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '199',
 //                 person: 'per person',
 //                 review: '300'
@@ -237,7 +237,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/1703314/pexels-photo-1703314.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 //                 place: "nightlife - lebanon",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '7',
 //                 person: 'per person',
 //                 review: '7'
@@ -246,7 +246,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/6669440/pexels-photo-6669440.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 //                 place: "nightlife - lebanon",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '17',
 //                 person: 'per person',
 //                 review: '10'
@@ -255,7 +255,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/5638677/pexels-photo-5638677.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - lebanon",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '43',
 //                 person: 'per person',
 //                 review: '69'
@@ -264,7 +264,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 4,
 //                 img: "https://images.pexels.com/photos/5638730/pexels-photo-5638730.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - lebanon",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '33',
 //                 person: 'per person',
 //                 review: '39'
@@ -275,7 +275,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/2157404/pexels-photo-2157404.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - lebanon",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '183',
 //                 person: 'per person',
 //                 review: '64'
@@ -284,7 +284,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - lebanon",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '155',
 //                 person: 'per person',
 //                 review: '44'
@@ -293,7 +293,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - lebanon",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '200',
 //                 person: 'per person',
 //                 review: '90'
@@ -309,7 +309,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/5929/food-salad-dinner-eating.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - england",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '90',
 //                 person: 'per person',
 //                 review: '66'
@@ -318,7 +318,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/2888108/pexels-photo-2888108.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - england",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '15',
 //                 person: 'per person',
 //                 review: '9'
@@ -327,7 +327,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/667221/pexels-photo-667221.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - england",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '23',
 //                 person: 'per person',
 //                 review: '12'
@@ -336,7 +336,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 4,
 //                 img: "https://images.pexels.com/photos/448754/pexels-photo-448754.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - england",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '71',
 //                 person: 'per person',
 //                 review: '33'
@@ -347,7 +347,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/280221/pexels-photo-280221.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - england",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '177',
 //                 person: 'per person',
 //                 review: '64'
@@ -356,7 +356,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - england",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '157',
 //                 person: 'per person',
 //                 review: '44'
@@ -365,7 +365,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/667221/pexels-photo-667221.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - england",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '209',
 //                 person: 'per person',
 //                 review: '88'
@@ -381,7 +381,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/5543257/pexels-photo-5543257.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - pakistan",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '43',
 //                 person: 'per person',
 //                 review: '7'
@@ -390,7 +390,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/2888108/pexels-photo-2888108.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - pakistan",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '8',
 //                 person: 'per person',
 //                 review: '9'
@@ -399,7 +399,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/1477535/pexels-photo-1477535.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - pakistan",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '24',
 //                 person: 'per person',
 //                 review: '12'
@@ -408,7 +408,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 4,
 //                 img: "https://images.pexels.com/photos/448754/pexels-photo-448754.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - pakistan",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '75',
 //                 person: 'per person',
 //                 review: '33'
@@ -419,7 +419,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/2157404/pexels-photo-2157404.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - pakistan",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '128',
 //                 person: 'per person',
 //                 review: '64'
@@ -428,7 +428,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - pakistan",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '150',
 //                 person: 'per person',
 //                 review: '44'
@@ -437,7 +437,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - pakistan",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '200',
 //                 person: 'per person',
 //                 review: '90'
@@ -453,7 +453,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/2260784/pexels-photo-2260784.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - canada",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '37',
 //                 person: 'per person',
 //                 review: '27'
@@ -462,7 +462,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/2888108/pexels-photo-2888108.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - canada",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '11',
 //                 person: 'per person',
 //                 review: '9'
@@ -471,7 +471,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/3889867/pexels-photo-3889867.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - canada",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '32',
 //                 person: 'per person',
 //                 review: '12'
@@ -480,7 +480,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 4,
 //                 img: "https://images.pexels.com/photos/237697/pexels-photo-237697.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 //                 place: "nightlife - canada",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '105',
 //                 person: 'per person',
 //                 review: '66'
@@ -491,7 +491,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/2187605/pexels-photo-2187605.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - canada",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '198',
 //                 person: 'per person',
 //                 review: '22'
@@ -500,7 +500,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/221506/pexels-photo-221506.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - canada",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '130',
 //                 person: 'per person',
 //                 review: '55'
@@ -509,7 +509,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/314937/pexels-photo-314937.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - canada",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '196',
 //                 person: 'per person',
 //                 review: '77'
@@ -525,7 +525,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/5543257/pexels-photo-5543257.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - morocco",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '40',
 //                 person: 'per person',
 //                 review: '7'
@@ -534,7 +534,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - morocco",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '10',
 //                 person: 'per person',
 //                 review: '9'
@@ -543,7 +543,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/1477535/pexels-photo-1477535.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - morocco",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '26',
 //                 person: 'per person',
 //                 review: '12'
@@ -552,7 +552,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 4,
 //                 img: "https://images.pexels.com/photos/448754/pexels-photo-448754.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - morocco",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '70',
 //                 person: 'per person',
 //                 review: '33'
@@ -563,7 +563,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/2157404/pexels-photo-2157404.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - morocco",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '128',
 //                 person: 'per person',
 //                 review: '64'
@@ -572,7 +572,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/209315/pexels-photo-209315.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - morocco",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '90',
 //                 person: 'per person',
 //                 review: '33'
@@ -581,7 +581,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - morocco",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '200',
 //                 person: 'per person',
 //                 review: '90'
@@ -597,7 +597,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/2260784/pexels-photo-2260784.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - malaysia",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '27',
 //                 person: 'per person',
 //                 review: '27'
@@ -606,7 +606,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/4916556/pexels-photo-4916556.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - malaysia",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '10',
 //                 person: 'per person',
 //                 review: '9'
@@ -615,7 +615,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/3889867/pexels-photo-3889867.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - malaysia",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '23',
 //                 person: 'per person',
 //                 review: '12'
@@ -624,7 +624,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 4,
 //                 img: "https://images.pexels.com/photos/237697/pexels-photo-237697.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 //                 place: "nightlife - malaysia",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '100',
 //                 person: 'per person',
 //                 review: '66'
@@ -635,7 +635,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/2187605/pexels-photo-2187605.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - malaysia",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '199',
 //                 person: 'per person',
 //                 review: '22'
@@ -644,7 +644,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/3935320/pexels-photo-3935320.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - malaysia",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '139',
 //                 person: 'per person',
 //                 review: '58'
@@ -653,7 +653,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/314937/pexels-photo-314937.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - malaysia",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '270',
 //                 person: 'per person',
 //                 review: '77'
@@ -669,7 +669,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/6062501/pexels-photo-6062501.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 //                 place: "nightlife - oman",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '29',
 //                 person: 'per person',
 //                 review: '13'
@@ -678,7 +678,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/4993114/pexels-photo-4993114.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - oman",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '80',
 //                 person: 'per person',
 //                 review: '17'
@@ -687,7 +687,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/1272392/pexels-photo-1272392.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - oman",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '80',
 //                 person: 'per person',
 //                 review: '39'
@@ -696,7 +696,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 4,
 //                 img: "https://images.pexels.com/photos/448754/pexels-photo-448754.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - oman",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '99',
 //                 person: 'per person',
 //                 review: '33'
@@ -707,7 +707,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - oman",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '170',
 //                 person: 'per person',
 //                 review: '69'
@@ -716,7 +716,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/2121121/pexels-photo-2121121.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 //                 place: "nightlife - oman",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '189',
 //                 person: 'per person',
 //                 review: '29'
@@ -725,7 +725,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 //                 place: "nightlife - oman",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '199',
 //                 person: 'per person',
 //                 review: '300'
@@ -741,7 +741,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/1703314/pexels-photo-1703314.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
 //                 place: "nightlife - india",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '7',
 //                 person: 'per person',
 //                 review: '7'
@@ -750,7 +750,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/6210765/pexels-photo-6210765.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - india",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '17',
 //                 person: 'per person',
 //                 review: '10'
@@ -759,7 +759,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/5638677/pexels-photo-5638677.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - india",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '60',
 //                 person: 'per person',
 //                 review: '69'
@@ -768,7 +768,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 4,
 //                 img: "https://images.pexels.com/photos/5638730/pexels-photo-5638730.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - india",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '33',
 //                 person: 'per person',
 //                 review: '39'
@@ -779,7 +779,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/2157404/pexels-photo-2157404.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - india",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '128',
 //                 person: 'per person',
 //                 review: '64'
@@ -788,7 +788,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/2587317/pexels-photo-2587317.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - india",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: "190",
 //                 person: 'per person',
 //                 review: '49'
@@ -797,7 +797,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - india",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '200',
 //                 person: 'per person',
 //                 review: '90'
@@ -813,7 +813,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/5929/food-salad-dinner-eating.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - netherland",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '90',
 //                 person: 'per person',
 //                 review: '66'
@@ -822,7 +822,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/2664443/pexels-photo-2664443.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - netherland",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '15',
 //                 person: 'per person',
 //                 review: '9'
@@ -831,7 +831,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/667221/pexels-photo-667221.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - netherland",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '23',
 //                 person: 'per person',
 //                 review: '12'
@@ -840,7 +840,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 4,
 //                 img: "https://images.pexels.com/photos/448754/pexels-photo-448754.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - netherland",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '70',
 //                 person: 'per person',
 //                 review: '33'
@@ -851,7 +851,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 1,
 //                 img: "https://images.pexels.com/photos/280221/pexels-photo-280221.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - netherland",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '128',
 //                 person: 'per person',
 //                 review: '64'
@@ -860,7 +860,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 2,
 //                 img: "https://images.pexels.com/photos/2523186/pexels-photo-2523186.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - netherland",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '156',
 //                 person: 'per person',
 //                 review: '44'
@@ -869,7 +869,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 //                 id: 3,
 //                 img: "https://images.pexels.com/photos/667221/pexels-photo-667221.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
 //                 place: "nightlife - netherland",
-//                 title: " Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+//                 title: " Lorem ipsum dolor sit consectetur",
 //                 price: '209',
 //                 person: 'per person',
 //                 review: '88'
@@ -909,7 +909,12 @@ const SearchDestination = ({ handleSearchResult }) => {
         fetch(`http://localhost:4000/destination${name}`)
             .then(res => res.json())
             .then(result => {
-                handleSearchResult(result)
+                if (result.length > 0) {
+                    handleSearchResult(result)
+                };
+                if (result.length == 0) {
+                    console.log('data empty')
+                };
             })
     }
     return (
