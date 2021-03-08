@@ -880,7 +880,7 @@ import { faMinus, faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
 // ];
 
 
-const SearchDestination = () => {
+const SearchDestination = ({ handleSearchResult }) => {
     // useEffect(() => {
     //     fetch('http://localhost:4000/homePagesAllData',{
     //         method: "POST",
@@ -888,18 +888,12 @@ const SearchDestination = () => {
     //         body: JSON.stringify(homeData)
     //     })
     // },[])
-    const name = "lab.";
-    useEffect(() => {
-        fetch(`http://localhost:4000/destination${name}`)
-            .then(res => res.json())
-            .then(result => console.log(result))
-    }, []);
+
     // date picker here ==============>
     const [selectedStartDate, setSelectedStartDate] = useState(new Date());
     // console.log(selectedStartDate, '[selectedStartDate]');
     const [selectedEndDate, setSelectedEndDate] = useState(new Date());
     // console.log(selectedEndDate, '[selectedEndDate]')
-
     const handleStartDate = startDate => {
         setSelectedStartDate(startDate);
     };
@@ -911,7 +905,12 @@ const SearchDestination = () => {
     // form func here ===================>
     const { register, errors, handleSubmit } = useForm();
     const onSubmit = data => {
-        console.log(data)
+        const name = data.searchBox;
+        fetch(`http://localhost:4000/destination${name}`)
+            .then(res => res.json())
+            .then(result => {
+                handleSearchResult(result)
+            })
     }
     return (
         <>
@@ -923,12 +922,18 @@ const SearchDestination = () => {
                         ref={register({ required: true })}
                         placeholder="Add city, Landmark, or address" />
                     <datalist id="datalistOptions">
-                        <option value="San Francisco" />
+                        <option value="Netherland" />
                         <option value="New York" />
                         <option value="Morocco" />
-                        <option value="Los Angeles" />
-                        <option value="Leab" />
+                        <option value="France" />
+                        <option value="Lebanon" />
                         <option value="Bangladesh" />
+                        <option value="India" />
+                        <option value="England" />
+                        <option value="Pakistan" />
+                        <option value="Canada" />
+                        <option value="Oman" />
+                        <option value="malaysia" />
                     </datalist>
                     {errors.searchBox && <span classNane="text-danger">feild is required</span>}
                 </div>
@@ -1003,9 +1008,9 @@ const SearchDestination = () => {
                     <div className="d-flex pt-5">
                         <h5 className="">ADULTS</h5>
                         <div className="btn_items">
-                            <button className="border-0 bg-white"> <FontAwesomeIcon icon={faMinus} /></button>
+                            {/* <button className="border-0 bg-white"> <FontAwesomeIcon icon={faMinus} /></button> */}
                             <label className="px-4 label_item" htmlFor="">1</label>
-                            <button className="border-0 bg-white"> <FontAwesomeIcon icon={faPlus} /></button>
+                            {/* <button className="border-0 bg-white"> <FontAwesomeIcon icon={faPlus} /></button> */}
                         </div>
                     </div>
                     <div className="d-flex pt-5">
@@ -1014,9 +1019,9 @@ const SearchDestination = () => {
                             <h6 className="text-muted">Age 2-12</h6>
                         </div>
                         <div className="btn_items ml-3">
-                            <button className="border-0 bg-white"> <FontAwesomeIcon icon={faMinus} /></button>
+                            {/* <button className="border-0 bg-white"> <FontAwesomeIcon icon={faMinus} /></button> */}
                             <label className="px-4 label_item" htmlFor="">2</label>
-                            <button className="border-0 bg-white"> <FontAwesomeIcon icon={faPlus} /></button>
+                            {/* <button className="border-0 bg-white"> <FontAwesomeIcon icon={faPlus} /></button> */}
                         </div>
                     </div>
                     <div className="d-flex pt-5">
@@ -1025,13 +1030,13 @@ const SearchDestination = () => {
                             <h6 className="text-muted">Younger tha 2</h6>
                         </div>
                         <div className="btn_item ml-2">
-                            <button className="border-0 bg-white"> <FontAwesomeIcon icon={faMinus} /></button>
+                            {/* <button className="border-0 bg-white"> <FontAwesomeIcon icon={faMinus} /></button> */}
                             <label className="px-4 label_item" htmlFor="">3</label>
-                            <button className="border-0 bg-white"> <FontAwesomeIcon icon={faPlus} /></button>
+                            {/* <button className="border-0 bg-white"> <FontAwesomeIcon icon={faPlus} /></button> */}
                         </div>
                     </div>
                 </div>
-                <button className="p-2 px-5 my-3 mr-2 apply_btn">APPLY</button>
+                {/* <button className="p-2 px-5 my-3 mr-2 apply_btn">APPLY</button> */}
                 <button
                     type="submit"
                     className="border-0 px-5 py-3 text-white"
