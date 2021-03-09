@@ -33,6 +33,10 @@
     font-size: 19px;
     font-weight: 600;
 }
+.count_content{
+    padding-top: 2rem;
+    padding-bottom: 8rem;
+}
 
 .count_content div h5 {
     font-weight: 700;
@@ -66,4 +70,9 @@
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
+}
+
+.members_count{
+    font-size: 20px;
+    font-weight: 700;
 }
