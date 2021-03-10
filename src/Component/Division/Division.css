@@ -1,0 +1,26 @@
+.rooms_container p {
+    font-weight: 500;
+    color: #6b6b6b;
+}
+
+.rooms_img {
+    border-radius: 13px;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -o-border-radius: 13px;
+}
+
+.review_content {
+    font-weight: 700;
+}
+
+.rooms_reviewIcon {
+    font-size: 17px;
+    color: #49e473;
+}
+
+.rooms_price {
+    font-size: 1.3rem;
+    font-weight: 700;
+}

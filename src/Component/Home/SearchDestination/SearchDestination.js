@@ -891,6 +891,7 @@ const SearchDestination = ({ handleSearchResult }) => {
             .then(res => res.json())
             .then(result => {
                 if (result.length > 0) {
+                    sessionStorage.setItem("city", result[0].city)
                     handleSearchResult(result)
                 };
                 if (result.length == 0) {
@@ -900,7 +901,6 @@ const SearchDestination = ({ handleSearchResult }) => {
     }, [search])
 
     // form func here ===================>
-
     const { register, errors, handleSubmit } = useForm();
     const onSubmit = data => {
         setSearch(data);

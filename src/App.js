@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import PageNotFound from './Component/PageNotFound/PageNotFound';
 import Home from './Component/Home/Home';
+import Division from './Component/Division/Division';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         </Route>
         <Route path="/home">
           <Home />
+        </Route>
+        <Route path="/division">
+          <Division />
         </Route>
         <Route exact path="*">
           <PageNotFound />

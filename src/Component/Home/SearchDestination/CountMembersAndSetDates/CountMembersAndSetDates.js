@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Col, Row } from 'react-bootstrap';
 import Shake from 'react-reveal/Shake';
+import { useHistory } from 'react-router';
 
 const initialState = {
     adults: 0,
@@ -41,7 +42,7 @@ const reducer = (state, action) => {
 
 const CountMembersAndSetDates = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
-
+    const history = useHistory();
     // date picker here ==============>
     const [selectedStartDate, setSelectedStartDate] = useState(new Date());
     const currentDate = new Date();
@@ -70,7 +71,7 @@ const CountMembersAndSetDates = () => {
             })
                 .then(result => {
                     if (result) {
-                        alert("data post successfully...")
+                        history.push("/division");
                     }
                     console.log(result)
                 });
