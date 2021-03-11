@@ -3,7 +3,6 @@ import './HomesAndExperiences.css'
 import { Col, Container, Row } from 'react-bootstrap';
 
 const HomesAndExperiences = ({ homesAndExperiencesData }) => {
-    console.log(homesAndExperiencesData)
     return (
         <Container fluid>
             <h2 className="my-5 homesAndExperiences_content">Experiences</h2>

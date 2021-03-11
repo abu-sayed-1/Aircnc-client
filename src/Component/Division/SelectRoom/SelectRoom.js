@@ -893,18 +893,23 @@ const SelectRoom = () => {
     //     })
     //         .then(result => console.log(result));
     // }, [])
-    const city = sessionStorage.getItem("city");
-    console.log(city);
+    // const city = sessionStorage.getItem("city");
+
+
+    let convert = JSON.parse(sessionStorage.getItem('countryAndDatesAndMembers'))
+    const city = convert && convert[0].city;
     useEffect(() => {
         fetch(`http://localhost:4000/roomsByData${city}`)
             .then(res => res.json())
-            .then(result => setRoomsData(result))
+            .then(result => {
+                setRoomsData(result)
+            })
     }, [city])
     return (
         <div className="pl-lg-5">
             <div>
                 <p>252 stays   guests</p>
-                <h2>Stay in  Division</h2>
+                <h2>Stay in {roomsData && roomsData[0].city} Division</h2>
             </div>
             {
                 roomsData ? roomsData[0].rooms.map(item => <Row key={item.id} className='border-bottom py-5 rooms_container'>
@@ -912,23 +917,23 @@ const SelectRoom = () => {
                         <img className="img-fluid rooms_img" src={item.img} alt="" />
                     </Col>
                     <Col sm={12} md={12} lg={12} xl={6}>
-                       <div>
-                       <h4>{item.title}</h4>
-                        <p className="m-1">{item.GuestsAndRoomDetail}</p>
-                        <p className="pt-1">{item.internat}</p>
-                        <p className="pt-2">{item.cancellation}</p>
-                        <div className="d-flex">
-                            <h6 className="m-md-0 review_content">
-                                <FontAwesomeIcon icon={faStar} className="rooms_reviewIcon" /> {item.review}
-                            </h6>
-                            <div className="pl-5">
+                        <div>
+                            <h4>{item.title}</h4>
+                            <p className="m-1">{item.GuestsAndRoomDetail}</p>
+                            <p className="pt-1">{item.internat}</p>
+                            <p className="pt-2">{item.cancellation}</p>
+                            <div className="d-flex">
+                                <h6 className="m-md-0 review_content">
+                                    <FontAwesomeIcon icon={faStar} className="rooms_reviewIcon" /> {item.review}
+                                </h6>
                                 <div className="pl-5">
-                                    <h6 className="m-0"><span className="rooms_price">${item.price}/</span>night</h6>
-                                    <small className='p-0 m-0 fw-light'>${item.totalPrice} total</small>
+                                    <div className="pl-5">
+                                        <h6 className="m-0"><span className="rooms_price">${item.price}/</span>night</h6>
+                                        <small className='p-0 m-0 fw-light'>${item.totalPrice} total</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                       </div>
                     </Col>
                 </Row>) : 'loading....'
             }

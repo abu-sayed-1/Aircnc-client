@@ -9,6 +9,7 @@ import Home from './Component/Home/Home';
 import Division from './Component/Division/Division';
 
 function App() {
+  //https://stackoverflow.com/questions/24544861/how-to-create-a-multiple-values-for-a-single-key-using-local-storage/24544905
   return (
     <Router>
       <Switch>

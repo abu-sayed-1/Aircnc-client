@@ -11,6 +11,7 @@ import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Col, Row } from 'react-bootstrap';
 import Shake from 'react-reveal/Shake';
 import { useHistory } from 'react-router';
+import uuid from 'react-uuid';
 
 const initialState = {
     adults: 0,
@@ -42,6 +43,7 @@ const reducer = (state, action) => {
 
 const CountMembersAndSetDates = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
+    const uniqueId = uuid();
     const history = useHistory();
     // date picker here ==============>
     const [selectedStartDate, setSelectedStartDate] = useState(new Date());
@@ -62,18 +64,24 @@ const CountMembersAndSetDates = () => {
         const startDateCheckout = selectedStartDate == "Invalid Date" || !selectedStartDate;
         const endDateCheckout = selectedEndDate == "Invalid Date" || !selectedEndDate;
         if (members && !startDateCheckout && !endDateCheckout) {
-            console.log(" true")
-            const remaining = { ...state, startDate: selectedStartDate, endDate: selectedEndDate };
+            const remaining = [
+                {
+                    id: uniqueId,
+                    ...state,
+                    startDate: selectedStartDate,
+                    endDate: selectedEndDate
+                }
+            ];
             fetch('http://localhost:4000/membersAndDates', {
                 method: "POST",
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(remaining)
             })
                 .then(result => {
+                    sessionStorage.setItem('uniqueId', uniqueId)
                     if (result) {
                         history.push("/division");
                     }
-                    console.log(result)
                 });
         };
 
