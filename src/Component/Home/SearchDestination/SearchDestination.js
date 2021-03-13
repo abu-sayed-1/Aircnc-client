@@ -891,11 +891,11 @@ const SearchDestination = ({ handleSearchResult }) => {
             .then(res => res.json())
             .then(result => {
                 if (result.length > 0) {
-                    const destination_dates_members = [{
+                    const destination_countryAndCity = [{
                         country: result[0].name,
                         city: result[0].city
                     }];
-                    sessionStorage.setItem("countryAndDatesAndMembers", JSON.stringify(destination_dates_members));
+                    sessionStorage.setItem("countryAndCity", JSON.stringify(destination_countryAndCity),);
                     handleSearchResult(result)
                 };
                 if (result.length == 0) {

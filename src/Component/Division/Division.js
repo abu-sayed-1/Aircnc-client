@@ -9,7 +9,7 @@ const Division = () => {
     return (
         <>
             <DivisionNavbar />
-            <Container fluid>
+            <Container fluid className="pt-5">
                 <Row>
                     <Col sm={12} md={7} lg={6} xl={6} className="pl-md-5">
                         <SelectRoom />

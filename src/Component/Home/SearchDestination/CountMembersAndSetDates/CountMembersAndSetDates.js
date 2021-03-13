@@ -50,7 +50,6 @@ const CountMembersAndSetDates = () => {
     const currentDate = new Date();
     const futureDate = currentDate.setDate(currentDate.getDate() + 3)
     const [selectedEndDate, setSelectedEndDate] = useState(currentDate);
-
     const handleStartDate = startDate => {
         setSelectedStartDate(startDate);
     };
@@ -63,13 +62,28 @@ const CountMembersAndSetDates = () => {
         const members = state.adults > 0 || state.child > 0;
         const startDateCheckout = selectedStartDate == "Invalid Date" || !selectedStartDate;
         const endDateCheckout = selectedEndDate == "Invalid Date" || !selectedEndDate;
+
         if (members && !startDateCheckout && !endDateCheckout) {
+            const EndFullDate = selectedEndDate.toLocaleDateString();
+            const startFullDate = selectedStartDate.toLocaleDateString();
+            const longEndDay = selectedEndDate.toLocaleString('default', { weekday: 'long' });
+            const longStartDay = selectedStartDate.toLocaleString('default', { weekday: 'long' });
+            const numericEndDay = selectedEndDate.toLocaleString('default', { day: 'numeric' });
+            const numericStartDay = selectedStartDate.toLocaleString('default', { day: 'numeric' });
+            const month = selectedStartDate.toLocaleString('default', { month: 'short' });
+            const gusts = state.adults + state.child + state.babies;
             const remaining = [
                 {
                     id: uniqueId,
-                    ...state,
-                    startDate: selectedStartDate,
-                    endDate: selectedEndDate
+                    startFullDate: startFullDate,
+                    EndFullDate: EndFullDate,
+                    Month: month,
+                    longStartDay: longStartDay,
+                    longEndDay: longEndDay,
+                    numericEndDay: numericEndDay,
+                    numericStartDay: numericStartDay,
+                    gusts: gusts,
+                    ...state
                 }
             ];
             fetch('http://localhost:4000/membersAndDates', {
@@ -98,7 +112,7 @@ const CountMembersAndSetDates = () => {
                                 <KeyboardDatePicker
                                     disableToolbar
                                     variant="inline"
-                                    format="dd/MM/yy"
+                                    format="MM/dd/yyyy"
                                     margin="normal"
                                     label="Arrival"
                                     value={selectedStartDate}
@@ -121,7 +135,7 @@ const CountMembersAndSetDates = () => {
                                 <KeyboardDatePicker
                                     disableToolbar
                                     variant="inline"
-                                    format="dd/MM/yy"
+                                    format="MM/dd/yyyy"
                                     margin="normal"
                                     label="Departure"
                                     value={selectedEndDate}
