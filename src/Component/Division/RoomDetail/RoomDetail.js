@@ -4,11 +4,11 @@ import { useParams } from 'react-router';
 const RoomDetail = () => {
     const { id } = useParams()
     console.log(id)
-    useEffect(() => {
-        fetch(`http://localhost:4000/roomDetail${id}`)
-            .then(res => res.json())
-            .then(result => console.log(result))
-    }, [id])
+    // useEffect(() => {
+    //     fetch(`http://localhost:4000/roomDetail${id}`)
+    //         .then(res => res.json())
+    //         .then(result => console.log(result))
+    // }, [id])
 
     return (
         <div>
