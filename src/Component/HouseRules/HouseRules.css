@@ -1,0 +1,38 @@
+.fw_bolder{
+    font-weight: 700;
+}
+
+.border_bottom {
+    border-bottom: 2px solid #cec8c8;
+}
+
+.months_dates {
+    background-color: #eaeaea;
+}
+
+.checkInAnd_checkout {
+    font-size: 16px;
+    font-weight: 500;
+    color: #757575;
+}
+
+.self_check {
+    color: #757575;
+}
+
+.read_more {
+    font-weight: 700;
+}
+
+.agree_btn {
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: 22px;
+    background: rgb(45, 231, 147);
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}

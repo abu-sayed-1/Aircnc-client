@@ -8,6 +8,7 @@ import PageNotFound from './Component/PageNotFound/PageNotFound';
 import Home from './Component/Home/Home';
 import Division from './Component/Division/Division';
 import RoomDetail from './Component/Division/RoomDetail/RoomDetail';
+import HouseRules from './Component/HouseRules/HouseRules';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route path="/roomDetail:id">
           <RoomDetail />
+        </Route>
+        <Route path="/houseRules">
+          <HouseRules />
         </Route>
         <Route exact path="*">
           <PageNotFound />

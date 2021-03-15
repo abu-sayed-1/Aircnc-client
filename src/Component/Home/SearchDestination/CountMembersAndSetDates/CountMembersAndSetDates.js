@@ -57,6 +57,8 @@ const CountMembersAndSetDates = () => {
         setSelectedEndDate(endDate)
     };
 
+
+
     // handle Members And Dates
     const handleMembersAndDates = () => {
         const members = state.adults > 0 || state.child > 0;
@@ -64,6 +66,8 @@ const CountMembersAndSetDates = () => {
         const endDateCheckout = selectedEndDate == "Invalid Date" || !selectedEndDate;
 
         if (members && !startDateCheckout && !endDateCheckout) {
+            const oneDay = 24 * 60 * 60 * 1000;
+            const days = Math.round(Math.abs((selectedStartDate - selectedEndDate) / oneDay));
             const EndFullDate = selectedEndDate.toLocaleDateString();
             const startFullDate = selectedStartDate.toLocaleDateString();
             const longEndDay = selectedEndDate.toLocaleString('default', { weekday: 'long' });
@@ -82,6 +86,7 @@ const CountMembersAndSetDates = () => {
                     longEndDay: longEndDay,
                     numericEndDay: numericEndDay,
                     numericStartDay: numericStartDay,
+                    days: days,
                     gusts: gusts,
                     ...state
                 }
