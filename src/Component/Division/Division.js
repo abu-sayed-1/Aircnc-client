@@ -2,8 +2,8 @@ import React from 'react';
 import './Division.css';
 import { Col, Container, Row } from 'react-bootstrap';
 import DivisionNavbar from '../Shred/DivisionNavbar/DivisionNavbar';
-import GoogleMap from './GoogleMap/GoogleMap';
 import SelectRoom from './SelectRoom/SelectRoom';
+import DestinationMap from './DestinationMap/DestinationMap';
 
 const Division = () => {
     return (
@@ -15,7 +15,7 @@ const Division = () => {
                         <SelectRoom />
                     </Col>
                     <Col sm={12} md={5} lg={6} xl={6} className="p-md-0">
-                        <GoogleMap />
+                        <DestinationMap />
                     </Col>
                 </Row>
             </Container>

@@ -6,19 +6,17 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from '@material-ui/core';
 import "./HouseRules.css"
 import HouseRulesAndPay from '../Shred/HouseRulesAndPay/HouseRulesAndPay';
+import { NavLink } from 'react-router-dom';
 
 const HouseRules = () => {
-    const [readMore, setReadMore] = useState(null)
+    const [readMore, setReadMore] = useState(null);
     const gustsAndDates = JSON.parse(sessionStorage.getItem('gustsAndDates'));
-    console.log(gustsAndDates)
-
     return (
-        <Container>
+        <Container className="mb-5 pb-5">
+            <HouseRulesAndPay />
             <Row>
                 <Col>
                     <>
-                        <HouseRulesAndPay />
-
                         <div className="border_bottom">
                             <h1 className="fw_bolder">Review house rules</h1>
                             <h6 className="pt-2">{gustsAndDates[0].days} nights in</h6>
@@ -96,7 +94,12 @@ const HouseRules = () => {
                             </div>
                         }
                         <br />
-                        <button className="mt-5 p-3 px-4 agree_btn text-white">Agree and continue</button>
+                        <NavLink to="/whoComing">
+                            <button onClick={() => sessionStorage.setItem('checkout', true)}
+                                className="px-4 py-3 mt-5 agree_btn text-white"
+                            >Agree and continue
+                            </button>
+                        </NavLink>
                     </>
                 </Col>
                 <Col>

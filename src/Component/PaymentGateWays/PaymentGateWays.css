@@ -1,0 +1,93 @@
+.card_content {
+    padding: 4rem !important;
+    border: 2px solid #90909060;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+.paypal_content {
+    border: 2px solid #90909060;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+.text_colors {
+    font-size: 17px;
+    color: #909090;
+}
+
+.input_name {
+    font-size: 17px;
+    color: #909090;
+}
+
+.payment_inputs {
+    padding: 1.8rem;
+    border: 1px solid#90909041 !important;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #ffa500;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+/* checkoutFrom Component Css here */
+@media screen and (min-device-width: 280px) and (max-device-width: 767px) {
+    #payWith_Stripe {
+        position: relative;
+        border: none;
+        outline: none;
+        top: 34.3rem;
+        width: 8rem;
+        line-height: 50px;
+        font-weight: 700;
+        background: rgb(45, 231, 147);    }
+}
+
+@media screen and (min-width:768px) {
+    #payWith_Stripe {
+        position: relative;
+        float: right;
+        border: none;
+        outline: none;
+        top: 24rem;
+        width: 11rem;
+        line-height: 50px;
+        font-weight: 700;
+        background: rgb(45, 231, 147);    }
+}
+
+@media screen and (min-device-width: 280px) and (max-device-width: 767px) {
+    .paymentsAll_btn {
+        display: flex !important;
+        justify-content: center !important;
+    }
+}
+
+/* payment Gateway component buttons css here payment_btn*/
+@media screen and (min-width:768px) {
+    .payments_btn {
+        position: relative;
+        float: right;
+    }
+}

@@ -9,6 +9,8 @@ import Home from './Component/Home/Home';
 import Division from './Component/Division/Division';
 import RoomDetail from './Component/Division/RoomDetail/RoomDetail';
 import HouseRules from './Component/HouseRules/HouseRules';
+import WhoComing from './Component/WhoComing/WhoComing';
+import PaymentGateWays from './Component/PaymentGateWays/PaymentGateWays';
 
 function App() {
   return (
@@ -28,6 +30,12 @@ function App() {
         </Route>
         <Route path="/houseRules">
           <HouseRules />
+        </Route>
+        <Route path="/whoComing">
+          <WhoComing />
+        </Route>
+        <Route path="/paymentGateWays">
+          <PaymentGateWays />
         </Route>
         <Route exact path="*">
           <PageNotFound />

@@ -1,6 +1,14 @@
 .rulesAndPay {
+    font-size: 1.2pc;
+    color: rgba(0, 0, 0, 0.822) !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+}
+
+.disabled_link {
+    pointer-events: none;
     font-size: 1.03pc;
-    color: black !important;
+    color: #807f7f !important;
     font-weight: 700 !important;
     text-decoration: none !important;
 }
