@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Container, Form, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import rowdra from "../../images/air-cnc-master/images/rowdra.jpg"
+import Card from '../Shred/Card/Card';
 import HouseRulesAndPay from '../Shred/HouseRulesAndPay/HouseRulesAndPay';
 
 const WhoComing = () => {
@@ -35,7 +36,8 @@ const WhoComing = () => {
                         </form>
                     </div>
                 </Col>
-                <Col>
+                <Col  className=" pl-5">
+                    <Card />
                 </Col>
             </Row>
         </Container>

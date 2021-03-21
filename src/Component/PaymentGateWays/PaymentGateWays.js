@@ -11,6 +11,7 @@ import { toast } from 'react-toastify';
 import HouseRulesAndPay from '../Shred/HouseRulesAndPay/HouseRulesAndPay';
 import Paypal from './Paypal/Paypal';
 import StripeCheckoutForm from './Stripe/StripeCheckoutForm';
+import Card from '../Shred/Card/Card';
 toast.configure();
 
 const creditCardImages = [
@@ -95,8 +96,8 @@ const PaymentGateWays = () => {
                             }
                         </div>
                     </Col>
-                    <Col>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti architecto dolor quae. Minus deleniti dolores molestiae et? Aspernatur, deleniti at?
+                    <Col className=" pl-5">
+                        <Card />
                     </Col>
                 </Row>
             </Container>

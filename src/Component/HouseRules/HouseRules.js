@@ -7,6 +7,7 @@ import { Link } from '@material-ui/core';
 import "./HouseRules.css"
 import HouseRulesAndPay from '../Shred/HouseRulesAndPay/HouseRulesAndPay';
 import { NavLink } from 'react-router-dom';
+import Card from '../Shred/Card/Card';
 
 const HouseRules = () => {
     const [readMore, setReadMore] = useState(null);
@@ -19,7 +20,7 @@ const HouseRules = () => {
                     <>
                         <div className="border_bottom">
                             <h1 className="fw_bolder">Review house rules</h1>
-                            <h6 className="pt-2">{gustsAndDates[0].days} nights in</h6>
+                            <h5 className="pt-2">{gustsAndDates && gustsAndDates[0].days} nights in</h5>
                             <div className="d-flex py-3">
                                 <div className="d-flex">
                                     <div className="px-2 h-75 rounded months_dates">
@@ -102,7 +103,8 @@ const HouseRules = () => {
                         </NavLink>
                     </>
                 </Col>
-                <Col>
+                <Col className=" pl-5">
+                    <Card />
                 </Col>
             </Row>
         </Container>

@@ -1,0 +1,24 @@
+.card_container {
+    border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
+}
+
+.room_title {
+    font-weight: 600 !important;
+}
+
+.guest{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.datesAndGests_item {
+    font-weight: 600;
+}
+
+.Dates_item {
+    font-size: 1.3rem;
+}
