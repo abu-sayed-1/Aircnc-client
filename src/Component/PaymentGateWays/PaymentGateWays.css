@@ -61,7 +61,13 @@ input[type='radio']:checked:after {
         width: 8rem;
         line-height: 50px;
         font-weight: 700;
-        background: rgb(45, 231, 147);    }
+        border-radius: 6px;
+        background: rgb(45, 231, 147);
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+}
 }
 
 @media screen and (min-width:768px) {
@@ -70,24 +76,30 @@ input[type='radio']:checked:after {
         float: right;
         border: none;
         outline: none;
-        top: 24rem;
+        top: 27rem;
         width: 11rem;
         line-height: 50px;
         font-weight: 700;
-        background: rgb(45, 231, 147);    }
+        border-radius: 6px;
+        background: rgb(45, 231, 147);
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+}
 }
 
-@media screen and (min-device-width: 280px) and (max-device-width: 767px) {
+/* @media screen and (min-device-width: 280px) and (max-device-width: 767px) {
     .paymentsAll_btn {
         display: flex !important;
         justify-content: center !important;
     }
-}
+} */
 
 /* payment Gateway component buttons css here payment_btn*/
-@media screen and (min-width:768px) {
+/* @media screen and (min-width:768px) { */
     .payments_btn {
         position: relative;
         float: right;
     }
-}
+/* } */

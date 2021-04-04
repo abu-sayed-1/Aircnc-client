@@ -13,7 +13,6 @@ const location = {
 function DestinationMap() {
   const [directionRes, setDirectionRes] = useState(null);
   const destination = JSON.parse(sessionStorage.getItem('countryAndCity'));
-  console.log(directionRes)
   return (
     <LoadScript
       googleMapsApiKey="AIzaSyD2-nrDZp4YnXXjvkFcrJlF8Ap2V-10P50"

@@ -82,14 +82,15 @@ const PaymentGateWays = () => {
                         <div className="paymentsAll_btn">
                             {
                                 !checkout.credit && !checkout.paypal &&
-                                <button className="agree_btn payments_btn px-3 py-1 text-white" onClick={() =>
+                                <button className="px-4 py-3 text-white payments_btn agree_btn" onClick={() =>
+                                    // agree_btn payments_btn 
                                     toast.error('Please Choose payment gateways !', { position: toast.POSITION.TOP_RIGHT })
                                 }
                                 >Continue to pay</button>
                             }
 
                             {
-                                checkout.paypal && <button className="agree_btn payments_btn px-3 py-1 text-white" onClick={() =>
+                                checkout.paypal && <button className="px-4 py-3 text-white payments_btn agree_btn" onClick={() =>
                                     toast.error('Please Chooses the Paypal Debit/Credit Card button !', { position: toast.POSITION.TOP_RIGHT })
                                 }
                                 >Continue to pay</button>

@@ -41,7 +41,7 @@ const StripeCheckoutForm = ({ checkout }) => {
                 );
 
                 if (response.data.success === true) {
-                    // history.push('/MembershipCreated');
+                    // history.push('/');
                     console.log("payment with stripe successfully")
                 }
                 if (response.data.success === false) {
@@ -72,20 +72,25 @@ const StripeCheckoutForm = ({ checkout }) => {
                     </Col>
                 </Row>
                 {process ?
-                    <div className="">
-                        <Button className="px-4 py-2 text-white" id="payWith_Stripe" variant="primary" disabled>
+                    <div>
+                        <Button className="text-white mt-5" id="payWith_Stripe" variant="primary" disabled>
                             Continue to pay
                         <Spinner
                                 animation="border"
                                 size="sm"
                                 variant="black"
-                                className="ml-3"
+                                className="ml-1"
                             />
                         </Button>
                     </div>
                     : <div className="paymentsAll_btn">
                         {
-                            checkout.credit && <button className="px-3 py-1 text-white" id="payWith_Stripe" type="submit">Continue to pay</button>
+                            checkout.credit &&
+                            <button className="text-white"
+                                id="payWith_Stripe" type="submit"
+                            >
+                                Continue to pay
+                            </button>
                         }
                     </div>}
             </form>

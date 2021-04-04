@@ -23,22 +23,22 @@ const reducer = (state, action) => {
     switch (action.type) {
         case 'INCREMENT1':
             return { ...state, adults: state.adults + 1 };
-        case 'DECREMENT1':
-            const adults = state.adults < 1;
-            return { ...state, adults: adults ? 0 : state.adults - 1 };
-        case 'INCREMENT2':
-            return { ...state, child: state.child + 1 };
-        case 'DECREMENT2':
-            const Child = state.child < 1;
-            return { ...state, child: Child ? 0 : state.child - 1 };
-        case 'INCREMENT3':
-            return { ...state, babies: state.babies + 1 };
-        case 'DECREMENT3':
-            const babies = state.babies < 1;
-            return { ...state, babies: babies ? 0 : state.babies - 1 };
-        default: throw new Error('Unexpected action');
-    };
-};
+            case 'DECREMENT1':
+                const adults = state.adults < 1;
+                return { ...state, adults: adults ? 0 : state.adults - 1 };
+                case 'INCREMENT2':
+                    return { ...state, child: state.child + 1 };
+                    case 'DECREMENT2':
+                        const Child = state.child < 1;
+                        return { ...state, child: Child ? 0 : state.child - 1 };
+                        case 'INCREMENT3':
+                            return { ...state, babies: state.babies + 1 };
+                        case 'DECREMENT3':
+                            const babies = state.babies < 1;
+                            return { ...state, babies: babies ? 0 : state.babies - 1 };
+                 default: throw new Error('Unexpected action');
+            };
+        };
 
 
 const CountMembersAndSetDates = () => {
@@ -56,8 +56,6 @@ const CountMembersAndSetDates = () => {
     const handleEndDate = endDate => {
         setSelectedEndDate(endDate)
     };
-
-
 
     // handle Members And Dates
     const handleMembersAndDates = () => {
