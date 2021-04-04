@@ -201,7 +201,9 @@ const RoomDetail = () => {
     const [roomInfo, setRoomInfo] = useState(null);
     const [serviceAndCountryInfo, setServiceAndCountryInfo] = useState(null);
     const destination = JSON.parse(sessionStorage.getItem('countryAndCity'));
-    const country = destination && destination[0].country;
+    const country = destination[0].country;
+
+    console.log(serviceAndCountryInfo)
 
     // post service And Country Info
     // useEffect(() => {
@@ -236,7 +238,7 @@ const RoomDetail = () => {
         <>
             <DivisionNavbar />
             {
-                roomInfo ? <>
+                roomInfo ?
                     <Container fluid>
                         <Row>
                             <Col className="pr-0">
@@ -246,11 +248,14 @@ const RoomDetail = () => {
                                 <img src={roomInfo.img} className="img-fluid roomAndBed" alt="" />
                             </Col>
                         </Row>
-                    </Container>
-                    <Container className='pt-3 pb-5 mb-4'>
-                        <Row>
-                            <Col>
-                                <>
+                    </Container> : 'loading'
+            }
+            <Container className='pt-3 pb-5 mb-4'>
+                <Row>
+                    <Col>
+                        <>
+                            {
+                                roomInfo ? <>
                                     <div className="d-flex border-bottom pb-2">
                                         <div>
                                             <h2>{roomInfo.title}</h2>
@@ -262,49 +267,57 @@ const RoomDetail = () => {
                                             <h5 className="self_check">Rowdra</h5>
                                         </div>
                                     </div>
-                                    {
-                                        serviceAndCountryInfo ? <div>
-                                            <div>
-                                                <h2>
-                                                    <FontAwesomeIcon icon={faHome} />
-                                                    {serviceAndCountryInfo[0].homeTitle}
-                                                </h2>
-                                                <p>{serviceAndCountryInfo[0].homeDis}</p>
-                                            </div>
-                                            <div>
-                                                <h2>
-                                                    <FontAwesomeIcon icon={faCheckSquare} />
-                                                    {serviceAndCountryInfo[0].selfTitle}
-                                                </h2>
-                                                <p>{serviceAndCountryInfo[0].selfDis}</p>
-                                            </div>
-                                            <div>
-                                                <h2>
-                                                    <FontAwesomeIcon icon={faSprayCan} />
-                                                    {serviceAndCountryInfo[0].sparklingTitle}
-                                                </h2>
-                                                <p>{serviceAndCountryInfo[0].sparklingDis}</p>
-                                            </div>
-                                            <div>
-                                                <h2>
-                                                    <FontAwesomeIcon icon={faUser} />
-                                                    {serviceAndCountryInfo[0].superHost}
-                                                </h2>
-                                                <p>{serviceAndCountryInfo[0].superHostDis}</p>
-                                            </div>
-                                        </div> : 'loading...'
-                                    }
-                                </>
-                            </Col>
-                            <Col>
-                                <Card />
-                            </Col>
-                        </Row>
-                    </Container>
-                </> : 'loading'
-            }
+                                </> : ''
+                            }
+
+                            {
+                                serviceAndCountryInfo ? <div className="mt-4">
+                                    <div className="pt-4">
+                                        <h4>
+                                            <FontAwesomeIcon className="mr-3" icon={faHome} />
+                                            {serviceAndCountryInfo[0].homeTitle}
+                                        </h4>
+                                        <p className="pl-5">{serviceAndCountryInfo[0].homeDis}</p>
+                                    </div>
+                                    <div className="pt-4">
+                                        <h4>
+                                            <FontAwesomeIcon className="mr-3" icon={faCheckSquare} />
+                                            {serviceAndCountryInfo[0].selfTitle}
+                                        </h4>
+                                        <p className="pl-5">{serviceAndCountryInfo[0].selfDis}</p>
+                                    </div>
+                                    <div className="pt-4">
+                                        <h4>
+                                            <FontAwesomeIcon className="mr-3" icon={faSprayCan} />
+                                            {serviceAndCountryInfo[0].sparklingTitle}
+                                        </h4>
+                                        <p className="pl-5">{serviceAndCountryInfo[0].sparklingDis}</p>
+                                    </div>
+                                    <div className="pt-4">
+                                        <h4>
+                                            <FontAwesomeIcon className="mr-3" icon={faUser} />
+                                            {serviceAndCountryInfo[0].superHost}
+                                        </h4>
+                                        <p className="pl-5">{serviceAndCountryInfo[0].superHostDis}</p>
+                                    </div>
+                                    <h5>{serviceAndCountryInfo[0].hotelInfo}</h5>
+                                    <h5>{serviceAndCountryInfo[0].countryInfo}</h5>
+
+                                </div> : 'loading...'
+                            }
+                        </>
+                    </Col>
+                    <Col>
+                        <Card />
+                    </Col>
+                </Row>
+            </Container>
+
         </>
     );
 };
 
 export default RoomDetail;
+
+
+
