@@ -6,7 +6,8 @@ import { useParams } from 'react-router';
 import DivisionNavbar from '../../Shred/DivisionNavbar/DivisionNavbar';
 import Card from '../../Shred/Card/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckSquare, faHome, faSprayCan, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCheckSquare, faChevronDown, faChevronUp, faHome, faSprayCan, faStar, faUser } from '@fortawesome/free-solid-svg-icons';
+import { Link } from '@material-ui/core';
 
 
 
@@ -199,11 +200,13 @@ import { faCheckSquare, faHome, faSprayCan, faUser } from '@fortawesome/free-sol
 
 const RoomDetail = () => {
     const [roomInfo, setRoomInfo] = useState(null);
+    console.log(roomInfo)
     const [serviceAndCountryInfo, setServiceAndCountryInfo] = useState(null);
+    const [readMoreSpace, setReadMoreSpace] = useState(null);
     const destination = JSON.parse(sessionStorage.getItem('countryAndCity'));
     const country = destination[0].country;
 
-    console.log(serviceAndCountryInfo)
+    console.log(serviceAndCountryInfo);
 
     // post service And Country Info
     // useEffect(() => {
@@ -237,82 +240,112 @@ const RoomDetail = () => {
     return (
         <>
             <DivisionNavbar />
-            {
-                roomInfo ?
-                    <Container fluid>
-                        <Row>
-                            <Col className="pr-0">
-                                <img src={roomInfo.building} className="img-fluid roomAndBed" alt="" />
-                            </Col>
-                            <Col className="pl-0">
-                                <img src={roomInfo.img} className="img-fluid roomAndBed" alt="" />
-                            </Col>
-                        </Row>
-                    </Container> : 'loading'
-            }
-            <Container className='pt-3 pb-5 mb-4'>
-                <Row>
-                    <Col>
-                        <>
-                            {
-                                roomInfo ? <>
-                                    <div className="d-flex border-bottom pb-2">
-                                        <div>
-                                            <h2>{roomInfo.title}</h2>
-                                            <p className='m-1'>{destination && destination[0].city}, {destination && destination[0].country}</p>
-                                            <p className="m-1">{roomInfo.GuestsAndRoomDetail}</p>
+            <div className=" roomDetail_content">
+                {
+                    roomInfo ?
+                        <Container fluid>
+                            <Row>
+                                <Col className="pr-0">
+                                    <img src={roomInfo.building} className="img-fluid roomAndBed" alt="" />
+                                </Col>
+                                <Col className="pl-0">
+                                    <img src={roomInfo.img} className="img-fluid roomAndBed" alt="" />
+                                </Col>
+                            </Row>
+                        </Container> : 'loading'
+                }
+                <Container className='pt-3 pb-5 mb-4'>
+                    <Row>
+                        <Col>
+                            <>
+                                {
+                                    roomInfo ? <>
+                                        <div className="d-flex border-bottom pb-2">
+                                            <div>
+                                                <h2>{roomInfo.title}</h2>
+                                                <p className='m-1 room_item room_list'>{destination && destination[0].city}, {destination && destination[0].country}</p>
+                                                <p className="m-1 room_item">{roomInfo.GuestsAndRoomDetail}</p>
+                                            </div>
+                                            <div className="pl-4">
+                                                <img className="img-fluid rounded-circle" src={rowdra} alt="" width="60px" />
+                                                <h5 className="self_check">Rowdra</h5>
+                                            </div>
                                         </div>
-                                        <div className="pl-4">
-                                            <img className="img-fluid rounded-circle" src={rowdra} alt="" width="60px" />
-                                            <h5 className="self_check">Rowdra</h5>
+                                    </> : ''
+                                }
+
+                                {
+                                    serviceAndCountryInfo ? <div className="mt-4">
+                                        <div className="border-bottom pb-2">
+                                            <div className="pt-3">
+                                                <h5>
+                                                    <FontAwesomeIcon className="mr-3 service" icon={faHome} />
+                                                    <span className="room_item">{serviceAndCountryInfo[0].homeTitle}</span>
+                                                </h5>
+                                                <p className="room_item room_list space">{serviceAndCountryInfo[0].homeDis}</p>
+                                            </div>
+                                            <div className="pt-3">
+                                                <h5>
+                                                    <FontAwesomeIcon className="mr-3 service" icon={faCheckSquare} />
+                                                    <span className="room_item">{serviceAndCountryInfo[0].selfTitle}</span>
+                                                </h5>
+                                                <p className="room_item room_list space">{serviceAndCountryInfo[0].selfDis}</p>
+                                            </div>
+                                            <div className="pt-3">
+                                                <h5>
+                                                    <FontAwesomeIcon className="mr-3 service" icon={faSprayCan} />
+                                                    <span className="room_item">{serviceAndCountryInfo[0].sparklingTitle}</span>
+                                                </h5>
+                                                <p className="room_item room_list space">{serviceAndCountryInfo[0].sparklingDis}</p>
+                                            </div>
+                                            <div className="pt-3">
+                                                <h5>
+                                                    <FontAwesomeIcon className="mr-3 service" icon={faUser} />
+                                                    <span className="room_item">{serviceAndCountryInfo[0].superHost}</span>
+                                                </h5>
+                                                <p className="room_item room_list space">{serviceAndCountryInfo[0].superHostDis}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </> : ''
-                            }
+                                        <div className="pt-3">
+                                            <p className="room_item room_list">{serviceAndCountryInfo[0].hotelInfo}</p>
+                                            <p className="room_item room_list">{serviceAndCountryInfo[0].countryInfo}</p>
 
-                            {
-                                serviceAndCountryInfo ? <div className="mt-4">
-                                    <div className="pt-4">
-                                        <h4>
-                                            <FontAwesomeIcon className="mr-3" icon={faHome} />
-                                            {serviceAndCountryInfo[0].homeTitle}
-                                        </h4>
-                                        <p className="pl-5">{serviceAndCountryInfo[0].homeDis}</p>
-                                    </div>
-                                    <div className="pt-4">
-                                        <h4>
-                                            <FontAwesomeIcon className="mr-3" icon={faCheckSquare} />
-                                            {serviceAndCountryInfo[0].selfTitle}
-                                        </h4>
-                                        <p className="pl-5">{serviceAndCountryInfo[0].selfDis}</p>
-                                    </div>
-                                    <div className="pt-4">
-                                        <h4>
-                                            <FontAwesomeIcon className="mr-3" icon={faSprayCan} />
-                                            {serviceAndCountryInfo[0].sparklingTitle}
-                                        </h4>
-                                        <p className="pl-5">{serviceAndCountryInfo[0].sparklingDis}</p>
-                                    </div>
-                                    <div className="pt-4">
-                                        <h4>
-                                            <FontAwesomeIcon className="mr-3" icon={faUser} />
-                                            {serviceAndCountryInfo[0].superHost}
-                                        </h4>
-                                        <p className="pl-5">{serviceAndCountryInfo[0].superHostDis}</p>
-                                    </div>
-                                    <h5>{serviceAndCountryInfo[0].hotelInfo}</h5>
-                                    <h5>{serviceAndCountryInfo[0].countryInfo}</h5>
+                                            <Link
+                                                className="pt-3 read_more"
+                                                style={{ cursor: 'pointer' }}
+                                                onClick={() => setReadMoreSpace(!readMoreSpace)}
+                                            >
+                                                Read more about the space
+                                                {
+                                                    readMoreSpace ? <FontAwesomeIcon className="ml-2 mt-2" icon={faChevronUp} /> : <FontAwesomeIcon className="ml-2 mt-2" icon={faChevronDown} />
+                                                }
+                                            </Link>
 
-                                </div> : 'loading...'
-                            }
-                        </>
-                    </Col>
-                    <Col>
-                        <Card />
-                    </Col>
-                </Row>
-            </Container>
+                                            {
+                                                readMoreSpace && <div className="pt-4">
+                                                    <p className="room_item room_list">{serviceAndCountryInfo[0].countryMoreInfo}</p>
+                                                </div>
+                                            }
+                                            <div className="pt-5">
+                                                <h5>Reviews</h5>
+                                                <h6 className="review_content">
+                                                    <FontAwesomeIcon icon={faStar} className="rooms_reviewIcon mr-2" />
+                                                    {roomInfo && roomInfo.review + "Reviews"}
+                                                </h6>
+                                            </div>
+                                        </div>
 
+                                    </div> : 'loading...'
+                                }
+                            </>
+                        </Col>
+                        <Col>
+                            <Card />
+                        </Col>
+                    </Row>
+                </Container>
+
+            </div>
         </>
     );
 };

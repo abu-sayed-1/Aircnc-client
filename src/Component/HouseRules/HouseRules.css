@@ -1,4 +1,4 @@
-.fw_bolder{
+.fw_bolder {
     font-weight: 700;
 }
 
@@ -22,6 +22,7 @@
 
 .read_more {
     font-weight: 700;
+    color: #0478ff !important;
 }
 
 .agree_btn {

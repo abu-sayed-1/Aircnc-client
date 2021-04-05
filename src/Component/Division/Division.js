@@ -15,7 +15,8 @@ const Division = () => {
                         <SelectRoom />
                     </Col>
                     <Col sm={12} md={5} lg={6} xl={6} className="p-md-0">
-                        <DestinationMap />
+                        {/* <DestinationMap /> */}
+                        map is coming soon...
                     </Col>
                 </Row>
             </Container>

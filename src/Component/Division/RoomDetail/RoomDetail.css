@@ -1,5 +1,20 @@
 .roomAndBed {
-    /* overflow: hidden !important; */
     width: 100% !important;
     height: 90% !important;
+}
+
+.room_item {
+    color: #7e7e7e;
+}
+
+.room_list {
+    font-size: 18px;
+}
+
+.space {
+    padding-left: 2.3rem;
+}
+
+.service {
+    color: #656565;
 }
