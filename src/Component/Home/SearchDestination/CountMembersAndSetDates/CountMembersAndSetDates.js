@@ -64,17 +64,17 @@ const CountMembersAndSetDates = () => {
         const endDateCheckout = selectedEndDate == "Invalid Date" || !selectedEndDate;
 
         if (members && !startDateCheckout && !endDateCheckout) {
-            const oneDay = 24 * 60 * 60 * 1000;
-            const days = Math.round(Math.abs((selectedStartDate - selectedEndDate) / oneDay));
-            const EndFullDate = selectedEndDate.toLocaleDateString();
-            const startFullDate = selectedStartDate.toLocaleDateString();
-            const longEndDay = selectedEndDate.toLocaleString('default', { weekday: 'long' });
-            const longStartDay = selectedStartDate.toLocaleString('default', { weekday: 'long' });
-            const numericEndDay = selectedEndDate.toLocaleString('default', { day: 'numeric' });
-            const numericStartDay = selectedStartDate.toLocaleString('default', { day: 'numeric' });
-            const month = selectedStartDate.toLocaleString('default', { month: 'short' });
-            const gusts = state.adults + state.child + state.babies;
-            const remaining = [
+                const oneDay = 24 * 60 * 60 * 1000;
+                const days = Math.round(Math.abs((selectedStartDate - selectedEndDate) / oneDay));
+                const EndFullDate = selectedEndDate.toLocaleDateString();
+                const startFullDate = selectedStartDate.toLocaleDateString();
+                const longEndDay = selectedEndDate.toLocaleString('default', { weekday: 'long' });
+                const longStartDay = selectedStartDate.toLocaleString('default', { weekday: 'long' });
+                const numericEndDay = selectedEndDate.toLocaleString('default', { day: 'numeric' });
+                const numericStartDay = selectedStartDate.toLocaleString('default', { day: 'numeric' });
+                const month = selectedStartDate.toLocaleString('default', { month: 'short' });
+                const gusts = state.adults + state.child + state.babies;
+                const remaining = [
                 {
                     id: uniqueId,
                     startFullDate: startFullDate,
@@ -84,7 +84,7 @@ const CountMembersAndSetDates = () => {
                     longEndDay: longEndDay,
                     numericEndDay: numericEndDay,
                     numericStartDay: numericStartDay,
-                    days: days,
+                    days: days + 1,
                     gusts: gusts,
                     ...state
                 }

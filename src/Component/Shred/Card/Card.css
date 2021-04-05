@@ -1,4 +1,5 @@
 .card_container {
+    /* max-height: 30rem !important; */
     border-radius: 14px;
     -webkit-border-radius: 14px;
     -moz-border-radius: 14px;
@@ -10,7 +11,7 @@
     font-weight: 600 !important;
 }
 
-.guest{
+.guest {
     font-size: 1.2rem;
     font-weight: 400;
 }

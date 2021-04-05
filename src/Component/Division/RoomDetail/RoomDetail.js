@@ -204,7 +204,7 @@ const RoomDetail = () => {
     const [serviceAndCountryInfo, setServiceAndCountryInfo] = useState(null);
     const [readMoreSpace, setReadMoreSpace] = useState(null);
     const destination = JSON.parse(sessionStorage.getItem('countryAndCity'));
-    const country = destination[0].country;
+    const countryName = destination[0].country;
 
     console.log(serviceAndCountryInfo);
 
@@ -232,10 +232,10 @@ const RoomDetail = () => {
     }, [id]);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/specificCountryInfo${country}`)
+        fetch(`http://localhost:4000/specificCountryInfo${countryName}`)
             .then(res => res.json())
             .then(result => setServiceAndCountryInfo(result))
-    }, [country]);
+    }, [countryName]);
 
     return (
         <>
@@ -340,7 +340,7 @@ const RoomDetail = () => {
                             </>
                         </Col>
                         <Col>
-                            <Card />
+                            <Card roomInfo={roomInfo && roomInfo} />
                         </Col>
                     </Row>
                 </Container>
