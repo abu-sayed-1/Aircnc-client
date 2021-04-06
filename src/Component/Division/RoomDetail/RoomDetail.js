@@ -200,13 +200,16 @@ import { Link } from '@material-ui/core';
 
 const RoomDetail = () => {
     const [roomInfo, setRoomInfo] = useState(null);
-    console.log(roomInfo)
+    if (roomInfo) {
+        const price_review = { price: roomInfo.price, review: roomInfo.review };
+        sessionStorage.setItem("priceAndReview", JSON.stringify(price_review));
+    }
     const [serviceAndCountryInfo, setServiceAndCountryInfo] = useState(null);
     const [readMoreSpace, setReadMoreSpace] = useState(null);
     const destination = JSON.parse(sessionStorage.getItem('countryAndCity'));
     const countryName = destination[0].country;
 
-    console.log(serviceAndCountryInfo);
+    // console.log(serviceAndCountryInfo);
 
     // post service And Country Info
     // useEffect(() => {
@@ -340,7 +343,7 @@ const RoomDetail = () => {
                             </>
                         </Col>
                         <Col>
-                            <Card roomInfo={roomInfo && roomInfo} />
+                            <Card />
                         </Col>
                     </Row>
                 </Container>
