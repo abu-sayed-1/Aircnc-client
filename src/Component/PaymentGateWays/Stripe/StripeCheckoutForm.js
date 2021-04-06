@@ -12,7 +12,7 @@ import { toast } from 'react-toastify';
 import { Button, Col, Row, Spinner } from 'react-bootstrap';
 
 toast.configure()
-const StripeCheckoutForm = ({ checkout }) => {
+const StripeCheckoutForm = ({ checkout, total_amount }) => {
     const history = useHistory()
     const stripe = useStripe();
     const elements = useElements();
@@ -35,14 +35,16 @@ const StripeCheckoutForm = ({ checkout }) => {
                 const response = await axios.post(
                     "http://localhost:4000/stripe/charge",
                     {
-                        amount: 1500,
+                        amount: total_amount + '00',
                         id: id,
                     }
                 );
 
                 if (response.data.success === true) {
-                    // history.push('/');
-                    console.log("payment with stripe successfully")
+                    toast.success('Payment successfully', { position: toast.POSITION.TOP_RIGHT });
+                    setTimeout(() => { history.push('/') }, 5000);
+
+
                 }
                 if (response.data.success === false) {
                     setProcess(false)

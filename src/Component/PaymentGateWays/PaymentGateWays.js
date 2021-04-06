@@ -29,9 +29,7 @@ const PaymentGateWays = () => {
         }
     );
 
-    const totalPrice = (total) => {
-        console.log(total);
-    }
+    const total_amount = sessionStorage.getItem('totalPrice');
     return (
         <>
             <Container className="mb-5 pb-5">
@@ -63,7 +61,7 @@ const PaymentGateWays = () => {
                                 </Col>
                             </Row>
                             <Elements stripe={stripePromise}>
-                                <StripeCheckoutForm checkout={checkout} />
+                                <StripeCheckoutForm checkout={checkout} total_amount={total_amount}/>
                             </Elements>
                         </div>
                         <Row className="p-5 mt-5 mb-5 paypal_content">
@@ -77,7 +75,7 @@ const PaymentGateWays = () => {
                                 </div>
                             </Col>
                             <Col sm={12} md={6} lg={6} xl={6} xs={4}>
-                                {checkout.paypal ? <Paypal />
+                                {checkout.paypal ? <Paypal total_amount={total_amount} />
                                     : <img src={paypalImg}
                                         width='200' className="d-flux justify-content-center" alt="" />}
                             </Col>
@@ -101,7 +99,7 @@ const PaymentGateWays = () => {
                         </div>
                     </Col>
                     <Col className=" pl-5">
-                        <Card totalPrice={totalPrice} />
+                        <Card />
                     </Col>
                 </Row>
             </Container>

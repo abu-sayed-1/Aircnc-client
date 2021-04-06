@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
-
-const Paypal = () => {
+import { toast } from 'react-toastify';
+toast.configure()
+const Paypal = ({ total_amount }) => {
     const paypal = useRef();
     const history = useHistory();
     useEffect(() => {
@@ -16,7 +17,7 @@ const Paypal = () => {
                                 description: "Cool looking table",
                                 amount: {
                                     currency_code: "USD",
-                                    value: 10,
+                                    value: total_amount,
                                 },
                             },
                         ],
@@ -25,8 +26,8 @@ const Paypal = () => {
                 onApprove: async (data, actions) => {
                     const order = await actions.order.capture();
                     if (order) {
-                        // history.push('/MembershipCreated')
-                        console.log("payment true done ")
+                        toast.success('Payment successfully', { position: toast.POSITION.TOP_RIGHT });
+                        setTimeout(() => { history.push('/') }, 5000);
                     }
                 },
                 onError: (err) => {

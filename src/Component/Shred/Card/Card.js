@@ -6,8 +6,7 @@ import { Container } from 'react-bootstrap';
 import { useLocation } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
-const Card = ({ totalPrice }) => {
-    console.log(totalPrice);
+const Card = () => {
     const location = useLocation();
     const sliceLocation = location.pathname.substring(0, 11);
     const gusts_dates = JSON.parse(sessionStorage.getItem('gustsAndDates'));
@@ -24,9 +23,8 @@ const Card = ({ totalPrice }) => {
     const cleaning_fee = Math.round(5 / 100 * countPrice);
     const service_fee = Math.round(10 / 100 * countPrice);
     const total = countPrice + cleaning_fee + service_fee;
-    if (total) {
-        totalPrice(total);
-    }
+    sessionStorage.setItem("totalPrice", total);
+
     return (
         <>
             <Container fluid className="shadow card_container p-4">
