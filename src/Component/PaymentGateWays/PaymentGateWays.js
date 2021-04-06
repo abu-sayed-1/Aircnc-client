@@ -29,6 +29,9 @@ const PaymentGateWays = () => {
         }
     );
 
+    const totalPrice = (total) => {
+        console.log(total);
+    }
     return (
         <>
             <Container className="mb-5 pb-5">
@@ -98,7 +101,7 @@ const PaymentGateWays = () => {
                         </div>
                     </Col>
                     <Col className=" pl-5">
-                        <Card />
+                        <Card totalPrice={totalPrice} />
                     </Col>
                 </Row>
             </Container>

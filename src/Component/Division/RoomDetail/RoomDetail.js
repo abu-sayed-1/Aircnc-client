@@ -9,8 +9,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckSquare, faChevronDown, faChevronUp, faHome, faSprayCan, faStar, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from '@material-ui/core';
 
-
-
 // const serviceAndCountryInfo = [
 //     {
 //         id: 1,
@@ -196,12 +194,10 @@ import { Link } from '@material-ui/core';
 //     },
 // ];
 
-
-
 const RoomDetail = () => {
     const [roomInfo, setRoomInfo] = useState(null);
     if (roomInfo) {
-        const price_review = { price: roomInfo.price, review: roomInfo.review };
+        const price_review = { price: roomInfo.price, review: roomInfo.review, img: roomInfo.img };
         sessionStorage.setItem("priceAndReview", JSON.stringify(price_review));
     }
     const [serviceAndCountryInfo, setServiceAndCountryInfo] = useState(null);
