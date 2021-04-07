@@ -1451,7 +1451,7 @@ const homeData = [
             },
             {
                 id: 2,
-                img: "https://images.pexels.com/photos/221506/pexels-photo-221506.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                img: "https://images.pexels.com/photos/3684943/pexels-photo-3684943.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 place: "nightlife - canada",
                 title: " Lorem ipsum dolor sit consectetur",
                 price: '130',
@@ -1523,7 +1523,7 @@ const homeData = [
             },
             {
                 id: 2,
-                img: "https://images.pexels.com/photos/221506/pexels-photo-221506.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                img: "https://images.pexels.com/photos/3790058/pexels-photo-3790058.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 place: "nightlife - canada",
                 title: " Lorem ipsum dolor sit consectetur",
                 price: '130',
@@ -1532,7 +1532,7 @@ const homeData = [
             },
             {
                 id: 3,
-                img: "https://images.pexels.com/photos/314937/pexels-photo-314937.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                img: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 place: "nightlife - canada",
                 title: " Lorem ipsum dolor sit consectetur",
                 price: '196',
@@ -1544,8 +1544,9 @@ const homeData = [
     },
     // canada 
     {
-        id: 8,
-        city: '', name: 'morocco',
+        id: 22,
+        city: 'rabat',
+        name: 'morocco',
         experiences: [
             {
                 id: 1,
@@ -1596,7 +1597,7 @@ const homeData = [
             },
             {
                 id: 2,
-                img: "https://images.pexels.com/photos/209315/pexels-photo-209315.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                img: "https://images.pexels.com/photos/2907034/pexels-photo-2907034.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
                 place: "nightlife - morocco",
                 title: " Lorem ipsum dolor sit consectetur",
                 price: '90',
@@ -1616,8 +1617,156 @@ const homeData = [
 
     },
     {
-        id: 9,
-        city: '', city: '', name: 'malaysia',
+        id: 23,
+        city: 'essaouira',
+        name: 'morocco',
+        experiences: [
+            {
+                id: 1,
+                img: "https://images.pexels.com/photos/4502972/pexels-photo-4502972.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - morocco",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '40',
+                person: 'per person',
+                review: '7'
+            },
+            {
+                id: 2,
+                img: "https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - morocco",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '10',
+                person: 'per person',
+                review: '9'
+            },
+            {
+                id: 3,
+                img: "https://images.pexels.com/photos/1477535/pexels-photo-1477535.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - morocco",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '26',
+                person: 'per person',
+                review: '12'
+            },
+            {
+                id: 4,
+                img: "https://images.pexels.com/photos/5490140/pexels-photo-5490140.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - morocco",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '70',
+                person: 'per person',
+                review: '33'
+            },
+        ],
+        homes: [
+            {
+                id: 1,
+                img: "https://images.pexels.com/photos/1743555/pexels-photo-1743555.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - morocco",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '128',
+                person: 'per person',
+                review: '64'
+            },
+            {
+                id: 2,
+                img: "https://images.pexels.com/photos/371404/pexels-photo-371404.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - morocco",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '90',
+                person: 'per person',
+                review: '33'
+            },
+            {
+                id: 3,
+                img: "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - morocco",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '200',
+                person: 'per person',
+                review: '90'
+            },
+        ]
+
+    },
+    {
+        id: 24,
+        city: 'meknes',
+        name: 'morocco',
+        experiences: [
+            {
+                id: 1,
+                img: "https://images.pexels.com/photos/6542795/pexels-photo-6542795.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - morocco",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '40',
+                person: 'per person',
+                review: '7'
+            },
+            {
+                id: 2,
+                img: "https://images.pexels.com/photos/1395967/pexels-photo-1395967.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - morocco",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '10',
+                person: 'per person',
+                review: '9'
+            },
+            {
+                id: 3,
+                img: "https://images.pexels.com/photos/5490188/pexels-photo-5490188.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - morocco",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '26',
+                person: 'per person',
+                review: '12'
+            },
+            {
+                id: 4,
+                img: "https://images.pexels.com/photos/2413238/pexels-photo-2413238.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - morocco",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '70',
+                person: 'per person',
+                review: '33'
+            },
+        ],
+        homes: [
+            {
+                id: 1,
+                img: "https://images.pexels.com/photos/161768/lafayette-park-washington-dc-c-architecture-161768.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - morocco",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '128',
+                person: 'per person',
+                review: '64'
+            },
+            {
+                id: 2,
+                img: "https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - morocco",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '90',
+                person: 'per person',
+                review: '33'
+            },
+            {
+                id: 3,
+                img: "https://images.pexels.com/photos/279100/pexels-photo-279100.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - morocco",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '200',
+                person: 'per person',
+                review: '90'
+            },
+        ]
+
+    },
+    // morocco 
+    {
+        id: 25,
+        city: 'kuala lumpur',
+        name: 'malaysia',
         experiences: [
             {
                 id: 1,
@@ -1687,6 +1836,153 @@ const homeData = [
         ]
 
     },
+    {
+        id: 26,
+        city: 'malacca',
+        name: 'malaysia',
+        experiences: [
+            {
+                id: 1,
+                img: "https://images.pexels.com/photos/1580112/pexels-photo-1580112.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - malaysia",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '27',
+                person: 'per person',
+                review: '27'
+            },
+            {
+                id: 2,
+                img: "https://images.pexels.com/photos/4916556/pexels-photo-4916556.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - malaysia",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '10',
+                person: 'per person',
+                review: '9'
+            },
+            {
+                id: 3,
+                img: "https://images.pexels.com/photos/6211094/pexels-photo-6211094.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - malaysia",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '23',
+                person: 'per person',
+                review: '12'
+            },
+            {
+                id: 4,
+                img: "https://images.pexels.com/photos/237697/pexels-photo-237697.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                place: "nightlife - malaysia",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '100',
+                person: 'per person',
+                review: '66'
+            },
+        ],
+        homes: [
+            {
+                id: 1,
+                img: "https://images.pexels.com/photos/1662159/pexels-photo-1662159.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - malaysia",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '199',
+                person: 'per person',
+                review: '22'
+            },
+            {
+                id: 2,
+                img: "https://images.pexels.com/photos/2475276/pexels-photo-2475276.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - malaysia",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '139',
+                person: 'per person',
+                review: '58'
+            },
+            {
+                id: 3,
+                img: "https://images.pexels.com/photos/425173/pexels-photo-425173.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - malaysia",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '270',
+                person: 'per person',
+                review: '77'
+            },
+        ]
+
+    },
+    {
+        id: 27,
+        city: 'kuantan',
+        name: 'malaysia',
+        experiences: [
+            {
+                id: 1,
+                img: "https://images.pexels.com/photos/303159/pexels-photo-303159.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - malaysia",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '27',
+                person: 'per person',
+                review: '27'
+            },
+            {
+                id: 2,
+                img: "https://images.pexels.com/photos/3714730/pexels-photo-3714730.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - malaysia",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '10',
+                person: 'per person',
+                review: '9'
+            },
+            {
+                id: 3,
+                img: "https://images.pexels.com/photos/4915528/pexels-photo-4915528.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - malaysia",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '23',
+                person: 'per person',
+                review: '12'
+            },
+            {
+                id: 4,
+                img: "https://images.pexels.com/photos/2351274/pexels-photo-2351274.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - malaysia",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '100',
+                person: 'per person',
+                review: '66'
+            },
+        ],
+        homes: [
+            {
+                id: 1,
+                img: "https://images.pexels.com/photos/1708463/pexels-photo-1708463.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - malaysia",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '199',
+                person: 'per person',
+                review: '22'
+            },
+            {
+                id: 2,
+                img: "https://images.pexels.com/photos/3935320/pexels-photo-3935320.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - malaysia",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '139',
+                person: 'per person',
+                review: '58'
+            },
+            {
+                id: 3,
+                img: "https://images.pexels.com/photos/1650904/pexels-photo-1650904.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                place: "nightlife - malaysia",
+                title: " Lorem ipsum dolor sit consectetur",
+                price: '270',
+                person: 'per person',
+                review: '77'
+            },
+        ]
+
+    },
+    // malaysia
     {
         id: 10,
         city: '', city: '', name: 'oman',
