@@ -26,8 +26,17 @@ const DivisionNavbar = () => {
                                 <h6 className="mr-3 pt-3 btn_list">{destination_countryAndCity && destination_countryAndCity[0].country}</h6>
                                 {
                                     gustsAndDates && <div className="d-flex px-md-3">
-                                        <h6 className="btn_list pt-3 mr-2">{gustsAndDates[0].Month}</h6>
-                                        <p className="btn_list pt-3 mr-3">{gustsAndDates[0].numericStartDay}-{gustsAndDates[0].numericEndDay}</p>
+                                        {
+                                            gustsAndDates[0].startMonth === gustsAndDates[0].endMonth ?
+                                                <div className="d-flex">
+                                                    <h6 className="btn_list pt-3 mr-2">{gustsAndDates[0].startMonth}</h6>
+                                                    <p className="btn_list pt-3 mr-3">{gustsAndDates[0].numericStartDay}-{gustsAndDates[0].numericEndDay}</p>
+                                                </div> :
+                                                <div className="d-flex">
+                                                    <h6 className="btn_list pt-3 mr-2">{gustsAndDates[0].startMonth} {gustsAndDates[0].numericStartDay} -</h6>
+                                                    <p className="btn_list pt-3 mr-3">{gustsAndDates[0].endMonth} {gustsAndDates[0].numericEndDay}</p>
+                                                </div>
+                                        }
                                         <p className="btn_list pt-3 mr-3">{gustsAndDates[0].gusts} Gusts</p>
                                     </div>
 

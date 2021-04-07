@@ -1,7 +1,9 @@
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from '@material-ui/core';
+import { Button } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
+import './SelectRoom.css';
 import { Col, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
@@ -40,6 +42,13 @@ const SelectRoom = () => {
                     252 stays {gustsAndDate && gustsAndDate[0].Month} {gustsAndDate && gustsAndDate[0].numericStartDay}-{gustsAndDate && gustsAndDate[0].numericEndDay}  {gustsAndDate && gustsAndDate[0].gusts} Gusts
                     </h6>
                 <h2>Stay in {roomsData && roomsData[0].city} Division</h2>
+                <div className="pt-3">
+                    <Button variant="outline-0 btn_Lists">Cancellation flexibility</Button>{' '}
+                    <Button variant="outline-0 btn_Lists">Type of place</Button>{' '}
+                    <Button variant="outline-0 btn_Lists">Price</Button>{' '}
+                    <Button variant="outline-0 btn_Lists">Instant Book</Button>{' '}
+                    <Button variant="outline-0 btn_Lists">More Filters</Button>{' '}
+                </div>
             </div>
             {
                 roomsData ? roomsData[0].rooms.map(item =>

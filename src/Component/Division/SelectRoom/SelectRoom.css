@@ -1,0 +1,10 @@
+.btn_Lists {
+    border: 2px solid #b2b2b2 !important;
+    color: #999898 !important;
+    margin-right: 1.4px !important;
+    border-radius: 20px !important;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}

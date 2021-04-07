@@ -23,22 +23,22 @@ const reducer = (state, action) => {
     switch (action.type) {
         case 'INCREMENT1':
             return { ...state, adults: state.adults + 1 };
-            case 'DECREMENT1':
-                const adults = state.adults < 1;
-                return { ...state, adults: adults ? 0 : state.adults - 1 };
-                case 'INCREMENT2':
-                    return { ...state, child: state.child + 1 };
-                    case 'DECREMENT2':
-                        const Child = state.child < 1;
-                        return { ...state, child: Child ? 0 : state.child - 1 };
-                        case 'INCREMENT3':
-                            return { ...state, babies: state.babies + 1 };
-                        case 'DECREMENT3':
-                            const babies = state.babies < 1;
-                            return { ...state, babies: babies ? 0 : state.babies - 1 };
-                 default: throw new Error('Unexpected action');
-            };
-        };
+        case 'DECREMENT1':
+            const adults = state.adults < 1;
+            return { ...state, adults: adults ? 0 : state.adults - 1 };
+        case 'INCREMENT2':
+            return { ...state, child: state.child + 1 };
+        case 'DECREMENT2':
+            const Child = state.child < 1;
+            return { ...state, child: Child ? 0 : state.child - 1 };
+        case 'INCREMENT3':
+            return { ...state, babies: state.babies + 1 };
+        case 'DECREMENT3':
+            const babies = state.babies < 1;
+            return { ...state, babies: babies ? 0 : state.babies - 1 };
+        default: throw new Error('Unexpected action');
+    };
+};
 
 
 const CountMembersAndSetDates = () => {
@@ -64,22 +64,24 @@ const CountMembersAndSetDates = () => {
         const endDateCheckout = selectedEndDate == "Invalid Date" || !selectedEndDate;
 
         if (members && !startDateCheckout && !endDateCheckout) {
-                const oneDay = 24 * 60 * 60 * 1000;
-                const days = Math.round(Math.abs((selectedStartDate - selectedEndDate) / oneDay));
-                const EndFullDate = selectedEndDate.toLocaleDateString();
-                const startFullDate = selectedStartDate.toLocaleDateString();
-                const longEndDay = selectedEndDate.toLocaleString('default', { weekday: 'long' });
-                const longStartDay = selectedStartDate.toLocaleString('default', { weekday: 'long' });
-                const numericEndDay = selectedEndDate.toLocaleString('default', { day: 'numeric' });
-                const numericStartDay = selectedStartDate.toLocaleString('default', { day: 'numeric' });
-                const month = selectedStartDate.toLocaleString('default', { month: 'short' });
-                const gusts = state.adults + state.child + state.babies;
-                const remaining = [
+            const oneDay = 24 * 60 * 60 * 1000;
+            const days = Math.round(Math.abs((selectedStartDate - selectedEndDate) / oneDay));
+            const endFullDate = selectedEndDate.toLocaleDateString();
+            const startFullDate = selectedStartDate.toLocaleDateString();
+            const longEndDay = selectedEndDate.toLocaleString('default', { weekday: 'long' });
+            const longStartDay = selectedStartDate.toLocaleString('default', { weekday: 'long' });
+            const numericEndDay = selectedEndDate.toLocaleString('default', { day: 'numeric' });
+            const numericStartDay = selectedStartDate.toLocaleString('default', { day: 'numeric' });
+            const startMonth = selectedStartDate.toLocaleString('default', { month: 'short' });
+            const endMonth = selectedEndDate.toLocaleString('default', { month: 'short' });
+            const gusts = state.adults + state.child + state.babies;
+            const remaining = [
                 {
                     id: uniqueId,
                     startFullDate: startFullDate,
-                    EndFullDate: EndFullDate,
-                    Month: month,
+                    endFullDate: endFullDate,
+                    startMonth: startMonth,
+                    endMonth: endMonth,
                     longStartDay: longStartDay,
                     longEndDay: longEndDay,
                     numericEndDay: numericEndDay,

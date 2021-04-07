@@ -12,7 +12,7 @@ const Card = () => {
     const gusts_dates = JSON.parse(sessionStorage.getItem('gustsAndDates'));
     const {
         startFullDate,
-        EndFullDate,
+        endFullDate,
         gusts,
         days
     } = gusts_dates && gusts_dates[0];
@@ -55,7 +55,7 @@ const Card = () => {
                 <div className="d-flex border p-3 rounded">
                     <p className="mr-auto mb-0 Dates_item">{startFullDate && startFullDate}</p>
                     <FontAwesomeIcon className="ml-auto mr-auto align-self-center" icon={faArrowRight} />
-                    <p className="ml-auto mb-0 Dates_item">{EndFullDate && EndFullDate}</p>
+                    <p className="ml-auto mb-0 Dates_item">{endFullDate && endFullDate}</p>
                 </div>
                 <label className="py-2 datesAndGests_item">Guests</label>
                 <div className="d-flex border rounded p-3 guest">
