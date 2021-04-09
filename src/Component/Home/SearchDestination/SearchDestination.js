@@ -2223,7 +2223,6 @@ const SearchDestination = ({ handleSearchResult }) => {
         fetch(`http://localhost:4000/destination${condition}`)
             .then(res => res.json())
             .then(result => {
-                console.log(result);
                 if (result.length > 0) {
                     const destination_countryAndCity = [{
                         country: result[0].name,

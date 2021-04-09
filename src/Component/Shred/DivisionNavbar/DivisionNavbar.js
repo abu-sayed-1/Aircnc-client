@@ -3,7 +3,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 
 const DivisionNavbar = () => {
     const [gustsAndDates, setGustsAndDates] = useState(null);
-    const destination_countryAndCity = JSON.parse(sessionStorage.getItem('countryAndCity'));
+    const destination_countryAndCity  = JSON.parse(sessionStorage.getItem('countryAndCity'));
     const id = sessionStorage.getItem("uniqueId");
     useEffect(() => {
         fetch(`http://localhost:4000/gustsAndDates${id}`)
