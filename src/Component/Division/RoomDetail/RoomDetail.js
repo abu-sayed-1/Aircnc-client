@@ -194,6 +194,7 @@ import { Link } from '@material-ui/core';
 //     },
 // ];
 
+
 const RoomDetail = () => {
     const [roomInfo, setRoomInfo] = useState(null);
     if (roomInfo) {
@@ -216,6 +217,7 @@ const RoomDetail = () => {
     //     })
     //         .then(result => console.log(result));
     // }, []);
+
 
     const { id } = useParams()
     useEffect(() => {

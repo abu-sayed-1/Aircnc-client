@@ -2202,8 +2202,8 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //             },
 //         ]
 
-//     },
-// ];
+//     }
+// ]
 
 
 const SearchDestination = ({ handleSearchResult }) => {

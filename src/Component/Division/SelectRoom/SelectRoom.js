@@ -1,11 +1,12 @@
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from '@material-ui/core';
-import { Button } from 'react-bootstrap';
+import { Button, DropdownButton, Dropdown } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import './SelectRoom.css';
 import { Col, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import place from '../../selectPlace.json';
 
 // const roomData = [
 
@@ -2255,14 +2256,14 @@ import { useHistory } from 'react-router-dom';
 
 const SelectRoom = () => {
     const [roomsData, setRoomsData] = useState(null);
-    console.log(roomsData);
+    const [place, setPlace] = useState(null);
     const history = useHistory();
 
     // useEffect(() => {
-    //     fetch('http://localhost:4000/roomsInfo', {
+    //     fetch('http://localhost:4000/allPlace', {
     //         method: 'POST',
     //         headers: { 'content-type': 'application/json' },
-    //         body: JSON.stringify(roomData)
+    //         body: JSON.stringify(place)
     //     })
     //         .then(result => console.log(result));
     // }, []);
@@ -2270,6 +2271,7 @@ const SelectRoom = () => {
     const gustsAndDate = JSON.parse(sessionStorage.getItem("gustsAndDates"));
     const convert = JSON.parse(sessionStorage.getItem('countryAndCity'));
     const city = convert && convert[0].city;
+    const country = convert[0].country;
     useEffect(() => {
         fetch(`http://localhost:4000/roomsByData${city}`)
             .then(res => res.json())
@@ -2278,9 +2280,20 @@ const SelectRoom = () => {
             })
     }, [city]);
 
+    useEffect(() => {
+        fetch(`http://localhost:4000/place${country}`)
+            .then(res => res.json())
+            .then(result => setPlace(result))
+    }, [country]);
+
+
     const roomDetail = (id) => {
         history.push(`roomDetail${id}`)
     };
+
+    const handlePlace = (e) => {
+        console.log(e.target.innerHTML);
+    }
     return (
         <div className="pl-lg-5">
             <div>
@@ -2294,6 +2307,18 @@ const SelectRoom = () => {
                     <Button variant="outline-0 btn_Lists">Price</Button>{' '}
                     <Button variant="outline-0 btn_Lists">Instant Book</Button>{' '}
                     <Button variant="outline-0 btn_Lists">More Filters</Button>{' '}
+                    <DropdownButton title="dropdown button">
+                        <Dropdown.ItemText className="text-uppercase">
+                            {country && country}
+                        </Dropdown.ItemText>
+                        {
+                            place && <>
+                                <Dropdown.Item className="btn btn-info" onClick={(e) => handlePlace(e)} as="button">{place[0].place1}</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => handlePlace(e)} as="button">{place[0].place2}</Dropdown.Item>
+                                <Dropdown.Item onClick={(e) => handlePlace(e)} as="button">{place[0].place3}</Dropdown.Item>
+                            </>
+                        }
+                    </DropdownButton>
                 </div>
             </div>
             {
