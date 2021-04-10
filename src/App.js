@@ -11,6 +11,7 @@ import RoomDetail from './Component/Division/RoomDetail/RoomDetail';
 import HouseRules from './Component/HouseRules/HouseRules';
 import WhoComing from './Component/WhoComing/WhoComing';
 import PaymentGateWays from './Component/PaymentGateWays/PaymentGateWays';
+import Login from './Component/SignUpAndLogin/Login/Login';
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
         </Route>
         <Route path="/paymentGateWays">
           <PaymentGateWays />
+        </Route>
+        <Route path="/login">
+          <Login />
         </Route>
         <Route exact path="*">
           <PageNotFound />

@@ -11,7 +11,8 @@ const rooms = {
     place: null,
     roomsData: [],
     price: [],
-    placeName: null
+    placeName: null,
+    showAll: false
 }
 
 const reducer = (roomsState, action) => {
@@ -22,19 +23,18 @@ const reducer = (roomsState, action) => {
             return { ...roomsState, roomsData: action.payload };
         case 'PRICE':
             const remaining = roomsState.roomsData[0].rooms.filter(item => item.price === action.payload);
-            return { ...roomsState, price: remaining };
+            return { ...roomsState, price: remaining, showAll: false };
         case 'PLACE_NAME':
-            return { ...roomsState, placeName: action.payload }
+            return { ...roomsState, placeName: action.payload };
+        case 'SHOW_ALL':
+            return { ...roomsState, showAll: action.payload };
         default: throw new Error('Unexpected action');
     }
 }
 
 const SelectRoom = () => {
     const [roomsState, dispatch] = useReducer(reducer, rooms);
-    console.log(roomsState.placeName ? roomsState.placeName : 'rakib false');
     const history = useHistory();
-
-    //https://cloud.mongodb.com/v2/5f70cef3fa46d90c51eefed1#metrics/replicaSet/602a1a1e3079de14cdd6bc32/explorer/aircnc/roomsInfo/find
     // useEffect(() => {
     //     fetch('http://localhost:4000/allPlace', {
     //         method: 'POST',
@@ -44,10 +44,10 @@ const SelectRoom = () => {
     //         .then(result => console.log(result));
     // }, []);
 
-    const verifyPlace = roomsState.price.length > 1 && roomsState.price;
+    const verifyPlace = roomsState.showAll ? false : roomsState.price.length > 1 && roomsState.price;
+    const specificRoom = roomsState.showAll ? false : roomsState.price.length === 1 && roomsState.price;
     const roomsCon = roomsState.roomsData.length > 0 && roomsState.roomsData[0].rooms;
     const checkout = verifyPlace ? verifyPlace : roomsCon;
-    // console.log(checkout);
     const gustsAndDate = JSON.parse(sessionStorage.getItem("gustsAndDates"));
     const convert = JSON.parse(sessionStorage.getItem('countryAndCity'));
     const verify = roomsState.place === null || roomsState.place == [] ? false : roomsState.place;
@@ -55,7 +55,6 @@ const SelectRoom = () => {
         convert[0].city = verify;
         const update = sessionStorage.setItem('countryAndCity', JSON.stringify(convert));
         window.location.reload(false);
-        console.log(update);
     };
     const city = convert && convert[0].city;
     const country = convert[0].country;
@@ -73,7 +72,6 @@ const SelectRoom = () => {
         fetch(`http://localhost:4000/roomsByData${check}`)
             .then(res => res.json())
             .then(result => {
-                console.log(result, '[result]');
                 dispatch({ type: 'ROOMS_DATA', payload: result })
             })
     }, [check]);
@@ -107,6 +105,7 @@ const SelectRoom = () => {
                         </Dropdown.ItemText>
                         {
                             roomsState.placeName ? <>
+
                                 <Dropdown.Item className="btn btn-info" onClick={(e) => handlePlace(e)} as="button">{roomsState.placeName[0].place1}</Dropdown.Item>
                                 <Dropdown.Item onClick={(e) => handlePlace(e)} as="button">{roomsState.placeName[0].place2}</Dropdown.Item>
                                 <Dropdown.Item onClick={(e) => handlePlace(e)} as="button">{roomsState.placeName[0].place3}</Dropdown.Item>
@@ -117,9 +116,11 @@ const SelectRoom = () => {
                         <Dropdown.ItemText>
                             PRICE
                         </Dropdown.ItemText>
+                        <Dropdown.Item className="btn btn-info" onClick={() => dispatch({ type: 'SHOW_ALL', payload: true })} as="button">Show-all</Dropdown.Item>
                         {
                             roomsState.roomsData.length > 0 && roomsState.roomsData[0].rooms.map(prices => <div key={prices.id}>
-                                <Dropdown.Item onClick={(price) => handlePrice(price)} as="button">{prices.price}</Dropdown.Item>
+                                <Dropdown.Item as="button">$<p className="mb-0" onClick={(price) => handlePrice(price)}>{prices.price}</p>
+                                </Dropdown.Item>
                             </div>
                             )
                         }
@@ -127,38 +128,66 @@ const SelectRoom = () => {
                 </div>
             </div>
             {
-                checkout ? <>
-                    {
-                        checkout.map(item =>
-                            <Link key={item.id} style={{ cursor: 'pointer' }} onClick={() => roomDetail(item.id)}>
-                                <Row className='border-bottom py-5 rooms_container'>
-                                    <Col sm={12} md={12} lg={12} xl={6}>
-                                        <img className="img-fluid rooms_img" src={item.img} alt="" />
-                                    </Col>
-                                    <Col sm={12} md={12} lg={12} xl={6}>
-                                        <div>
-                                            <h4>{item.title}</h4>
-                                            <p className="m-1">{item.GuestsAndRoomDetail}</p>
-                                            <p className="pt-1">{item.internat}</p>
-                                            <p className="pt-2">{item.cancellation}</p>
-                                            <div className="d-flex">
-                                                <h6 className="m-md-0 review_content">
-                                                    <FontAwesomeIcon icon={faStar} className="rooms_reviewIcon" /> {item.review}
-                                                </h6>
-                                                <div className="pl-5">
+                specificRoom ? <div>
+                    <Link style={{ cursor: 'pointer' }} onClick={() => roomDetail(specificRoom[0].id)}>
+                        <Row className='border-bottom py-5 rooms_container'>
+                            <Col sm={12} md={12} lg={12} xl={6}>
+                                <img className="img-fluid rooms_img" src={specificRoom[0].img} alt="" />
+                            </Col>
+                            <Col sm={12} md={12} lg={12} xl={6}>
+                                <div>
+                                    <h4>{specificRoom[0].title}</h4>
+                                    <p className="m-1">{specificRoom[0].GuestsAndRoomDetail}</p>
+                                    <p className="pt-1">{specificRoom[0].internat}</p>
+                                    <p className="pt-2">{specificRoom[0].cancellation}</p>
+                                    <div className="d-flex">
+                                        <h6 className="m-md-0 review_content">
+                                            <FontAwesomeIcon icon={faStar} className="rooms_reviewIcon" /> {specificRoom[0].review}
+                                        </h6>
+                                        <div className="pl-5">
+                                            <div className="pl-5">
+                                                <h6 className="m-0"><span className="rooms_price">${specificRoom[0].price}/</span>night</h6>
+                                                <small className='p-0 m-0 fw-light'>${specificRoom[0].totalPrice} total</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Link>
+                </div> :
+                    <>
+                        {
+                            checkout ? checkout.map(item =>
+                                <Link key={item.id} style={{ cursor: 'pointer' }} onClick={() => roomDetail(item.id)}>
+                                    <Row className='border-bottom py-5 rooms_container'>
+                                        <Col sm={12} md={12} lg={12} xl={6}>
+                                            <img className="img-fluid rooms_img" src={item.img} alt="" />
+                                        </Col>
+                                        <Col sm={12} md={12} lg={12} xl={6}>
+                                            <div>
+                                                <h4>{item.title}</h4>
+                                                <p className="m-1">{item.GuestsAndRoomDetail}</p>
+                                                <p className="pt-1">{item.internat}</p>
+                                                <p className="pt-2">{item.cancellation}</p>
+                                                <div className="d-flex">
+                                                    <h6 className="m-md-0 review_content">
+                                                        <FontAwesomeIcon icon={faStar} className="rooms_reviewIcon" /> {item.review}
+                                                    </h6>
                                                     <div className="pl-5">
-                                                        <h6 className="m-0"><span className="rooms_price">${item.price}/</span>night</h6>
-                                                        <small className='p-0 m-0 fw-light'>${item.totalPrice} total</small>
+                                                        <div className="pl-5">
+                                                            <h6 className="m-0"><span className="rooms_price">${item.price}/</span>night</h6>
+                                                            <small className='p-0 m-0 fw-light'>${item.totalPrice} total</small>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </Col>
-                                </Row>
-                            </Link>
-                        )
-                    }
-                </> : "loading"
+                                        </Col>
+                                    </Row>
+                                </Link>
+                            ) : 'Loading....'
+                        }
+                    </>
             }
         </div >
     );

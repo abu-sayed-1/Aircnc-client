@@ -3694,6 +3694,11 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classnames@^2.2.5:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.1.tgz#dfcfa3891e306ec1dad105d0e88f4417b8535e8e"
+  integrity sha512-OlQdbZ7gLfGarSqxesMesDa5uz7KFbID8Kpq/SxIoNGDqY8lSYs0D+hhtBXhcdB3rcbXArFr7vlHheLk1voeNA==
+
 classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
@@ -4102,6 +4107,11 @@ cosmiconfig@^7.0.0:
     parse-json "^5.0.0"
     path-type "^4.0.0"
     yaml "^1.10.0"
+
+country-flag-icons@^1.0.2:
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/country-flag-icons/-/country-flag-icons-1.2.9.tgz#cee7d150b23d3532adcc1e22c2ebb59962e04633"
+  integrity sha512-qn1cKt9PJrghEb1IbyIIqHcvNLPJ8mul0lbz6lFSBmzbGqYC38PJ4wPSIT0gV/iB/DbPylHE04zJNedrj1BXvA==
 
 create-ecdh@^4.0.0:
   version "4.0.4"
@@ -6746,6 +6756,13 @@ inline-source-map@~0.5.0:
   dependencies:
     source-map "~0.4.0"
 
+input-format@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/input-format/-/input-format-0.3.5.tgz#be8f6c3e6b9cd8689e6e46f72f86878f7e5f24ca"
+  integrity sha512-PJJYVeD+YLKe4qO+0Oo4lCAAdz4fV5kw/Rsf2zSL2SjFPqIHhFA/I+v0+0zYXBHoR+Q+YLIWc0ztk7u1yN5YcA==
+  dependencies:
+    prop-types "^15.7.2"
+
 insert-module-globals@^6.2.0:
   version "6.6.3"
   resolved "https://registry.yarnpkg.com/insert-module-globals/-/insert-module-globals-6.6.3.tgz#20638e29a30f9ed1ca2e3a825fbc2cba5246ddfc"
@@ -8020,6 +8037,11 @@ lexical-scope@^1.2.0:
   integrity sha1-/Ope3HBKSzqHls3KQZw6CvryLfQ=
   dependencies:
     astw "^2.0.0"
+
+libphonenumber-js@^1.9.14:
+  version "1.9.16"
+  resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-1.9.16.tgz#84fcadf834a1e4234dab3399b5798cf8ff809683"
+  integrity sha512-PaHT7nTtnejZ0HHekAaA0olv6BUTKZGtKM4SCQS0yE3XjFuVo/tjePMHUAr32FKwIZfyPky1ExMUuaiBAUmV6w==
 
 liftoff@^2.1.0:
   version "2.5.0"
@@ -10588,6 +10610,17 @@ react-overlays@^5.0.0:
     prop-types "^15.7.2"
     uncontrollable "^7.0.0"
     warning "^4.0.3"
+
+react-phone-number-input@^3.1.18:
+  version "3.1.18"
+  resolved "https://registry.yarnpkg.com/react-phone-number-input/-/react-phone-number-input-3.1.18.tgz#1bb7d98bb9fa66bab4a5a7f92c712b5e9a5fea45"
+  integrity sha512-HHdcyw9wBqvYcufet+vkic2Zn10PVGi6L+rWNDIs3jeF013B4LkaRq4Z1HgufR1osxag86aEdD0kq6OihoR+Og==
+  dependencies:
+    classnames "^2.2.5"
+    country-flag-icons "^1.0.2"
+    input-format "^0.3.5"
+    libphonenumber-js "^1.9.14"
+    prop-types "^15.7.2"
 
 react-places-autocomplete@^7.3.0:
   version "7.3.0"
