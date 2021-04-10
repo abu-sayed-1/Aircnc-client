@@ -12,6 +12,7 @@ import HouseRules from './Component/HouseRules/HouseRules';
 import WhoComing from './Component/WhoComing/WhoComing';
 import PaymentGateWays from './Component/PaymentGateWays/PaymentGateWays';
 import Login from './Component/SignUpAndLogin/Login/Login';
+import SignUp from './Component/SignUpAndLogin/SignUp/SignUp';
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
         </Route>
         <Route path="/paymentGateWays">
           <PaymentGateWays />
+        </Route>
+        <Route path="/signUp">
+          <SignUp />
         </Route>
         <Route path="/login">
           <Login />

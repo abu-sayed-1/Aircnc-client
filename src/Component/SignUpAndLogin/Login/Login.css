@@ -1,4 +1,38 @@
-.PhoneInputCountryIconImg{
-    width: 3% !important;
-    /* height: 18% !important; */
+@media screen and (min-width:768px) {
+    .login_container {
+        max-width: 517px !important;
+    }
+}
+
+.login_title {
+    font-weight: 700;
+}
+
+.PhoneInputCountryIconImg {
+    display: none;
+}
+
+.PhoneInputCountrySelect,
+.PhoneInputInput {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 22px 11px 22px 11px !important;
+    border: 2px solid #e5e5e5;
+    outline: none;
+    box-shadow: 0px 0px 10px #f0ecec;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.login_dis {
+    color: #bebebe;
+    font-size: 18px;
+}
+
+.signUp_link {
+    font-weight: 700 !important;
+    color: black !important;
 }
