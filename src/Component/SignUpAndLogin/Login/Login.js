@@ -3,17 +3,18 @@ import './Login.css'
 import PhoneInput, { formatPhoneNumber, formatPhoneNumberIntl, isValidPhoneNumber } from 'react-phone-number-input';
 
 const Login = () => {
-    const [showErr, setShowErr] = useState(null);
     const [value, setValue] = useState(null);
-
+    const [showErr, setShowErr] = useState('');
+    console.log(showErr);
     const func = () => {
         const checkoutValue = value ? (isValidPhoneNumber(value) ?
-            undefined : console.log('Invalid phone number')) : console.log('Phone number required')
-        // const remaining = checkoutValue ? console.log('error is not true') : 'is true';
-        console.log(checkoutValue);
-
+            undefined : setShowErr('Invalid phone number')) : setShowErr('number is required');
+        const isValid = value && isValidPhoneNumber(value) ? true : false;
+        if (isValid) {
+            const number = value && formatPhoneNumberIntl(value);
+        }
     };
-    func();
+
     return (
         <div>
             <PhoneInput
@@ -22,14 +23,14 @@ const Login = () => {
                 withCountryCallingCode
                 value={value}
                 onChange={setValue}
-            // error={value ? (isValidPhoneNumber(value) ?
-            //     undefined : console.log('Invalid phone number')) : console.log('Phone number required')}
             />
+            
             <div>
+                <h6>{showErr ? showErr : ''}</h6>
                 <p> {value && isValidPhoneNumber(value) ? 'true' : 'false'}</p>
                 <p>{value && formatPhoneNumber(value)}</p>
                 <p>{value && formatPhoneNumberIntl(value)}</p>
-
+                <button onClick={() => func()}>checkout</button>
             </div>
         </div>
     );

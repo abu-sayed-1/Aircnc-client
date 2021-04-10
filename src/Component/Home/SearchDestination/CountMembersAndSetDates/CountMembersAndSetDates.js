@@ -50,6 +50,7 @@ const CountMembersAndSetDates = () => {
     const currentDate = new Date();
     const futureDate = currentDate.setDate(currentDate.getDate() + 3)
     const [selectedEndDate, setSelectedEndDate] = useState(currentDate);
+    
     const handleStartDate = startDate => {
         setSelectedStartDate(startDate);
     };
