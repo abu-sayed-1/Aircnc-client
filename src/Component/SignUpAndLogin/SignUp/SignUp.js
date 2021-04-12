@@ -16,7 +16,6 @@ const SignUp = () => {
     const [signUpErr, setSignUpErr] = useState('');
     const { register, errors, handleSubmit } = useForm();
     const onSubmit = data => {
-        console.log(data);
         if (isValid) {
             const signUpData = {
                 firstName: data.firstName,
@@ -50,6 +49,7 @@ const SignUp = () => {
             <div className="d-flex justify-content-center">
                 <>
                     <div className="mt-5 login_container mx-2">
+                        <h5 className="text-center login_title">Sign up</h5>
                         <Form onSubmit={handleSubmit(onSubmit)}>
                             <Form.Control
                                 ref={register({
@@ -97,7 +97,7 @@ const SignUp = () => {
                                 <div className="pt-4">
                                     <label htmlFor="" className="login_dis">have an account?</label>
                                     <NavLink to="/login">
-                                        <Link className="signUp_link">Login</Link>
+                                        <Link className="signUp_link pl-2">Login</Link>
                                     </NavLink>
                                 </div>
                             </div>

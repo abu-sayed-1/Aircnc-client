@@ -9,7 +9,9 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import NumberInput from '../NumberInput/NumberInput';
 
 const Login = () => {
-    const [loginNumber, setLoginNumber] = useState('');
+    const [verifyLoginNumber, setVerifyLoginNumber] = useState(false);
+    console.log(verifyLoginNumber)
+    const [loginNumber, setLoginNumber] = useState(false);
     const [checkEvent, setCheckEvent] = useState(false);
     const [loginErr, setLoginErr] = useState('');
     const err = (errMassage) => {
@@ -19,6 +21,13 @@ const Login = () => {
         setLoginNumber(number);
     };
 
+    useEffect(() => {
+        if (loginNumber !== false) {
+            setVerifyLoginNumber('');
+        }
+    }, [loginNumber])
+
+
     const handleLogin = () => {
         setCheckEvent(true);
         if (loginNumber) {
@@ -26,7 +35,11 @@ const Login = () => {
                 .then(res => res.json())
                 .then(result => {
                     if (result.length > 0) {
-                        console.log('ok')
+                        console.log(result)
+                        sessionStorage.setItem("number", JSON.stringify(result[0]));
+                    }
+                    else {
+                        setVerifyLoginNumber('Phone number do not match. Please try again')
                     }
                 });
         }
@@ -46,7 +59,14 @@ const Login = () => {
                                 {
                                     loginErr ? <Shake>
                                         <h6 className="text-danger text-center">{loginErr} <FontAwesomeIcon icon={faExclamationTriangle} className="ml-2" /> </h6>
-                                    </Shake> : ''
+                                    </Shake>
+                                        : <>
+                                            {
+                                                verifyLoginNumber && <Shake>
+                                                    <h6 className="text-danger text-center">{verifyLoginNumber} <FontAwesomeIcon icon={faExclamationTriangle} className="ml-2" /> </h6>
+                                                </Shake>
+                                            }
+                                        </>
                                 }
                             </> : ''
                         }
@@ -64,7 +84,7 @@ const Login = () => {
                             <div className="pt-4">
                                 <label htmlFor="" className="login_dis">Don't have an account?</label>
                                 <NavLink to="/signUp">
-                                    <Link className="signUp_link"> Sign up</Link>
+                                    <Link className="signUp_link pl-2"> Sign up</Link>
                                 </NavLink>
                             </div>
                         </div>
