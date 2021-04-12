@@ -9,11 +9,28 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import NumberInput from '../NumberInput/NumberInput';
 
 const Login = () => {
-    const [checkEvent, setCheckEvent] = useState(false)
-    const [loginErr, setLoginErr] = useState('')
+    const [loginNumber, setLoginNumber] = useState('');
+    const [checkEvent, setCheckEvent] = useState(false);
+    const [loginErr, setLoginErr] = useState('');
     const err = (errMassage) => {
         setLoginErr(errMassage);
     };
+    const phoneNumber = (number) => {
+        setLoginNumber(number);
+    };
+
+    const handleLogin = () => {
+        setCheckEvent(true);
+        if (loginNumber) {
+            fetch(`http://localhost:4000/verifyLoginNumber${loginNumber}`)
+                .then(res => res.json())
+                .then(result => {
+                    if (result.length > 0) {
+                        console.log('ok')
+                    }
+                });
+        }
+    }
 
     return (
         <>
@@ -21,7 +38,7 @@ const Login = () => {
             <div className="d-flex justify-content-center">
                 <div className="mt-5 login_container mx-2">
                     <h5 className="text-center login_title">Log in</h5>
-                    <NumberInput err={err} />
+                    <NumberInput err={err} phoneNumber={phoneNumber} />
                     <div>
                         <p className="login_dis">We'll call or text you to confirm your number Standard message and data rates apply.</p>
                         {
@@ -34,14 +51,15 @@ const Login = () => {
                             </> : ''
                         }
                         <button
-                            onClick={() => setCheckEvent(true)}
-                            F className="
+                            onClick={() => handleLogin()}
+                            className="
                                 border-0 px-2 py-3 
                                 text-white 
-                                rounded-lg w-100" id="search_btn"
+                                rounded-lg w-100"
+                            id="search_btn"
                         >
                             Continue
-                            </button>
+                                </button>
                         <div className="d-flex justify-content-center">
                             <div className="pt-4">
                                 <label htmlFor="" className="login_dis">Don't have an account?</label>

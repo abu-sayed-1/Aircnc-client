@@ -51,11 +51,16 @@
 
 import React, { useEffect, useState } from 'react';
 import PhoneInput, { formatPhoneNumber, formatPhoneNumberIntl, isValidPhoneNumber } from 'react-phone-number-input';
+import { useLocation } from 'react-router';
 
-const NumberInput = ({ err }) => {
+const NumberInput = ({ err, numberTrue, phoneNumber }) => {
     const [value, setValue] = useState(null);
     const verifyNumber = value && isValidPhoneNumber(value)
+    const location = useLocation();
     useEffect(() => {
+        if (location.pathname === "/signUp") {
+            numberTrue(verifyNumber ? true : false);
+        }
         if (verifyNumber && true) {
             err('');
         }
@@ -65,12 +70,16 @@ const NumberInput = ({ err }) => {
         const checkoutValue = value ? (isValidPhoneNumber(value) ?
             undefined : err('Invalid Phone Number')) : err('Number is required');
         const isValid = value && isValidPhoneNumber(value) ? true : false;
-        if (isValid) {
-            const number = value && formatPhoneNumberIntl(value);
-            // fetch(`http://localhost:4000/verifyNumber${number}`)
+        const number = value && formatPhoneNumberIntl(value);
+        phoneNumber(isValid ? number : false);
+        // if (isValid) {
+            // if (location.pathname === "/signUp") {
+            // phoneNumber(number);
+            // }
+            // fetch(`http://localhost:4000/verifyLoginNumber${number}`)
             //     .then(res => res.json())
             //     .then(result => console.log(result));
-        }
+        // }
     };
     func();
     return (
@@ -79,7 +88,6 @@ const NumberInput = ({ err }) => {
                 placeholder="enter phone number"
                 international
                 withCountryCallingCode
-                // onBlur={() => func()}
                 value={value}
                 onChange={setValue}
             />
