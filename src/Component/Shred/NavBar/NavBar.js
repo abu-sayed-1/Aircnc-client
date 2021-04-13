@@ -1,8 +1,12 @@
 import React from 'react';
 import './NavBar.css'
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 const NavBar = () => {
+    const userInfo = JSON.parse(sessionStorage.getItem("number"));
+    console.log(userInfo)
     return (
         <>
             <Navbar collapseOnSelect expand="lg" className="border">
@@ -14,8 +18,22 @@ const NavBar = () => {
                             <Nav.Link className="mr-3 pt-3 btn_list" href="/">Host your home</Nav.Link>
                             <Nav.Link className="mr-3 pt-3 btn_list" href="/">Host your experience</Nav.Link>
                             <Nav.Link className="mr-3 pt-3 btn_list" href="/">Help</Nav.Link>
-                            <Nav.Link className="mr-3 pt-3 btn_list" href="/">Log in</Nav.Link>
-                            <Nav.Link className="mr-3" href="/"><button className="signUp_btn p-2 px-4">Sign up</button></Nav.Link>
+                            {
+                                userInfo.length > 0 ? <>
+                                    <div className="loggedUser_content px-3 pb-1">
+                                        <h6 className="logged_user btn_list">
+                                            <FontAwesomeIcon
+                                                className="mr-2 logged_icon"
+                                                icon={faUserCircle} />
+                                            {userInfo[0].firstName} {userInfo[0].lastName}
+                                        </h6>
+                                    </div>
+                                </> :
+                                    <>
+                                        <Nav.Link className="mr-3 pt-3 btn_list" href="/">Log in</Nav.Link>
+                                        <Nav.Link className="mr-3" href="/"><button className="signUp_btn p-2 px-4">Sign up</button></Nav.Link>
+                                    </>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

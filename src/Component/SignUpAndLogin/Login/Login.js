@@ -1,19 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Login.css'
 import NavBar from '../../Shred/NavBar/NavBar';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import { Link } from '@material-ui/core';
 import Shake from 'react-reveal/Shake';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import NumberInput from '../NumberInput/NumberInput';
+import { UserContext } from '../../../App';
 
 const Login = () => {
+    const { signUpAndLoggedInUser, setSignUpAndLoggedInUser } = useContext(UserContext);
     const [verifyLoginNumber, setVerifyLoginNumber] = useState(false);
-    console.log(verifyLoginNumber)
     const [loginNumber, setLoginNumber] = useState(false);
     const [checkEvent, setCheckEvent] = useState(false);
     const [loginErr, setLoginErr] = useState('');
+
+    const history = useHistory();
+    const location = useLocation();
+    let { from } = location.state || { form: { pathname: "/" } };
+
     const err = (errMassage) => {
         setLoginErr(errMassage);
     };
@@ -35,8 +41,9 @@ const Login = () => {
                 .then(res => res.json())
                 .then(result => {
                     if (result.length > 0) {
-                        console.log(result)
-                        sessionStorage.setItem("number", JSON.stringify(result[0]));
+                        setSignUpAndLoggedInUser(result[0].number);
+                        sessionStorage.setItem("number", JSON.stringify(result));
+                        history.replace(from);
                     }
                     else {
                         setVerifyLoginNumber('Phone number do not match. Please try again')

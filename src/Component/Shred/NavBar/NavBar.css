@@ -11,6 +11,26 @@
     color: black !important;
 }
 
+.loggedUser_content {
+    border: 1px solid #49e575;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.logged_icon{
+    color: #49e575f1;
+}
+
+.logged_user {
+    padding-top: 1.09rem !important;
+    background: -webkit-linear-gradient(#2bde8c, #49e575);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .signUp_btn {
     border: none;
     outline: none;

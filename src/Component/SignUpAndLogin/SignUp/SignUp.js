@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import NumberInput from '../NumberInput/NumberInput';
@@ -6,14 +6,18 @@ import Shake from 'react-reveal/Shake';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import NavBar from '../../Shred/NavBar/NavBar';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import { Link } from '@material-ui/core';
+import { UserContext } from '../../../App';
 
 const SignUp = () => {
+    const { signUpAndLoggedInUser, setSignUpAndLoggedInUser } = useContext(UserContext);
     const [number, setNumber] = useState('');
     const [isValid, setIsValid] = useState(false);
     const [numberErr, setNumberErr] = useState(false);
     const [signUpErr, setSignUpErr] = useState('');
+    const history = useHistory();
+
     const { register, errors, handleSubmit } = useForm();
     const onSubmit = data => {
         if (isValid) {
@@ -28,7 +32,11 @@ const SignUp = () => {
                 body: JSON.stringify(signUpData)
             })
                 .then(result => {
-                    console.log(result)
+                    if (result) {
+                        setSignUpAndLoggedInUser(signUpData.number)
+                        sessionStorage.setItem("number", JSON.stringify([signUpData]));
+                        history.push("/paymentGateWays");
+                    }
                 });
         }
     }

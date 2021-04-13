@@ -13,43 +13,50 @@ import WhoComing from './Component/WhoComing/WhoComing';
 import PaymentGateWays from './Component/PaymentGateWays/PaymentGateWays';
 import Login from './Component/SignUpAndLogin/Login/Login';
 import SignUp from './Component/SignUpAndLogin/SignUp/SignUp';
+import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
+import { createContext, useState } from 'react';
+
+export const UserContext = createContext();
 
 function App() {
+  const [signUpAndLoggedInUser, setSignUpAndLoggedInUser] = useState(false);
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/division">
-          <Division />
-        </Route>
-        <Route path="/roomDetail:id">
-          <RoomDetail />
-        </Route>
-        <Route path="/houseRules">
-          <HouseRules />
-        </Route>
-        <Route path="/whoComing">
-          <WhoComing />
-        </Route>
-        <Route path="/paymentGateWays">
-          <PaymentGateWays />
-        </Route>
-        <Route path="/signUp">
-          <SignUp />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route exact path="*">
-          <PageNotFound />
-        </Route>
-      </Switch>
-    </Router>
+    <UserContext.Provider value={{ signUpAndLoggedInUser, setSignUpAndLoggedInUser }} >
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/division">
+            <Division />
+          </Route>
+          <Route path="/roomDetail:id">
+            <RoomDetail />
+          </Route>
+          <Route path="/houseRules">
+            <HouseRules />
+          </Route>
+          <Route path="/whoComing">
+            <WhoComing />
+          </Route>
+          <PrivateRoute path="/paymentGateWays">
+            <PaymentGateWays />
+          </PrivateRoute>
+          <Route path="/signUp">
+            <SignUp />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route exact path="*">
+            <PageNotFound />
+          </Route>
+        </Switch>
+      </Router>
+    </UserContext.Provider>
   );
 }
 
