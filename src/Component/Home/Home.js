@@ -12,12 +12,12 @@ const Home = () => {
     return (
         <>
             <NavBar />
-            <Container fluid className="px-5 my-5">
+            <Container fluid className="px-md-5 my-md-5">
                 <Row>
-                    <Col xs={5}>
+                    <Col sm={12} md={12} lg={5} xl={5}>
                         <SearchDestination handleSearchResult={handleSearchResult} />
                     </Col>
-                    <Col>
+                    <Col sm={12} md={12} lg={7} xl={7}>
                         <HomesAndExperiences homesAndExperiencesData={homesAndExperiencesData} />
                     </Col>
                 </Row>

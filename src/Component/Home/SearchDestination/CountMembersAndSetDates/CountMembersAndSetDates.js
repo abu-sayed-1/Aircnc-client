@@ -50,7 +50,7 @@ const CountMembersAndSetDates = () => {
     const currentDate = new Date();
     const futureDate = currentDate.setDate(currentDate.getDate() + 3)
     const [selectedEndDate, setSelectedEndDate] = useState(currentDate);
-    
+
     const handleStartDate = startDate => {
         setSelectedStartDate(startDate);
     };
@@ -111,9 +111,9 @@ const CountMembersAndSetDates = () => {
     return (
         <div>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <Grid container justify="space-around">
-                    <Row className="mt-4">
-                        <Col className="p-2 shadow search_item">
+                <Grid justify="space-around">
+                    <Row className="mt-4 px-2">
+                        <Col className="p-2 shadow search_item mt-2">
                             <div>
                                 <KeyboardDatePicker
                                     disableToolbar
@@ -136,7 +136,7 @@ const CountMembersAndSetDates = () => {
                             </div>
                         </Col>
 
-                        <Col className="p-2 ml-2 shadow search_item">
+                        <Col className="p-2 ml-2 shadow search_item mt-2">
                             <div>
                                 <KeyboardDatePicker
                                     disableToolbar
@@ -163,14 +163,13 @@ const CountMembersAndSetDates = () => {
             </MuiPickersUtilsProvider>
             <br />
             <div className="container-fluid px-3 shadow count_content">
-
                 <div className="py-3 border-bottom">
                     <h6 className="text-muted mb-0">Guests</h6>
                     <label className="mr-2 members_count" htmlFor="">{state.adults} adults,</label>
                     <label className="mr-2 members_count" htmlFor="">{state.child} child,</label>
                     <label className="mr-2 members_count" htmlFor="">{state.babies} babies</label>
                 </div>
-                <div className="d-flex pt-5">
+                <div sm={12} md={12} lg={12} xl={12} className="d-flex pt-5">
                     <h5 className="">ADULTS</h5>
                     <div className="btn_items">
                         <button onClick={() => dispatch({ type: 'DECREMENT1' })} className="border-0 bg-white"> <FontAwesomeIcon icon={faMinus} /></button>
@@ -178,7 +177,7 @@ const CountMembersAndSetDates = () => {
                         <button onClick={() => dispatch({ type: 'INCREMENT1' })} className="border-0 bg-white"> <FontAwesomeIcon icon={faPlus} /></button>
                     </div>
                 </div>
-                <div className="d-flex pt-5">
+                <div sm={12} md={12} lg={12} xl={12} className="d-flex pt-5">
                     <div>
                         <h5>CHILD</h5>
                         <h6 className="text-muted">Age 2-12</h6>
@@ -189,7 +188,7 @@ const CountMembersAndSetDates = () => {
                         <button onClick={() => dispatch({ type: 'INCREMENT2' })} className="border-0 bg-white"> <FontAwesomeIcon icon={faPlus} /></button>
                     </div>
                 </div>
-                <div className="d-flex pt-5">
+                <div sm={12} md={12} lg={12} xl={12} className="d-flex pt-5">
                     <div>
                         <h5>BABIES</h5>
                         <h6 className="text-muted">Younger tha 2</h6>

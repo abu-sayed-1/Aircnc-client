@@ -2244,11 +2244,14 @@ const SearchDestination = ({ handleSearchResult }) => {
     };
     return (
         <>
-            <h3 className="mb-5 pb-2 item">Where do you want to go</h3>
+            <h3 className="mb-5 pb-2 item mt-2">Where do you want to go</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="p-4 shadow-sm search_item">
                     <h5 className="pl-4 fw_bold">LOCATION</h5>
-                    <FormControl className="p-4 border-0 search_input" list="datalistOptions" type="text" name="searchBox"
+                    <FormControl
+                        className="p-4 border-0 search_input"
+                        list="datalistOptions" type="text"
+                        name="searchBox"
                         ref={register({ required: true })}
                         placeholder="Add city, Landmark, or address" />
                     <datalist id="datalistOptions">
@@ -2269,7 +2272,7 @@ const SearchDestination = ({ handleSearchResult }) => {
                 </div>
                 <button
                     type="submit"
-                    className="border-0 px-5 py-3 text-white"
+                    className="border-0 px-5 py-3 text-white w-100"
                     id="search_btn">
                     <FontAwesomeIcon className="mr-2" icon={faSearch} /> Search
                  </button>
