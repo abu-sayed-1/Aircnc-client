@@ -45,6 +45,7 @@ const CountMembersAndSetDates = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const uniqueId = uuid();
     const history = useHistory();
+
     // date picker here ==============>
     const [selectedStartDate, setSelectedStartDate] = useState(new Date());
     const currentDate = new Date();
@@ -111,7 +112,7 @@ const CountMembersAndSetDates = () => {
     return (
         <div>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <Grid justify="space-around">
+                <Grid justify="space-around" className="mx-2">
                     <Row className="mt-4 px-2">
                         <Col className="p-2 shadow search_item mt-2">
                             <div>
@@ -162,23 +163,23 @@ const CountMembersAndSetDates = () => {
                 </Grid>
             </MuiPickersUtilsProvider>
             <br />
-            <div className="container-fluid px-3 shadow count_content">
+            <div className="container-fluid px-md-5 px-lg-3 shadow count_content">
                 <div className="py-3 border-bottom">
                     <h6 className="text-muted mb-0">Guests</h6>
                     <label className="mr-2 members_count" htmlFor="">{state.adults} adults,</label>
                     <label className="mr-2 members_count" htmlFor="">{state.child} child,</label>
                     <label className="mr-2 members_count" htmlFor="">{state.babies} babies</label>
                 </div>
-                <div sm={12} md={12} lg={12} xl={12} className="d-flex pt-5">
-                    <h5 className="">ADULTS</h5>
+                <div className="pt-5">
+                    <h5 className="d-inline-block">ADULTS</h5>
                     <div className="btn_items">
                         <button onClick={() => dispatch({ type: 'DECREMENT1' })} className="border-0 bg-white"> <FontAwesomeIcon icon={faMinus} /></button>
                         <label className="px-4 label_item" htmlFor="">{state.adults}</label>
                         <button onClick={() => dispatch({ type: 'INCREMENT1' })} className="border-0 bg-white"> <FontAwesomeIcon icon={faPlus} /></button>
                     </div>
                 </div>
-                <div sm={12} md={12} lg={12} xl={12} className="d-flex pt-5">
-                    <div>
+                <div className="pt-5 mt-3">
+                    <div className="d-inline-block">
                         <h5>CHILD</h5>
                         <h6 className="text-muted">Age 2-12</h6>
                     </div>
@@ -188,18 +189,19 @@ const CountMembersAndSetDates = () => {
                         <button onClick={() => dispatch({ type: 'INCREMENT2' })} className="border-0 bg-white"> <FontAwesomeIcon icon={faPlus} /></button>
                     </div>
                 </div>
-                <div sm={12} md={12} lg={12} xl={12} className="d-flex pt-5">
-                    <div>
+                <div className="pt-5">
+                    <div className="d-inline-block">
                         <h5>BABIES</h5>
                         <h6 className="text-muted">Younger tha 2</h6>
                     </div>
-                    <div className="btn_item ml-2">
+                    <div className="btn_items ml-2">
                         <button onClick={() => dispatch({ type: 'DECREMENT3' })} className="border-0 bg-white"> <FontAwesomeIcon icon={faMinus} /></button>
                         <label className="px-4 label_item" htmlFor="">{state.babies}</label>
                         <button onClick={() => dispatch({ type: 'INCREMENT3' })} className="border-0 bg-white"> <FontAwesomeIcon icon={faPlus} /></button>
                     </div>
+                    <br />
+                    <button onClick={() => handleMembersAndDates()} className="p-2 px-5 mt-5 apply_btn">APPLY</button>
                 </div>
-                <button onClick={() => handleMembersAndDates()} className="p-2 px-5 mt-5 mr-2 apply_btn">APPLY</button>
             </div>
         </div>
     );

@@ -2208,14 +2208,15 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 
 const SearchDestination = ({ handleSearchResult }) => {
     const [search, setSearch] = useState({ searchBox: '' });
-
+    const [input, setInput] = useState(false);
+    const [autocomplete, setAutocomplete] = useState([]);
     // useEffect(() => {
-    //     fetch('http://localhost:4000/homePagesAllData',{
+    //     fetch('http://localhost:4000/autocompleteData', {
     //         method: "POST",
-    //         headers:{'content-type': 'application/json'},
-    //         body: JSON.stringify(homeData)
+    //         headers: { 'content-type': 'application/json' },
+    //         body: JSON.stringify(fakeData)
     //     })
-    // },[]);
+    // }, []);
 
     useEffect(() => {
         const locationName = search.searchBox;
@@ -2241,7 +2242,24 @@ const SearchDestination = ({ handleSearchResult }) => {
     const { register, errors, handleSubmit } = useForm();
     const onSubmit = data => {
         setSearch(data);
+
     };
+
+    useEffect(() => {
+        if (input) {
+            fetch(`http://localhost:4000/autocompleteChange${input}`)
+                .then(res => res.json())
+                .then(result => setAutocomplete(result));
+        }
+    }, [input]);
+
+    const handleChange = (e) => {
+        setInput(e);
+        if (e === '') {
+            setInput('hjdhsjfekjdkskljiejkjdk');
+            setAutocomplete([])
+        }
+    }
     return (
         <>
             <h3 className="mb-5 pb-2 item mt-2">Where do you want to go</h3>
@@ -2249,30 +2267,35 @@ const SearchDestination = ({ handleSearchResult }) => {
                 <div className="p-4 shadow-sm search_item">
                     <h5 className="pl-4 fw_bold">LOCATION</h5>
                     <FormControl
+                        onChange={(e) => handleChange(e.target.value)}
                         className="p-4 border-0 search_input"
-                        list="datalistOptions" type="text"
+                        type="text"
                         name="searchBox"
                         ref={register({ required: true })}
                         placeholder="Add city, Landmark, or address" />
-                    <datalist id="datalistOptions">
-                        <option value="Netherland" />
-                        <option value="US" />
-                        <option value="Morocco" />
-                        <option value="France" />
-                        <option value="Lebanon" />
-                        <option value="Bangladesh" />
-                        <option value="India" />
-                        <option value="England" />
-                        <option value="Pakistan" />
-                        <option value="Canada" />
-                        <option value="Oman" />
-                        <option value="malaysia" />
-                    </datalist>
                     {errors.searchBox && <span classNane="text-danger">feild is required</span>}
+                    <>
+                        <div>
+                            {
+                                autocomplete.length > 1 ? autocomplete.map(item => <div key={item.id} className="d-flex">
+                                    <img src={item.img} alt="" />
+                                    <p className="mt-auto mb-auto pl-5">{item.countryAndCity}</p>
+                                </div>) : ''
+                            }
+                        </div>
+                        <div>
+                            {
+                                autocomplete.length === 1 ? <div className="d-flex">
+                                    <img src={autocomplete[0].img} alt="" />
+                                    <p>{autocomplete[0].countryAndCity}</p>
+                                </div> : ''
+                            }
+                        </div>
+                    </>
                 </div>
                 <button
                     type="submit"
-                    className="border-0 px-5 py-3 text-white w-100"
+                    className="border-0 mt-3 px-5 py-3 text-white w-100"
                     id="search_btn">
                     <FontAwesomeIcon className="mr-2" icon={faSearch} /> Search
                  </button>

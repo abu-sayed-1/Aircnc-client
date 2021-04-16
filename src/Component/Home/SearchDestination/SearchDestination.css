@@ -18,11 +18,7 @@
 }
 
 .btn_items {
-    padding-left: 18rem !important;
-}
-
-.btn_item {
-    padding-left: 16.1rem !important;
+    float: right;
 }
 
 .item {
@@ -33,9 +29,10 @@
     font-size: 19px;
     font-weight: 600;
 }
-.count_content{
+
+.count_content {
     padding-top: 2rem;
-    padding-bottom: 8rem;
+    padding-bottom: 2rem;
 }
 
 .count_content div h5 {
@@ -47,8 +44,8 @@
 }
 
 .apply_btn {
+    /* float: right !important; */
     border: 3px solid #2de793;
-    float: right;
     font-weight: 700 !important;
     border-radius: 13px;
     background: -webkit-linear-gradient(#2de793, #74ee52);
@@ -72,7 +69,7 @@
     -o-border-radius: 15px;
 }
 
-.members_count{
+.members_count {
     font-size: 20px;
     font-weight: 700;
 }
