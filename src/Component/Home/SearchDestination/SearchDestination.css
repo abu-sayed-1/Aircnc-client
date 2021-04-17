@@ -73,3 +73,14 @@
     font-size: 20px;
     font-weight: 700;
 }
+
+.autocomplete_lest :hover {
+    background-color: rgb(206, 201, 192);
+    cursor: pointer;
+}
+
+.autocomplete_lest {
+    font-weight: 500 !important;
+    color: rgba(0, 0, 0, 0.685) !important;
+    font-family: 'Secular One', sans-serif;
+}

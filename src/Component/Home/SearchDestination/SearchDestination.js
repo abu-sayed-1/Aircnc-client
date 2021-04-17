@@ -2257,8 +2257,12 @@ const SearchDestination = ({ handleSearchResult }) => {
         setInput(e);
         if (e === '') {
             setInput('hjdhsjfekjdkskljiejkjdk');
-            setAutocomplete([])
-        }
+            setAutocomplete([]);
+        };
+    }
+
+    const handleSuggestion = (e) => {
+        console.log(e.target.children[1]);
     }
     return (
         <>
@@ -2275,19 +2279,23 @@ const SearchDestination = ({ handleSearchResult }) => {
                         placeholder="Add city, Landmark, or address" />
                     {errors.searchBox && <span classNane="text-danger">feild is required</span>}
                     <>
-                        <div>
+                        <div className="autocomplete_lest">
                             {
-                                autocomplete.length > 1 ? autocomplete.map(item => <div key={item.id} className="d-flex">
-                                    <img src={item.img} alt="" />
-                                    <p className="mt-auto mb-auto pl-5">{item.countryAndCity}</p>
-                                </div>) : ''
+                                autocomplete.length > 1 ? autocomplete.map(item =>
+                                    <div onClick={(e) => handleSuggestion(e)} key={item.id} className="d-flex">
+                                        <img src={item.img} alt="" />
+                                        <p className="mt-auto mb-auto pl-5">{item.countryAndCity}</p>
+                                    </div>) : ''
                             }
                         </div>
-                        <div>
+                        <div className="autocomplete_lest">
                             {
-                                autocomplete.length === 1 ? <div className="d-flex">
+                                autocomplete.length === 1 ? <div
+                                    onClick={(e) => handleSuggestion(e)}
+                                    className="d-flex"
+                                >
                                     <img src={autocomplete[0].img} alt="" />
-                                    <p>{autocomplete[0].countryAndCity}</p>
+                                    <p className="mt-auto mb-auto pl-5">{autocomplete[0].countryAndCity}</p>
                                 </div> : ''
                             }
                         </div>
