@@ -2205,10 +2205,10 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //     }
 // ]
 
-
 const SearchDestination = ({ handleSearchResult }) => {
+    const [suggestion, setSuggestion] = useState('');
     const [search, setSearch] = useState({ searchBox: '' });
-    const [input, setInput] = useState(false);
+    const [input, setInput] = useState('');
     const [autocomplete, setAutocomplete] = useState([]);
     // useEffect(() => {
     //     fetch('http://localhost:4000/autocompleteData', {
@@ -2254,6 +2254,7 @@ const SearchDestination = ({ handleSearchResult }) => {
     }, [input]);
 
     const handleChange = (e) => {
+        setSuggestion(e);
         setInput(e);
         if (e === '') {
             setInput('hjdhsjfekjdkskljiejkjdk');
@@ -2262,7 +2263,11 @@ const SearchDestination = ({ handleSearchResult }) => {
     }
 
     const handleSuggestion = (e) => {
-        console.log(e.target.children[1]);
+        if (e.target.localName == 'img') {
+            setSuggestion(e.target.nextSibling.innerText)
+        } else {
+            setSuggestion(e.target.innerText)
+        }
     }
     return (
         <>
@@ -2275,14 +2280,18 @@ const SearchDestination = ({ handleSearchResult }) => {
                         className="p-4 border-0 search_input"
                         type="text"
                         name="searchBox"
+                        value={suggestion}
+                        // value={suggestion ? suggestion : input}
+                        // defaultValue={suggestion ? suggestion : input}
                         ref={register({ required: true })}
                         placeholder="Add city, Landmark, or address" />
-                    {errors.searchBox && <span classNane="text-danger">feild is required</span>}
+                    {errors.searchBox && <span className="text-danger">feild is required</span>}
                     <>
                         <div className="autocomplete_lest">
                             {
                                 autocomplete.length > 1 ? autocomplete.map(item =>
-                                    <div onClick={(e) => handleSuggestion(e)} key={item.id} className="d-flex">
+                                    <div onClick={(e) => handleSuggestion(e)}
+                                        key={item.id} className="d-flex">
                                         <img src={item.img} alt="" />
                                         <p className="mt-auto mb-auto pl-5">{item.countryAndCity}</p>
                                     </div>) : ''
