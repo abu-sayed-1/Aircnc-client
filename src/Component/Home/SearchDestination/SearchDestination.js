@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './SearchDestination.css'
 import { FormControl } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
@@ -2206,10 +2206,18 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 // ]
 
 const SearchDestination = ({ handleSearchResult }) => {
+    // const [mouseDown, setMouseDown] = useState(false);
+    const [isEmpty, setEmpty] = useState(false);
     const [suggestion, setSuggestion] = useState('');
     const [search, setSearch] = useState({ searchBox: '' });
-    const [input, setInput] = useState('');
+    const [input, setInput] = useState(false);
     const [autocomplete, setAutocomplete] = useState([]);
+    const myRef = useRef(null);
+
+    // const myInput = useRef(null);
+
+    // console.log(myInput);
+
     // useEffect(() => {
     //     fetch('http://localhost:4000/autocompleteData', {
     //         method: "POST",
@@ -2246,45 +2254,75 @@ const SearchDestination = ({ handleSearchResult }) => {
     };
 
     useEffect(() => {
-        if (input) {
-            fetch(`http://localhost:4000/autocompleteChange${input}`)
+        if (suggestion) {
+            fetch(`http://localhost:4000/autocompleteChange${suggestion}`)
                 .then(res => res.json())
-                .then(result => setAutocomplete(result));
+                .then(result => {
+                    setAutocomplete(result);
+                    if (input) {
+                        setAutocomplete([]);
+                    }
+                });
         }
-    }, [input]);
+    }, [suggestion]);
+
+    useEffect(() => {
+        window.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            window.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
+    const handleClickOutside = (e) => {
+        if (myRef.current && !myRef.current.contains(e.target)) {
+            setAutocomplete([]);
+        }
+    }
 
     const handleChange = (e) => {
         setSuggestion(e);
-        setInput(e);
+        setInput(false);
+        setEmpty(false);
         if (e === '') {
-            setInput('hjdhsjfekjdkskljiejkjdk');
+            setEmpty(true);
+            setSuggestion('k6swiekkm__kdjkfjejlksdjfewjk');
             setAutocomplete([]);
         };
     }
 
     const handleSuggestion = (e) => {
         if (e.target.localName == 'img') {
-            setSuggestion(e.target.nextSibling.innerText)
-        } else {
-            setSuggestion(e.target.innerText)
+            setSuggestion(e.target.nextSibling.innerText);
         }
-    }
+        else {
+            setSuggestion(e.target.innerText);
+        };
+        setInput(true);
+    };
+
+    // const handleMu = e => {
+    //     if (e.type == "mousedown") {
+    //         setMouseDown(e.target.defaultValue)
+    //     }
+    // };
+    // console.log(suggestion, '[suggestion]')
     return (
         <>
             <h3 className="mb-5 pb-2 item mt-2">Where do you want to go</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="p-4 shadow-sm search_item">
+                <div ref={myRef} className="p-4 shadow-sm search_item">
                     <h5 className="pl-4 fw_bold">LOCATION</h5>
-                    <FormControl
-                        onChange={(e) => handleChange(e.target.value)}
-                        className="p-4 border-0 search_input"
-                        type="text"
-                        name="searchBox"
-                        value={suggestion}
-                        // value={suggestion ? suggestion : input}
-                        // defaultValue={suggestion ? suggestion : input}
-                        ref={register({ required: true })}
-                        placeholder="Add city, Landmark, or address" />
+                    <div>
+                        <FormControl
+                            // ref={myInput}
+                            onChange={(e) => handleChange(e.target.value)}
+                            className="p-4 border-0 search_input"
+                            type="text"
+                            name="searchBox"
+                            value={isEmpty ? '' : suggestion}
+                            ref={register({ required: true })}
+                            placeholder="Add city, Landmark, or address" />
+                    </div>
                     {errors.searchBox && <span className="text-danger">feild is required</span>}
                     <>
                         <div className="autocomplete_lest">

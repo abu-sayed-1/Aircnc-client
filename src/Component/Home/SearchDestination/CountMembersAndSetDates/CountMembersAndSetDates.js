@@ -112,7 +112,8 @@ const CountMembersAndSetDates = () => {
     return (
         <div>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <Grid justify="space-around" className="mx-2">
+                <Grid className="mx-2">
+                    {/* justify="space-around" */}
                     <Row className="mt-4 px-2">
                         <Col className="p-2 shadow search_item mt-2">
                             <div>
