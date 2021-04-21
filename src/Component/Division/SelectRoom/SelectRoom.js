@@ -65,7 +65,8 @@ const SelectRoom = () => {
     };
 
     const handlePrice = price => {
-        dispatch({ type: 'PRICE', payload: price.target.innerHTML })
+        console.log(price)
+        dispatch({ type: 'PRICE', payload: price })
     }
 
     useEffect(() => {
@@ -88,44 +89,65 @@ const SelectRoom = () => {
 
     return (
         <div className="pl-lg-5">
-            <div>
-                <h6 className="pb-2">
-                    252 stays {gustsAndDate && gustsAndDate[0].Month} {gustsAndDate && gustsAndDate[0].numericStartDay}-{gustsAndDate && gustsAndDate[0].numericEndDay}  {gustsAndDate && gustsAndDate[0].gusts} Gusts
+            <h6 className="pb-2">
+                252 stays {gustsAndDate && gustsAndDate[0].Month} {gustsAndDate && gustsAndDate[0].numericStartDay}-{gustsAndDate && gustsAndDate[0].numericEndDay}  {gustsAndDate && gustsAndDate[0].gusts} Gusts
                     </h6>
-                <h2>Stay in {convert && convert[0].city} Division</h2>
-                <div className="pt-3">
-                    <Button variant="outline-0 btn_Lists">Cancellation flexibility</Button>{' '}
-                    <Button variant="outline-0 btn_Lists">Type of place</Button>{' '}
-                    <Button variant="outline-0 btn_Lists">Price</Button>{' '}
-                    <Button variant="outline-0 btn_Lists">Instant Book</Button>{' '}
-                    <Button variant="outline-0 btn_Lists">More Filters</Button>{' '}
-                    <DropdownButton title="dropdown button">
-                        <Dropdown.ItemText className="text-uppercase">
+            <h2>Stay in {convert && convert[0].city} Division</h2>
+            <div>
+                <Row className="pt-4">
+                    <Button disabled variant="outline-0 btn_Lists mr-2 mt-2">Cancellation flexibility</Button>{' '}
+                    <DropdownButton variant="outline-0 btn_Lists mr-2 mt-2" title="Type of place">
+                        <Dropdown.ItemText className="text-uppercase bg-info text-white country_title">
                             {country && country}
                         </Dropdown.ItemText>
                         {
                             roomsState.placeName ? <>
-
-                                <Dropdown.Item className="btn btn-info" onClick={(e) => handlePlace(e)} as="button">{roomsState.placeName[0].place1}</Dropdown.Item>
-                                <Dropdown.Item onClick={(e) => handlePlace(e)} as="button">{roomsState.placeName[0].place2}</Dropdown.Item>
-                                <Dropdown.Item onClick={(e) => handlePlace(e)} as="button">{roomsState.placeName[0].place3}</Dropdown.Item>
+                                <div className="city_items mt-1">
+                                    <Dropdown.Item className="rounded-0 places" onClick={(e) => handlePlace(e)} as="button">{roomsState.placeName[0].place1}</Dropdown.Item>
+                                </div>
+                                <div className="city_items ">
+                                    <Dropdown.Item className="places" onClick={(e) => handlePlace(e)} as="button">{roomsState.placeName[0].place2}</Dropdown.Item>
+                                </div>
+                                <div className="city_items ">
+                                    <Dropdown.Item className="places" onClick={(e) => handlePlace(e)} as="button">{roomsState.placeName[0].place3}</Dropdown.Item>
+                                </div>
                             </> : ''
                         }
-                    </DropdownButton>
-                    <DropdownButton title="Price">
-                        <Dropdown.ItemText>
+                    </DropdownButton>{' '}
+                    <DropdownButton
+                        variant="outline-0 btn_Lists mr-2 mt-2"
+                        title="Price"
+                        className="price_container">
+                        <Dropdown.ItemText className="price_title text-white">
                             PRICE
                         </Dropdown.ItemText>
-                        <Dropdown.Item className="btn btn-info" onClick={() => dispatch({ type: 'SHOW_ALL', payload: true })} as="button">Show-all</Dropdown.Item>
+                        <div className="price_items">
+                            <Dropdown.Item
+                                className="show_all"
+                                onClick={() =>
+                                    dispatch({
+                                        type: 'SHOW_ALL', payload: true
+                                    })}
+                                as="button">Show-all
+                          </Dropdown.Item>
+                        </div>
                         {
-                            roomsState.roomsData.length > 0 && roomsState.roomsData[0].rooms.map(prices => <div key={prices.id}>
-                                <Dropdown.Item as="button">$<p className="mb-0" onClick={(price) => handlePrice(price)}>{prices.price}</p>
-                                </Dropdown.Item>
-                            </div>
+                            roomsState.roomsData.length > 0 && roomsState.roomsData[0].rooms.map(prices =>
+                                <div
+                                    className="price_items"
+                                    key={prices.id}
+                                    onClick={() => handlePrice(prices.price)}
+                                >
+                                    <Dropdown.Item as="button">
+                                        <p className="mb-0 border-left-0 prices">${prices.price}</p>
+                                    </Dropdown.Item>
+                                </div>
                             )
                         }
-                    </DropdownButton>
-                </div>
+                    </DropdownButton>{' '}
+                    <Button disabled variant="outline-0 btn_Lists mr-2 mt-2">Instant Book</Button>{' '}
+                    <Button disabled variant="outline-0 btn_Lists mr-2 mt-2">More Filters</Button>{' '}
+                </Row>
             </div>
             {
                 specificRoom ? <div>

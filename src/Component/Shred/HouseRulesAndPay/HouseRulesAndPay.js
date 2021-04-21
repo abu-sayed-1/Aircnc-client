@@ -10,22 +10,22 @@ const HouseRulesAndPay = () => {
     const agreeContinue = sessionStorage.getItem('continue');
     return (
         <>
-            <Row className="py-5">
-                <Col xs={4.8} className="pr-2">
+            <Row className="py-5 d-flex justify-content-start">
+                <div>
                     <NavLink className="rulesAndPay" to="/houseRules">1.Reviews house rules
                     <FontAwesomeIcon className="ml-3" icon={faChevronRight} />
                     </NavLink>
-                </Col>
-                <Col xs={3.2} className="pl-3 text-center">
+                </div>
+                <div className="ml-4">
                     <NavLink className={agree ? "rulesAndPay" : "disabled_link"} to="/whoComing">2.Who's coming
                      <FontAwesomeIcon className="ml-3" icon={faChevronRight} />
                     </NavLink>
-                </Col>
-                <Col xs={4} className="pl-3 pr-0">
+                </div>
+                <div className="ml-4">
                     <NavLink className={agreeContinue ? "rulesAndPay" : "disabled_link"} to="/paymentGateWays">3.Confirm and pay
                     <FontAwesomeIcon className="ml-3" icon={faChevronRight} />
                     </NavLink>
-                </Col>
+                </div>
             </Row>
         </>
     );

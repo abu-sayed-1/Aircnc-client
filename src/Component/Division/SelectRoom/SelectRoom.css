@@ -8,3 +8,34 @@
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
 }
+
+.places,
+.prices {
+    font-weight: 700 !important;
+    color: rgba(0, 0, 0, 0.637) !important;
+}
+
+.country_title {
+    font-weight: 600;
+    letter-spacing: 6px;
+}
+
+.city_items :hover {
+    border-left: 3.5px solid #17a2b8;
+}
+
+.price_title {
+    background-color: rgba(11, 138, 138, 0.918);
+    font-weight: 700;
+    letter-spacing: 10px;
+}
+
+.show_all {
+    font-weight: 700 !important;
+    background-color: #6c757d94 !important;
+    color: rgba(255, 255, 255, 0.918) !important;
+}
+
+.price_items :hover {
+    border-left: 3px solid rgba(11, 138, 138, 0.918);
+}

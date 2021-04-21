@@ -36,10 +36,10 @@ const PaymentGateWays = () => {
                 <HouseRulesAndPay />
                 <h4 className="py-5">Payment Selection</h4>
                 <Row>
-                    <Col>
-                        <div className="form-check card_content">
-                            <Row>
-                                <Col sm={12} md={6} lg={6} xl={6} xs={8}>
+                    <Col sm={12} md={12} lg={6} xl={6} className="pr-xl-5">
+                        <div className="form-check card_content pr-3 py-3 py-md-0 p-md-5">
+                            <Row className="p-md-3">
+                                <Col sm={12} md={6} lg={6} xl={6}>
                                     <input onClick={
                                         () => setCheckout({ credit: "creditCard" })}
                                         className="form-check-input check_input" type="radio"
@@ -61,7 +61,7 @@ const PaymentGateWays = () => {
                                 </Col>
                             </Row>
                             <Elements stripe={stripePromise}>
-                                <StripeCheckoutForm checkout={checkout} total_amount={total_amount}/>
+                                <StripeCheckoutForm checkout={checkout} total_amount={total_amount} />
                             </Elements>
                         </div>
                         <Row className="p-5 mt-5 mb-5 paypal_content">
@@ -74,7 +74,7 @@ const PaymentGateWays = () => {
                                     <p className="pt-4 text_colors">You well be redirected to PayPal website to complete your purchase securely...</p>
                                 </div>
                             </Col>
-                            <Col sm={12} md={6} lg={6} xl={6} xs={4}>
+                            <Col sm={12} md={6} lg={6} xl={6}>
                                 {checkout.paypal ? <Paypal total_amount={total_amount} />
                                     : <img src={paypalImg}
                                         width='200' className="d-flux justify-content-center" alt="" />}
@@ -84,7 +84,6 @@ const PaymentGateWays = () => {
                             {
                                 !checkout.credit && !checkout.paypal &&
                                 <button className="px-4 py-3 text-white payments_btn agree_btn" onClick={() =>
-                                    // agree_btn payments_btn 
                                     toast.error('Please Choose payment gateways !', { position: toast.POSITION.TOP_RIGHT })
                                 }
                                 >Continue to pay</button>
@@ -98,7 +97,7 @@ const PaymentGateWays = () => {
                             }
                         </div>
                     </Col>
-                    <Col className=" pl-5">
+                    <Col sm={12} md={12} lg={6} xl={6} className="pt-5 mt-3  pt-lg-0 mt-lg-0 pr-lg-0">
                         <Card />
                     </Col>
                 </Row>

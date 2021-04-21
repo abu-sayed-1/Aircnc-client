@@ -10,7 +10,7 @@ const WhoComing = () => {
         <Container className="mb-5 pb-5">
             <HouseRulesAndPay />
             <Row>
-                <Col xs={6.5}>
+                <Col sm={12} md={12} lg={6} xl={6}>
                     <div className="py-5">
                         <h4 className="py-3 pb-2 fw_bolder">Traveling for work?</h4>
                         <h6 className=" self_check">Say hello to your host</h6>
@@ -22,7 +22,7 @@ const WhoComing = () => {
                             </div>
                         </div>
                         <form>
-                            <Form.Group>
+                            <Form.Group className="pt-3">
                                 <Form.Control as="textarea" rows={8} className="w-75" placeholder="Hello Rowdra! Can't wait to spend 4 night is your home" />
                             </Form.Group>
                             <NavLink to="/paymentGateWays">
@@ -36,7 +36,7 @@ const WhoComing = () => {
                         </form>
                     </div>
                 </Col>
-                <Col  className=" pl-5">
+                <Col sm={12} md={12} lg={6} xl={6}>
                     <Card />
                 </Col>
             </Row>

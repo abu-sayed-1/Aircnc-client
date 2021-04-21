@@ -201,7 +201,7 @@ const RoomDetail = () => {
         const price_review = { price: roomInfo.price, review: roomInfo.review, img: roomInfo.img };
         sessionStorage.setItem("priceAndReview", JSON.stringify(price_review));
     }
-    const [serviceAndCountryInfo, setServiceAndCountryInfo] = useState(null);
+    const [serviceAndCountryInfo, setServiceAndCountryInfo] = useState([]);
     const [readMoreSpace, setReadMoreSpace] = useState(null);
     const destination = JSON.parse(sessionStorage.getItem('countryAndCity'));
     const countryName = destination[0].country;
@@ -244,12 +244,12 @@ const RoomDetail = () => {
             <div className=" roomDetail_content">
                 {
                     roomInfo ?
-                        <Container fluid>
+                        <Container fluid className="mb-5">
                             <Row>
-                                <Col className="pr-0">
+                                <Col sm={12} md={6} lg={6} xl={6} className="p-0">
                                     <img src={roomInfo.building} className="img-fluid roomAndBed" alt="" />
                                 </Col>
-                                <Col className="pl-0">
+                                <Col sm={12} md={6} lg={6} xl={6} className="p-0 ">
                                     <img src={roomInfo.img} className="img-fluid roomAndBed" alt="" />
                                 </Col>
                             </Row>
@@ -257,7 +257,7 @@ const RoomDetail = () => {
                 }
                 <Container className='pt-3 pb-5 mb-4'>
                     <Row>
-                        <Col>
+                        <Col sm={12} md={12} lg={6} xl={6}>
                             <>
                                 {
                                     roomInfo ? <>
@@ -276,7 +276,7 @@ const RoomDetail = () => {
                                 }
 
                                 {
-                                    serviceAndCountryInfo ? <div className="mt-4">
+                                    serviceAndCountryInfo.length > 0 ? <div className="mt-4">
                                         <div className="border-bottom pb-2">
                                             <div className="pt-3">
                                                 <h5>
@@ -340,7 +340,7 @@ const RoomDetail = () => {
                                 }
                             </>
                         </Col>
-                        <Col>
+                        <Col sm={12} md={12} lg={6} xl={6}>
                             <Card />
                         </Col>
                     </Row>

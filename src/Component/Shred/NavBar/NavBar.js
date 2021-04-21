@@ -3,6 +3,7 @@ import './NavBar.css'
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     const userInfo = JSON.parse(sessionStorage.getItem("number"));
@@ -18,7 +19,7 @@ const NavBar = () => {
                             <Nav.Link className="mr-3 pt-3 btn_list" href="/">Host your home</Nav.Link>
                             <Nav.Link className="mr-3 pt-3 btn_list" href="/">Host your experience</Nav.Link>
                             <Nav.Link className="mr-3 pt-3 btn_list" href="/">Help</Nav.Link>
-                            {/* {
+                            {
                                 userInfo.length > 0 ? <>
                                     <div className="loggedUser_content px-3 pb-1">
                                         <h6 className="logged_user btn_list">
@@ -28,12 +29,12 @@ const NavBar = () => {
                                             {userInfo[0].firstName} {userInfo[0].lastName}
                                         </h6>
                                     </div>
-                                </> : */}
+                                </> :
                                     <>
-                                        <Nav.Link className="mr-3 pt-3 btn_list" href="/">Log in</Nav.Link>
-                                        <Nav.Link className="mr-3" href="/"><button className="signUp_btn p-2 px-4">Sign up</button></Nav.Link>
+                                        <NavLink to="/login" className="mr-3 pt-3 btn_list">Log in</NavLink>
+                                        <NavLink to="/signUp" className="mr-3"><button className="signUp_btn p-2 px-4">Sign up</button></NavLink>
                                     </>
-                            {/* } */}
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

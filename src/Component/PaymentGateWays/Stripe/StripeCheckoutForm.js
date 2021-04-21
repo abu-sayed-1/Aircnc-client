@@ -75,26 +75,34 @@ const StripeCheckoutForm = ({ checkout, total_amount }) => {
                 </Row>
                 {process ?
                     <div>
-                        <Button className="text-white mt-5" id="payWith_Stripe" variant="primary" disabled>
-                            Continue to pay
-                        <Spinner
-                                animation="border"
-                                size="sm"
-                                variant="black"
-                                className="ml-1"
-                            />
-                        </Button>
-                    </div>
-                    : <div className="paymentsAll_btn">
                         {
                             checkout.credit &&
-                            <button className="text-white"
-                                id="payWith_Stripe" type="submit"
+                            <Button className="text-white"
+                                id="payWith_Stripe"
+                                disabled>
+                                Continue to pay
+                            <Spinner
+                                    animation="border"
+                                    size="sm"
+                                    variant="black"
+                                    className="ml-1"
+                                />
+                            </Button>
+
+                        }
+                    </div>
+                    : <div>
+                        {
+                            checkout.credit &&
+                            <Button className="text-white"
+                                id="payWith_Stripe"
+                                type="submit"
                             >
                                 Continue to pay
-                            </button>
+                            </Button>
                         }
-                    </div>}
+                    </div>
+                }
             </form>
         </div>
     );

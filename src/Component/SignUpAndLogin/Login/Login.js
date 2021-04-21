@@ -44,6 +44,7 @@ const Login = () => {
                         setSignUpAndLoggedInUser(result[0].number);
                         sessionStorage.setItem("number", JSON.stringify(result));
                         history.replace(from);
+                        history.push('/paymentGateWays')
                     }
                     else {
                         setVerifyLoginNumber('Phone number do not match. Please try again')

@@ -17,7 +17,7 @@ const HouseRules = () => {
         <Container className="mb-5 pb-5">
             <HouseRulesAndPay />
             <Row>
-                <Col>
+                <Col sm={12} md={12} lg={6} xl={6}>
                     <>
                         <div className="border_bottom">
                             <h1 className="fw_bolder">Review house rules</h1>
@@ -86,11 +86,9 @@ const HouseRules = () => {
                             readMore &&
                             <div>
                                 <div className="d-flex mt-3">
-                                    {/* <FontAwesomeIcon icon={ } /> */}
                                     <h6 className="pl-3 align-self-center">...</h6>
                                 </div>
                                 <div className="d-flex mt-3">
-                                    {/* <FontAwesomeIcon icon={ } /> */}
                                     <h6 className="pl-3 align-self-center">...</h6>
                                 </div>
                             </div>
@@ -104,7 +102,7 @@ const HouseRules = () => {
                         </NavLink>
                     </>
                 </Col>
-                <Col className=" pl-5">
+                <Col sm={12} md={12} lg={6} xl={6}>
                     <Card />
                 </Col>
             </Row>

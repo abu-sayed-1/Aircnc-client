@@ -11,6 +11,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 1,
 //         city: 'dhaka',
 //         name: 'bangladesh',
+//         countryAndCity: "bangladesh,dhaka",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -84,6 +85,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 2,
 //         city: "cox's bazar",
 //         name: 'bangladesh',
+//         countryAndCity: "bangladesh,cox's bazar",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -156,6 +158,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 3,
 //         city: 'sundarban',
 //         name: 'bangladesh',
+//         countryAndCity: "bangladesh,sundarban",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -230,6 +233,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 4,
 //         city: 'new york',
 //         name: 'us',
+//         countryAndCity: "us,new york",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -303,6 +307,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 5,
 //         city: 'chicago',
 //         name: 'us',
+//         countryAndCity: "us,chicago",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -376,6 +381,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 6,
 //         city: 'los angeles',
 //         name: 'us',
+//         countryAndCity: "us,los angeles",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -450,6 +456,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 7,
 //         city: 'paris',
 //         name: 'france',
+//         countryAndCity: "france,paris",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -523,6 +530,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 8,
 //         city: 'marseille',
 //         name: 'france',
+//         countryAndCity: "france,marseille",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -595,6 +603,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 9,
 //         city: 'toulouse',
 //         name: 'france',
+//         countryAndCity: "france,toulouse",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -669,6 +678,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 10,
 //         city: 'jounieh',
 //         name: 'lebanon',
+//         countryAndCity: "lebanon,jounieh",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -742,6 +752,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 11,
 //         city: 'baalbek',
 //         name: 'lebanon',
+//         countryAndCity: "lebanon,baalbek",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -814,6 +825,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 12,
 //         city: 'byblos',
 //         name: 'lebanon',
+//         countryAndCity: "lebanon,byblos",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -888,6 +900,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 13,
 //         city: 'liverpool',
 //         name: 'england',
+//         countryAndCity: "england,liverpool",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -961,6 +974,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 14,
 //         city: 'manchester',
 //         name: 'england',
+//         countryAndCity: "england,manchester",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -1034,6 +1048,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 15,
 //         city: 'london',
 //         name: 'england',
+//         countryAndCity: "england,london",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -1108,6 +1123,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 16,
 //         city: 'karachi',
 //         name: 'pakistan',
+//         countryAndCity: "pakistan,karachi",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -1181,6 +1197,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 17,
 //         city: 'faisalabad',
 //         name: 'pakistan',
+//         countryAndCity: "pakistan,faisalabad",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -1254,6 +1271,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 18,
 //         city: 'lahore',
 //         name: 'pakistan',
+//         countryAndCity: "pakistan,lahore",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -1328,6 +1346,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 19,
 //         city: 'quebec',
 //         name: 'canada',
+//         countryAndCity: "canada,quebec",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -1401,6 +1420,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 20,
 //         city: 'vancouver',
 //         name: 'canada',
+//         countryAndCity: "canada,vancouver",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -1473,6 +1493,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 21,
 //         city: 'charlottetown',
 //         name: 'canada',
+//         countryAndCity: "canada,charlottetown",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -1547,6 +1568,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 22,
 //         city: 'rabat',
 //         name: 'morocco',
+//         countryAndCity: "morocco,rabat",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -1620,6 +1642,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 23,
 //         city: 'essaouira',
 //         name: 'morocco',
+//         countryAndCity: "morocco,essaouira",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -1693,6 +1716,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 24,
 //         city: 'meknes',
 //         name: 'morocco',
+//         countryAndCity: "morocco,meknes",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -1767,6 +1791,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 25,
 //         city: 'kuala lumpur',
 //         name: 'malaysia',
+//         countryAndCity: "malaysia,kuala lumpur",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -1840,6 +1865,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 26,
 //         city: 'malacca',
 //         name: 'malaysia',
+//         countryAndCity: "malaysia,malacca",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -1913,6 +1939,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 27,
 //         city: 'kuantan',
 //         name: 'malaysia',
+//         countryAndCity: "malaysia,kuantan",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -1988,6 +2015,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 28,
 //         city: 'muscat ',
 //         name: 'oman',
+//         countryAndCity: "oman,muscat",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -2061,6 +2089,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 29,
 //         city: 'salalah',
 //         name: 'oman',
+//         countryAndCity: "oman,salalah",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -2134,6 +2163,7 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 //         id: 30,
 //         city: 'bawshar',
 //         name: 'oman',
+//         countryAndCity: "oman,bawshar",
 //         experiences: [
 //             {
 //                 id: 1,
@@ -2219,11 +2249,12 @@ const SearchDestination = ({ handleSearchResult }) => {
     // console.log(myInput);
 
     // useEffect(() => {
-    //     fetch('http://localhost:4000/autocompleteData', {
+    //     fetch('http://localhost:4000/homePagesAllData', {
     //         method: "POST",
     //         headers: { 'content-type': 'application/json' },
-    //         body: JSON.stringify(fakeData)
+    //         body: JSON.stringify(homeData)
     //     })
+    //     .then(result => console.log(result))
     // }, []);
 
     useEffect(() => {
@@ -2285,7 +2316,7 @@ const SearchDestination = ({ handleSearchResult }) => {
         setEmpty(false);
         if (e === '') {
             setEmpty(true);
-            setSuggestion('k6swiekkm__kdjkfjejlksdjfewjk');
+            setSuggestion('');
             setAutocomplete([]);
         };
     }
@@ -2314,12 +2345,11 @@ const SearchDestination = ({ handleSearchResult }) => {
                     <h5 className="pl-4 fw_bold">LOCATION</h5>
                     <div>
                         <FormControl
-                            // ref={myInput}
                             onChange={(e) => handleChange(e.target.value)}
                             className="p-4 border-0 search_input"
                             type="text"
                             name="searchBox"
-                            value={isEmpty ? '' : suggestion}
+                            value={suggestion}
                             ref={register({ required: true })}
                             placeholder="Add city, Landmark, or address" />
                     </div>
