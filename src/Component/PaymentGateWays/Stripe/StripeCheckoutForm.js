@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     CardCvcElement,
     CardExpiryElement,
@@ -9,14 +9,13 @@ import {
 import { useHistory } from 'react-router-dom';
 import axios from "axios";
 import { toast } from 'react-toastify';
-import { Button, Col, Row, Spinner } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 toast.configure()
-const StripeCheckoutForm = ({ checkout, total_amount }) => {
+const StripeCheckoutForm = ({ handleStripeProcess, total_amount }) => {
     const history = useHistory()
     const stripe = useStripe();
     const elements = useElements();
-    const [process, setProcess] = useState(false);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -24,7 +23,7 @@ const StripeCheckoutForm = ({ checkout, total_amount }) => {
             type: 'card',
             card: elements.getElement(CardNumberElement, CardExpiryElement, CardCvcElement),
         });
-        setProcess(paymentMethod, true)
+        handleStripeProcess(paymentMethod, true);
         if (error) {
             toast.error(error.message, { position: toast.POSITION.TOP_RIGHT });
         }
@@ -47,7 +46,7 @@ const StripeCheckoutForm = ({ checkout, total_amount }) => {
 
                 }
                 if (response.data.success === false) {
-                    setProcess(false)
+                    handleStripeProcess(false)
                     toast.error(response.data.message, { position: toast.POSITION.TOP_RIGHT })
                 }
 
@@ -60,7 +59,7 @@ const StripeCheckoutForm = ({ checkout, total_amount }) => {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} id="stripe_form">
                 <label htmlFor="" className="input_name pt-5 mt-md-2">CARD NUMBER</label>
                 <CardNumberElement className="payment_inputs m-auto" />
                 <Row>
@@ -73,36 +72,6 @@ const StripeCheckoutForm = ({ checkout, total_amount }) => {
                         <CardCvcElement className="payment_inputs" />
                     </Col>
                 </Row>
-                {process ?
-                    <div>
-                        {
-                            checkout.credit &&
-                            <Button className="text-white"
-                                id="payWith_Stripe"
-                                disabled>
-                                Continue to pay
-                            <Spinner
-                                    animation="border"
-                                    size="sm"
-                                    variant="black"
-                                    className="ml-1"
-                                />
-                            </Button>
-
-                        }
-                    </div>
-                    : <div>
-                        {
-                            checkout.credit &&
-                            <Button className="text-white"
-                                id="payWith_Stripe"
-                                type="submit"
-                            >
-                                Continue to pay
-                            </Button>
-                        }
-                    </div>
-                }
             </form>
         </div>
     );

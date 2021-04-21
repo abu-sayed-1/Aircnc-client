@@ -17,25 +17,32 @@ const initialState = {
     adults: 0,
     child: 0,
     babies: 0,
+    membersErr: false,
+    verifyMembers: false
 };
 
 const reducer = (state, action) => {
     switch (action.type) {
         case 'INCREMENT1':
-            return { ...state, adults: state.adults + 1 };
+            return { ...state, adults: state.adults + 1, membersErr: false, verifyMembers: false };
         case 'DECREMENT1':
             const adults = state.adults < 1;
             return { ...state, adults: adults ? 0 : state.adults - 1 };
         case 'INCREMENT2':
-            return { ...state, child: state.child + 1 };
+            return { ...state, child: state.child + 1, membersErr: false, verifyMembers: false };
         case 'DECREMENT2':
             const Child = state.child < 1;
             return { ...state, child: Child ? 0 : state.child - 1 };
         case 'INCREMENT3':
-            return { ...state, babies: state.babies + 1 };
+            return { ...state, babies: state.babies + 1, membersErr: false };
         case 'DECREMENT3':
             const babies = state.babies < 1;
             return { ...state, babies: babies ? 0 : state.babies - 1 };
+        case 'MEMBERS_ERR':
+            return { ...state, membersErr: action.payload };
+        case 'VERIFY_MEMBERS':
+            return { ...state, verifyMembers: action.payload }
+
         default: throw new Error('Unexpected action');
     };
 };
@@ -61,6 +68,10 @@ const CountMembersAndSetDates = () => {
 
     // handle Members And Dates
     const handleMembersAndDates = () => {
+        const membersError = !state.adults && !state.child && !state.babies ? 'Members is required' : false;
+        dispatch({ type: 'MEMBERS_ERR', payload: membersError });
+        const verifyMembers = !state.adults && !state.child && state.babies ? 'Please make sure adult or child' : false;
+        dispatch({ type: 'VERIFY_MEMBERS', payload: verifyMembers });
         const members = state.adults > 0 || state.child > 0;
         const startDateCheckout = selectedStartDate == "Invalid Date" || !selectedStartDate;
         const endDateCheckout = selectedEndDate == "Invalid Date" || !selectedEndDate;
@@ -113,7 +124,6 @@ const CountMembersAndSetDates = () => {
         <div>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <Grid className="mx-2">
-                    {/* justify="space-around" */}
                     <Row className="mt-4 px-2">
                         <Col className="p-2 shadow search_item mt-2">
                             <div>
@@ -165,6 +175,17 @@ const CountMembersAndSetDates = () => {
             </MuiPickersUtilsProvider>
             <br />
             <div className="container-fluid px-md-5 px-lg-3 shadow count_content">
+                {
+                    state.membersErr ? <Shake>
+                        <h6 className="text-center text-danger">{state.membersErr}</h6>
+                    </Shake>
+                        : ''
+                }
+                {
+                    state.verifyMembers ? <Shake>
+                        <h6 className="text-center text-danger">{state.verifyMembers}</h6>
+                    </Shake> : ''
+                }
                 <div className="py-3 border-bottom">
                     <h6 className="text-muted mb-0">Guests</h6>
                     <label className="mr-2 members_count" htmlFor="">{state.adults} adults,</label>
@@ -201,7 +222,9 @@ const CountMembersAndSetDates = () => {
                         <button onClick={() => dispatch({ type: 'INCREMENT3' })} className="border-0 bg-white"> <FontAwesomeIcon icon={faPlus} /></button>
                     </div>
                     <br />
-                    <button onClick={() => handleMembersAndDates()} className="p-2 px-5 mt-5 apply_btn">APPLY</button>
+                    <div id="apply_content">
+                        <button onClick={() => handleMembersAndDates()} className="p-2 px-5 mt-5 apply_btn">APPLY</button>
+                    </div>
                 </div>
             </div>
         </div>

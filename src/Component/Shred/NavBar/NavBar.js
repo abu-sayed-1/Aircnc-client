@@ -20,7 +20,7 @@ const NavBar = () => {
                             <Nav.Link className="mr-3 pt-3 btn_list" href="/">Host your experience</Nav.Link>
                             <Nav.Link className="mr-3 pt-3 btn_list" href="/">Help</Nav.Link>
                             {
-                                userInfo.length > 0 ? <>
+                                userInfo ? <>
                                     <div className="loggedUser_content px-3 pb-1">
                                         <h6 className="logged_user btn_list">
                                             <FontAwesomeIcon

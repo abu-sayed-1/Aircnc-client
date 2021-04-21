@@ -33,6 +33,7 @@
 .count_content {
     padding-top: 2rem;
     padding-bottom: 2rem;
+    min-height: 35rem;
 }
 
 .count_content div h5 {
@@ -43,8 +44,11 @@
     font-weight: 800;
 }
 
+#apply_content {
+    float: right !important;
+}
+
 .apply_btn {
-    /* float: right !important; */
     border: 3px solid #2de793;
     font-weight: 700 !important;
     border-radius: 13px;

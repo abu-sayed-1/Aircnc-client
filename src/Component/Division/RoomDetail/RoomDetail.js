@@ -327,7 +327,7 @@ const RoomDetail = () => {
                                                     <p className="room_item room_list">{serviceAndCountryInfo[0].countryMoreInfo}</p>
                                                 </div>
                                             }
-                                            <div className="pt-5">
+                                            <div className="pt-5 py-5">
                                                 <h5>Reviews</h5>
                                                 <h6 className="review_content">
                                                     <FontAwesomeIcon icon={faStar} className="rooms_reviewIcon mr-2" />

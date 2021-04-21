@@ -27,7 +27,7 @@ const Card = () => {
 
     return (
         <>
-            <Container fluid className="shadow card_container p-4">
+            <Container fluid className="shadow card_container p-3 p-md-4">
                 <div className="d-flex">
                     <div>
                         {

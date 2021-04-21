@@ -9,6 +9,7 @@
 .btn_list {
     font-weight: 700 !important;
     color: black !important;
+    text-decoration: none !important;
 }
 
 .loggedUser_content {

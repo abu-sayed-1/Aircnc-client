@@ -4,7 +4,7 @@ import amex from '../../images/air-cnc-master/icons/credit-cards_amex.png';
 import mastercard from '../../images/air-cnc-master/icons/credit-cards_mastercard.png';
 import visaCard from '../../images/air-cnc-master/icons/credit-cards_visa.png';
 import paypalImg from '../../images/air-cnc-master/icons/paypal.png';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Container, Row, Spinner } from 'react-bootstrap';
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements, } from "@stripe/react-stripe-js";
 import { toast } from 'react-toastify';
@@ -22,6 +22,7 @@ const creditCardImages = [
 
 const PaymentGateWays = () => {
     const stripePromise = loadStripe("pk_test_51HaKX2FWzFyXdW5KjdYVQtPEcdPZOSLq0nvfi4MfePscvZAop5VwXrGvH9Z0XjenRtpUwNFsX07um8rLzI8yrrB600opOV9Hw9");
+    const [process, setProcess] = useState(false);
     const [checkout, setCheckout] = useState(
         {
             paypal: '',
@@ -30,6 +31,10 @@ const PaymentGateWays = () => {
     );
 
     const total_amount = sessionStorage.getItem('totalPrice');
+    const handleStripeProcess = (data) => {
+        console.log(data);
+        setProcess(data);
+    }
     return (
         <>
             <Container className="mb-5 pb-5">
@@ -61,7 +66,7 @@ const PaymentGateWays = () => {
                                 </Col>
                             </Row>
                             <Elements stripe={stripePromise}>
-                                <StripeCheckoutForm checkout={checkout} total_amount={total_amount} />
+                                <StripeCheckoutForm total_amount={total_amount} handleStripeProcess={handleStripeProcess} />
                             </Elements>
                         </div>
                         <Row className="p-5 mt-5 mb-5 paypal_content">
@@ -94,6 +99,40 @@ const PaymentGateWays = () => {
                                     toast.error('Please Chooses the Paypal Debit/Credit Card button !', { position: toast.POSITION.TOP_RIGHT })
                                 }
                                 >Continue to pay</button>
+                            }
+                            {process ?
+                                <div>
+                                    {
+                                        checkout.credit &&
+                                        <button
+                                            form="stripe_form"
+                                            className="px-4 py-3 text-white payments_btn agree_btn"
+                                            // id="payWith_Stripe"
+                                            disabled>
+                                            Continue to pay,,
+                                              <Spinner
+                                                animation="border"
+                                                size="sm"
+                                                variant="black"
+                                                className="ml-1"
+                                            />
+                                        </button>
+
+                                    }
+                                </div>
+                                : <div>
+                                    {
+                                        checkout.credit &&
+                                        <button
+                                            form="stripe_form"
+                                            className="px-4 py-3 text-white payments_btn agree_btn"
+                                            // id="payWith_Stripe"
+                                            type="submit"
+                                        >
+                                            Continue to pay,,
+                                    </button>
+                                    }
+                                </div>
                             }
                         </div>
                     </Col>

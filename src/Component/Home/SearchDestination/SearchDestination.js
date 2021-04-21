@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './SearchDestination.css'
 import { FormControl } from 'react-bootstrap';
-import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSetDates';
+import Shake from 'react-reveal/Shake';
 
 // const homeData = [
 //     {
@@ -2236,8 +2236,9 @@ import CountMembersAndSetDates from './CountMembersAndSetDates/CountMembersAndSe
 // ]
 
 const SearchDestination = ({ handleSearchResult }) => {
-    // const [mouseDown, setMouseDown] = useState(false);
+    const [locationNotFound, setLocationNotFound] = useState(false);
     const [isEmpty, setEmpty] = useState(false);
+    const [handleErr, setHandleErr] = useState(false);
     const [suggestion, setSuggestion] = useState('');
     const [search, setSearch] = useState({ searchBox: '' });
     const [input, setInput] = useState(false);
@@ -2271,18 +2272,20 @@ const SearchDestination = ({ handleSearchResult }) => {
                     sessionStorage.setItem("countryAndCity", JSON.stringify(destination_countryAndCity),);
                     handleSearchResult(result)
                 };
-                if (result.length == 0) {
-                    alert("location not found")
+                if (result.length === 0) {
+                    setLocationNotFound('Location not found');
                 };
             });
     }, [search])
-
     // form func here ===================>
-    const { register, errors, handleSubmit } = useForm();
-    const onSubmit = data => {
-        setSearch(data);
-
-    };
+    const handleSubmit = (e) => {
+        setSearch({ searchBox: e.target[0].defaultValue });
+        setHandleErr(false);
+        if (e.target[0].defaultValue === '') {
+            setHandleErr("Destination is required");
+        }
+        e.preventDefault()
+    }
 
     useEffect(() => {
         if (suggestion) {
@@ -2314,9 +2317,11 @@ const SearchDestination = ({ handleSearchResult }) => {
         setSuggestion(e);
         setInput(false);
         setEmpty(false);
+        setHandleErr(false);
+        setLocationNotFound(false);
         if (e === '') {
             setEmpty(true);
-            setSuggestion('');
+            setSuggestion('fjkjeijlksfjejldksfelwkdfks');
             setAutocomplete([]);
         };
     }
@@ -2331,16 +2336,10 @@ const SearchDestination = ({ handleSearchResult }) => {
         setInput(true);
     };
 
-    // const handleMu = e => {
-    //     if (e.type == "mousedown") {
-    //         setMouseDown(e.target.defaultValue)
-    //     }
-    // };
-    // console.log(suggestion, '[suggestion]')
     return (
         <>
             <h3 className="mb-5 pb-2 item mt-2">Where do you want to go</h3>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={(e) => handleSubmit(e)} id="destination_form">
                 <div ref={myRef} className="p-4 shadow-sm search_item">
                     <h5 className="pl-4 fw_bold">LOCATION</h5>
                     <div>
@@ -2349,11 +2348,19 @@ const SearchDestination = ({ handleSearchResult }) => {
                             className="p-4 border-0 search_input"
                             type="text"
                             name="searchBox"
-                            value={suggestion}
-                            ref={register({ required: true })}
+                            value={isEmpty ? "" : suggestion}
+                            // ref={register({ required: true })}
                             placeholder="Add city, Landmark, or address" />
                     </div>
-                    {errors.searchBox && <span className="text-danger">feild is required</span>}
+                    <>
+                        {handleErr ?
+                            <Shake> <h6 className="text-danger pt-2">{handleErr}</h6></Shake> : ''
+                        }
+                        {
+                            locationNotFound ? <Shake> <h6 className="text-danger pt-2">{locationNotFound}</h6></Shake>
+                                : ''
+                        }
+                    </>
                     <>
                         <div className="autocomplete_lest">
                             {
@@ -2378,14 +2385,18 @@ const SearchDestination = ({ handleSearchResult }) => {
                         </div>
                     </>
                 </div>
-                <button
-                    type="submit"
-                    className="border-0 mt-3 px-5 py-3 text-white w-100"
-                    id="search_btn">
-                    <FontAwesomeIcon className="mr-2" icon={faSearch} /> Search
-                 </button>
             </form>
             <CountMembersAndSetDates />
+            <button
+                type="submit"
+                form="destination_form"
+                className="border-0 mt-3
+                     px-5 py-3 
+                     text-white w-100"
+                id="search_btn"
+            >
+                <FontAwesomeIcon className="mr-2" icon={faSearch} /> Search
+         </button>
         </>
     );
 };
