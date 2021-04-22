@@ -1,5 +1,4 @@
 .card_content {
-    /* padding: 4rem !important; */
     border: 2px solid #90909060;
     border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -51,55 +50,11 @@ input[type='radio']:checked:after {
     border: 2px solid white;
 }
 
-/* checkoutFrom Component Css here */
-@media screen and (min-device-width: 280px) and (max-device-width: 767px) {
-    #payWith_Stripe {
-        position: relative;
-        border: none;
-        outline: none;
-        top: 34.3rem;
-        width: 8rem;
-        line-height: 50px;
-        font-weight: 700;
-        border-radius: 6px;
-        background: rgb(45, 231, 147);
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        -ms-border-radius: 6px;
-        -o-border-radius: 6px;
-}
+.payments_btn {
+    position: relative;
+    float: right;
 }
 
-@media screen and (min-width:768px) {
-    #payWith_Stripe {
-        position: relative;
-        float: right;
-        border: none;
-        outline: none;
-        top: 27rem;
-        width: 11rem;
-        line-height: 50px;
-        font-weight: 700;
-        border-radius: 6px;
-        background: rgb(45, 231, 147);
-        -webkit-border-radius: 6px;
-        -moz-border-radius: 6px;
-        -ms-border-radius: 6px;
-        -o-border-radius: 6px;
+.disabled_color {
+    background: #dddddd;
 }
-}
-
-/* @media screen and (min-device-width: 280px) and (max-device-width: 767px) {
-    .paymentsAll_btn {
-        display: flex !important;
-        justify-content: center !important;
-    }
-} */
-
-/* payment Gateway component buttons css here payment_btn*/
-/* @media screen and (min-width:768px) { */
-    .payments_btn {
-        position: relative;
-        float: right;
-    }
-/* } */

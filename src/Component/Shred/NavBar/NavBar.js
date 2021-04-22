@@ -7,7 +7,6 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
     const userInfo = JSON.parse(sessionStorage.getItem("number"));
-    console.log(userInfo)
     return (
         <>
             <Navbar collapseOnSelect expand="lg" className="border">

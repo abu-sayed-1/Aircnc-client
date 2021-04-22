@@ -106,18 +106,21 @@ const PaymentGateWays = () => {
                                         checkout.credit &&
                                         <button
                                             form="stripe_form"
-                                            className="px-4 py-3 text-white payments_btn agree_btn"
-                                            // id="payWith_Stripe"
+                                            className="
+                                            px-4 py-3 
+                                            text-white 
+                                            payments_btn 
+                                            agree_btn
+                                            disabled_color"
                                             disabled>
-                                            Continue to pay,,
-                                              <Spinner
+                                            Continue to pay
+                                            <Spinner
                                                 animation="border"
                                                 size="sm"
                                                 variant="black"
                                                 className="ml-1"
                                             />
                                         </button>
-
                                     }
                                 </div>
                                 : <div>
@@ -126,10 +129,9 @@ const PaymentGateWays = () => {
                                         <button
                                             form="stripe_form"
                                             className="px-4 py-3 text-white payments_btn agree_btn"
-                                            // id="payWith_Stripe"
                                             type="submit"
                                         >
-                                            Continue to pay,,
+                                            Continue to pay
                                     </button>
                                     }
                                 </div>

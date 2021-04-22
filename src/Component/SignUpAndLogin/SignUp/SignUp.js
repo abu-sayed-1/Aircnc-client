@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import NumberInput from '../NumberInput/NumberInput';
@@ -12,15 +12,38 @@ import { UserContext } from '../../../App';
 
 const SignUp = () => {
     const { signUpAndLoggedInUser, setSignUpAndLoggedInUser } = useContext(UserContext);
+    const [verifySignUpErr, setVerifySignUpErr] = useState(false);
+    const [checkoutVerifySignUp, setCheckoutVerifySignUp] = useState(false);
+    console.log(checkoutVerifySignUp)
+    // console.log(verifySignUpErr)
     const [number, setNumber] = useState('');
     const [isValid, setIsValid] = useState(false);
     const [numberErr, setNumberErr] = useState(false);
     const [signUpErr, setSignUpErr] = useState('');
     const history = useHistory();
 
+    useEffect(() => {
+        if (isValid) {
+            fetch(`http://localhost:4000/verifySignUp${number}`)
+                .then(res => res.json())
+                .then(result => {
+                    if (result.length > 0) {
+                        setVerifySignUpErr('The user has already registered with this number, try another number');
+                        setCheckoutVerifySignUp(false);
+                    }
+                    if (result.length === 0) {
+                        setCheckoutVerifySignUp(true);
+                        setVerifySignUpErr(false);
+                    }
+                });
+        };
+
+    }, [isValid]);
+
     const { register, errors, handleSubmit } = useForm();
     const onSubmit = data => {
-        if (isValid) {
+        if (checkoutVerifySignUp) {
+            console.log('every thing is ok')
             const signUpData = {
                 firstName: data.firstName,
                 lastName: data.lastName,
@@ -32,6 +55,7 @@ const SignUp = () => {
                 body: JSON.stringify(signUpData)
             })
                 .then(result => {
+                    console.log(result)
                     if (result) {
                         setSignUpAndLoggedInUser(signUpData.number)
                         sessionStorage.setItem("number", JSON.stringify([signUpData]));
@@ -42,6 +66,7 @@ const SignUp = () => {
     }
     const err = (errMassage) => {
         setSignUpErr(errMassage);
+        setVerifySignUpErr(false);
     };
 
     const numberTrue = (isNumberValid) => {
@@ -91,6 +116,11 @@ const SignUp = () => {
                                     }
                                 </>
 
+                            }
+                            {
+                                verifySignUpErr ? <Shake>
+                                    <h6 className="text-danger pb-2">{verifySignUpErr}</h6>
+                                </Shake> : ''
                             }
                             <p className="login_dis">We'll call or text you to confirm your number Standard message and data rates apply.</p>
                             <button type="submit" className="
