@@ -2349,7 +2349,6 @@ const SearchDestination = ({ handleSearchResult }) => {
                             type="text"
                             name="searchBox"
                             value={isEmpty ? "" : suggestion}
-                            // ref={register({ required: true })}
                             placeholder="Add city, Landmark, or address" />
                     </div>
                     <>

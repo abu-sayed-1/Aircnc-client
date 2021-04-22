@@ -42,7 +42,7 @@ const Login = () => {
                 .then(result => {
                     if (result.length > 0) {
                         setSignUpAndLoggedInUser(result[0].number);
-                        sessionStorage.setItem("number", JSON.stringify(result));
+                        sessionStorage.setItem("number", JSON.stringify(result[0]));
                         history.replace(from);
                         history.push('/paymentGateWays')
                     }

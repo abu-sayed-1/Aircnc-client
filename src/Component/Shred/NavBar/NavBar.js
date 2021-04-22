@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './NavBar.css'
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
+import { UserContext } from '../../../App';
 
 const NavBar = () => {
+    const { signUpAndLoggedInUser, setSignUpAndLoggedInUser } = useContext(UserContext);
     const userInfo = JSON.parse(sessionStorage.getItem("number"));
+    console.log(userInfo, "[userInfo sessionStorage]")
+    console.log(signUpAndLoggedInUser, "[signUpAndLoggedInUser]")
+
     return (
         <>
             <Navbar collapseOnSelect expand="lg" className="border">
@@ -19,19 +24,21 @@ const NavBar = () => {
                             <Nav.Link className="mr-3 pt-3 btn_list" href="/">Host your experience</Nav.Link>
                             <Nav.Link className="mr-3 pt-3 btn_list" href="/">Help</Nav.Link>
                             {
-                                userInfo ? <>
+                                (signUpAndLoggedInUser || userInfo) ? <>
                                     <div className="loggedUser_content px-3 pb-1">
                                         <h6 className="logged_user btn_list">
                                             <FontAwesomeIcon
                                                 className="mr-2 logged_icon"
                                                 icon={faUserCircle} />
-                                            {userInfo[0].firstName} {userInfo[0].lastName}
+                                            {userInfo.firstName} {userInfo.lastName}
                                         </h6>
                                     </div>
                                 </> :
                                     <>
                                         <NavLink to="/login" className="mr-3 pt-3 btn_list">Log in</NavLink>
-                                        <NavLink to="/signUp" className="mr-3"><button className="signUp_btn p-2 px-4">Sign up</button></NavLink>
+                                        <NavLink to="/signUp" className="mr-3">
+                                            <button className="signUp_btn p-2 px-4 mt-2">Sign up</button>
+                                        </NavLink>
                                     </>
                             }
                         </Nav>

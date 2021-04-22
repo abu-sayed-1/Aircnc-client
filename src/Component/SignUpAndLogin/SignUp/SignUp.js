@@ -14,8 +14,6 @@ const SignUp = () => {
     const { signUpAndLoggedInUser, setSignUpAndLoggedInUser } = useContext(UserContext);
     const [verifySignUpErr, setVerifySignUpErr] = useState(false);
     const [checkoutVerifySignUp, setCheckoutVerifySignUp] = useState(false);
-    console.log(checkoutVerifySignUp)
-    // console.log(verifySignUpErr)
     const [number, setNumber] = useState('');
     const [isValid, setIsValid] = useState(false);
     const [numberErr, setNumberErr] = useState(false);
@@ -43,7 +41,6 @@ const SignUp = () => {
     const { register, errors, handleSubmit } = useForm();
     const onSubmit = data => {
         if (checkoutVerifySignUp) {
-            console.log('every thing is ok')
             const signUpData = {
                 firstName: data.firstName,
                 lastName: data.lastName,

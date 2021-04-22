@@ -1,9 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useContext, useEffect, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import { UserContext } from '../../../App';
 
 const DivisionNavbar = () => {
+    const { signUpAndLoggedInUser, setSignUpAndLoggedInUser } = useContext(UserContext);
+    const userInfo = JSON.parse(sessionStorage.getItem("number"));
+    console.log(userInfo, "[userInfo sessionStorage]")
+    console.log(signUpAndLoggedInUser, "[signUpAndLoggedInUser]")
     const [gustsAndDates, setGustsAndDates] = useState(null);
-    const destination_countryAndCity  = JSON.parse(sessionStorage.getItem('countryAndCity'));
+    const destination_countryAndCity = JSON.parse(sessionStorage.getItem('countryAndCity'));
     const id = sessionStorage.getItem("uniqueId");
     useEffect(() => {
         fetch(`http://localhost:4000/gustsAndDates${id}`)
@@ -43,10 +51,26 @@ const DivisionNavbar = () => {
                                 }
                             </div>
                         </div>
-                        <Nav className="">
+                        <Nav>
                             <Nav.Link className="mr-3 pt-3 btn_list" href="/">Help</Nav.Link>
-                            <Nav.Link className="mr-3 pt-3 btn_list" href="/">Log in</Nav.Link>
-                            <Nav.Link className="mr-3" href="/"><button className="signUp_btn p-2 px-4">Sign up</button></Nav.Link>
+                            {
+                                (signUpAndLoggedInUser || userInfo) ? <>
+                                    <div className="loggedUser_content px-3 pb-1">
+                                        <h6 className="logged_user btn_list">
+                                            <FontAwesomeIcon
+                                                className="mr-2 logged_icon"
+                                                icon={faUserCircle} />
+                                            {userInfo.firstName} {userInfo.lastName}
+                                        </h6>
+                                    </div>
+                                </> :
+                                    <>
+                                        <NavLink to="/login" className="mr-3 pt-3 btn_list">Log in</NavLink>
+                                        <NavLink to="/signUp" className="mr-3">
+                                            <button className="signUp_btn p-2 px-4 mt-2">Sign up</button>
+                                        </NavLink>
+                                    </>
+                            }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
