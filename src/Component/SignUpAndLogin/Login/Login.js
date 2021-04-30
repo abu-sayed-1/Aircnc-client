@@ -79,7 +79,7 @@ const Login = () => {
                             houseRulesPage
                         ) {
                             history.replace(from);
-                            // history.push('/paymentGateWays')
+                            history.push('/paymentGateWays')
                         }
                         else {
                             history.goBack()

@@ -6,7 +6,7 @@ import Shake from 'react-reveal/Shake';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import NavBar from '../../Shred/NavBar/NavBar';
-import { NavLink, useHistory, useLocation } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { Link } from '@material-ui/core';
 import { UserContext } from '../../../App';
 

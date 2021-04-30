@@ -34,6 +34,7 @@ const reducer = (roomsState, action) => {
 
 const SelectRoom = () => {
     const [roomsState, dispatch] = useReducer(reducer, rooms);
+    // console.log(roomsState.roomsData)
     const location = useLocation();
     const previousUrl = JSON.parse(sessionStorage.getItem('urls'));
     sessionStorage.setItem('urls', JSON.stringify({
@@ -42,6 +43,7 @@ const SelectRoom = () => {
     }));
 
     const history = useHistory();
+
     // useEffect(() => {
     //     fetch('http://localhost:4000/allPlace', {
     //         method: 'POST',
@@ -72,7 +74,6 @@ const SelectRoom = () => {
     };
 
     const handlePrice = price => {
-        console.log(price)
         dispatch({ type: 'PRICE', payload: price })
     }
 
@@ -110,16 +111,30 @@ const SelectRoom = () => {
                         {
                             roomsState.placeName ? <>
                                 <div className="city_items mt-1">
-                                    <Dropdown.Item className="rounded-0 places" onClick={(e) => handlePlace(e)} as="button">{roomsState.placeName[0].place1}</Dropdown.Item>
+                                    <Dropdown.Item
+                                        className="rounded-0 places"
+                                        onClick={(e) => handlePlace(e)}
+                                        as="button">
+                                        {roomsState.placeName[0].place1}
+                                    </Dropdown.Item>
                                 </div>
                                 <div className="city_items ">
-                                    <Dropdown.Item className="places" onClick={(e) => handlePlace(e)} as="button">{roomsState.placeName[0].place2}</Dropdown.Item>
+                                    <Dropdown.Item className="places"
+                                        onClick={(e) => handlePlace(e)}
+                                        as="button">
+                                        {roomsState.placeName[0].place2}
+                                    </Dropdown.Item>
                                 </div>
                                 <div className="city_items ">
-                                    <Dropdown.Item className="places" onClick={(e) => handlePlace(e)} as="button">{roomsState.placeName[0].place3}</Dropdown.Item>
+                                    <Dropdown.Item className="places"
+                                        onClick={(e) => handlePlace(e)}
+                                        as="button">
+                                        {roomsState.placeName[0].place3}
+                                    </Dropdown.Item>
                                 </div>
                             </> : ''
                         }
+
                     </DropdownButton>{' '}
                     <DropdownButton
                         variant="outline-0 btn_Lists mr-2 mt-2"
@@ -139,7 +154,8 @@ const SelectRoom = () => {
                           </Dropdown.Item>
                         </div>
                         {
-                            roomsState.roomsData.length > 0 && roomsState.roomsData[0].rooms.map(prices =>
+                            roomsState.roomsData.length > 0 &&
+                            roomsState.roomsData[0].rooms.map(prices =>
                                 <div
                                     className="price_items"
                                     key={prices.id}
@@ -156,6 +172,8 @@ const SelectRoom = () => {
                     <Button disabled variant="outline-0 btn_Lists mr-2 mt-2">More Filters</Button>{' '}
                 </Row>
             </div>
+
+
             {
                 specificRoom ? <div>
                     <Link style={{ cursor: 'pointer' }} onClick={() => roomDetail(specificRoom[0].id)}>
