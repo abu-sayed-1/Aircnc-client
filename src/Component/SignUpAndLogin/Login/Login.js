@@ -16,9 +16,18 @@ const pathName = [{
     "selectRoom": "/division",
     "whoComing": "/whoComing",
 }];
+
 const Login = () => {
-    // let pageUrls = JSON.parse(sessionStorage.getItem("urls"));
-    // console.log(pageUrls)
+    const { signUpAndLoggedInUser, setSignUpAndLoggedInUser } = useContext(UserContext);
+    const [verifyLoginNumber, setVerifyLoginNumber] = useState(false);
+    const [loginNumber, setLoginNumber] = useState(false);
+    const [checkEvent, setCheckEvent] = useState(false);
+    const [loginErr, setLoginErr] = useState('');
+    const history = useHistory();
+    const location = useLocation();
+    let { from } = location.state || { form: { pathname: "/" } };
+    let pageUrls = JSON.parse(sessionStorage.getItem("urls"));
+
     // if (pathName.every(r => pageUrls.home && pageUrls.selectRoom && pageUrls.roomDetail && pageUrls.houseRules && pageUrls.whoComing.includes(r.home, r.selectRoom, r.roomDetail, r.houseRules, r.whoComing))) {
     //     // let che = pageUrls.home && pageUrls.selectRoom && pageUrls.roomDetail && pageUrls.houseRules && pageUrls.whoComing == pathName.home && pathName.selectRoom && pathName.roomDetail && pathName.houseRules && pathName.whoComing;
     //     //item.home && item.selectRoom && item.roomDetail && item.houseRules &&   pageUrls.home && pageUrls.selectRoom && pageUrls.roomDetail && pageUrls.houseRules && 
@@ -34,15 +43,11 @@ const Login = () => {
     //     console.log('Did not find all of', ar1, 'in', ar2);
     // }
 
-    const { signUpAndLoggedInUser, setSignUpAndLoggedInUser } = useContext(UserContext);
-    const [verifyLoginNumber, setVerifyLoginNumber] = useState(false);
-    const [loginNumber, setLoginNumber] = useState(false);
-    const [checkEvent, setCheckEvent] = useState(false);
-    const [loginErr, setLoginErr] = useState('');
-
-    const history = useHistory();
-    const location = useLocation();
-    let { from } = location.state || { form: { pathname: "/" } };
+    const homepage = pathName[0].home === pageUrls.home;
+    const selectRoomPage = pathName[0].selectRoom === pageUrls.selectRoom;
+    const roomDetailPage = pathName[0].roomDetail === pageUrls.roomDetail;
+    const houseRulesPage = pathName[0].houseRules === pageUrls.houseRules;
+    const whoComingPage = pathName[0].whoComing === pageUrls.whoComing;
 
     const err = (errMassage) => {
         setLoginErr(errMassage);
@@ -67,8 +72,18 @@ const Login = () => {
                     if (result.length > 0) {
                         setSignUpAndLoggedInUser(result[0].number);
                         sessionStorage.setItem("number", JSON.stringify(result));
-                        history.replace(from);
-                        // history.push('/paymentGateWays')
+                        if (whoComingPage &&
+                            homepage &&
+                            selectRoomPage &&
+                            roomDetailPage &&
+                            houseRulesPage
+                        ) {
+                            history.replace(from);
+                            // history.push('/paymentGateWays')
+                        }
+                        else {
+                            history.goBack()
+                        }
                     }
                     else {
                         setVerifyLoginNumber('Phone number do not match. Please try again')

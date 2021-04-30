@@ -10,7 +10,17 @@ import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import { Link } from '@material-ui/core';
 import { UserContext } from '../../../App';
 
+
+const pathNames = [{
+    "home": "/",
+    "houseRules": "/houseRules",
+    "roomDetail": "/roomDetail",
+    "selectRoom": "/division",
+    "whoComing": "/whoComing",
+}];
+
 const SignUp = () => {
+
     const { signUpAndLoggedInUser, setSignUpAndLoggedInUser } = useContext(UserContext);
     const [verifySignUpErr, setVerifySignUpErr] = useState(false);
     const [checkoutVerifySignUp, setCheckoutVerifySignUp] = useState(false);
@@ -19,7 +29,13 @@ const SignUp = () => {
     const [numberErr, setNumberErr] = useState(false);
     const [signUpErr, setSignUpErr] = useState('');
     const history = useHistory();
+    let pageUrls = JSON.parse(sessionStorage.getItem("urls"));
 
+    const homepage = pathNames[0].home === pageUrls.home;
+    const selectRoomPage = pathNames[0].selectRoom === pageUrls.selectRoom;
+    const roomDetailPage = pathNames[0].roomDetail === pageUrls.roomDetail;
+    const houseRulesPage = pathNames[0].houseRules === pageUrls.houseRules;
+    const whoComingPage = pathNames[0].whoComing === pageUrls.whoComing;
     useEffect(() => {
         if (isValid) {
             fetch(`http://localhost:4000/verifySignUp${number}`)
@@ -55,7 +71,15 @@ const SignUp = () => {
                     if (result) {
                         setSignUpAndLoggedInUser(signUpData.number)
                         sessionStorage.setItem("number", JSON.stringify([signUpData]));
-                        history.push("/paymentGateWays");
+                        if (whoComingPage &&
+                            homepage &&
+                            selectRoomPage &&
+                            roomDetailPage &&
+                            houseRulesPage) {
+                            history.push("/paymentGateWays");
+                        } else {
+                            history.goBack();
+                        }
                     }
                 });
         }
