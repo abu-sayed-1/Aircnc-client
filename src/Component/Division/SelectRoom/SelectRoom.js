@@ -283,8 +283,10 @@ import { useHistory, useLocation } from 'react-router-dom';
 const rooms = {
     place: null,
     roomsData: [],
+    sliceRoomInfo: [],
     price: [],
     placeName: null,
+    moreFilters: false,
 }
 
 const reducer = (roomsState, action) => {
@@ -292,7 +294,11 @@ const reducer = (roomsState, action) => {
         case 'CHECKOUT':
             return { ...roomsState, place: action.payload };
         case 'ROOMS_DATA':
-            return { ...roomsState, roomsData: action.payload };
+            return {
+                ...roomsState,
+                roomsData: action.payload,
+                sliceRoomInfo: action.payload[0].rooms.slice(0, 3)
+            };
         case 'PRICE':
             const remaining = roomsState.roomsData[0].rooms.filter(item => item.price === action.payload);
             return { ...roomsState, price: remaining };
@@ -300,12 +306,18 @@ const reducer = (roomsState, action) => {
             return { ...roomsState, placeName: action.payload };
         case 'SHOW_ALL':
             return { ...roomsState, price: [] };
+        case 'MORE_FILTERS':
+            return { ...roomsState, moreFilters: true, sliceRoomInfo: roomsState.roomsData[0].rooms };
+        case 'PREVIOUS_ROOMS':
+            const previousData = roomsState.roomsData[0].rooms.slice(0, 3);
+            return { ...roomsState, moreFilters: false, sliceRoomInfo: previousData }
         default: throw new Error('Unexpected action');
     }
 }
 
 const SelectRoom = () => {
     const [roomsState, dispatch] = useReducer(reducer, rooms);
+    console.log(roomsState)
     const location = useLocation();
     const history = useHistory();
     const previousUrl = JSON.parse(sessionStorage.getItem('urls'));
@@ -314,15 +326,15 @@ const SelectRoom = () => {
         "home": previousUrl.home
     }));
 
-    const checkLength = roomsState.roomsData.length > 0 ? roomsState.roomsData[0].rooms : false;
-    const checkout = roomsState.price.length === 1 ? roomsState.price : checkLength;
+    // const checkLength = roomsState.roomsData.length > 0 ? roomsState.roomsData[0].rooms : false;
+    const checkout = roomsState.price.length === 1 ? roomsState.price : roomsState.sliceRoomInfo;
     const gustsAndDate = JSON.parse(sessionStorage.getItem("gustsAndDates"));
     const convert = JSON.parse(sessionStorage.getItem('countryAndCity'));
-    const verify = roomsState.place === null || roomsState.place == [] ? false : roomsState.place;
+    const verify = roomsState.place === null || roomsState.place === [] ? false : roomsState.place;
 
     if (verify) {
         convert[0].city = verify;
-        const update = sessionStorage.setItem('countryAndCity', JSON.stringify(convert));
+        sessionStorage.setItem('countryAndCity', JSON.stringify(convert));
         window.location.reload(false);
     };
 
@@ -333,11 +345,9 @@ const SelectRoom = () => {
     const handlePlace = (e) => {
         dispatch({ type: 'CHECKOUT', payload: e.target.innerHTML })
     };
-
     const handlePrice = price => {
         dispatch({ type: 'PRICE', payload: price })
     };
-
     const roomDetail = (id) => {
         history.push(`roomDetail${id}`)
     };
@@ -430,7 +440,22 @@ const SelectRoom = () => {
                         }
                     </DropdownButton>{' '}
                     <Button disabled variant="outline-0 btn_Lists mr-2 mt-2">Instant Book</Button>{' '}
-                    <Button disabled variant="outline-0 btn_Lists mr-2 mt-2">More Filters</Button>{' '}
+                    {roomsState.moreFilters ?
+                        <Button
+                            onClick={() => dispatch({
+                                type: 'PREVIOUS_ROOMS'
+                            })}
+                            variant="outline-0 btn_Lists mr-2 mt-2">
+                            Previous
+                    </Button> :
+                        <Button
+                            onClick={() => dispatch({
+                                type: 'MORE_FILTERS'
+                            })}
+                            variant="outline-0 btn_Lists mr-2 mt-2">
+                            More Filters
+                         </Button>
+                    }
                 </Row>
             </div>
             <>
