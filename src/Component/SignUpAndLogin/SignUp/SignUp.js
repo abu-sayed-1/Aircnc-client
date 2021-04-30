@@ -52,7 +52,6 @@ const SignUp = () => {
                 body: JSON.stringify(signUpData)
             })
                 .then(result => {
-                    console.log(result)
                     if (result) {
                         setSignUpAndLoggedInUser(signUpData.number)
                         sessionStorage.setItem("number", JSON.stringify([signUpData]));

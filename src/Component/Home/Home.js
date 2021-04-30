@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { useHistory, useLocation } from 'react-router';
 import NavBar from '../Shred/NavBar/NavBar';
 import HomesAndExperiences from './HomesAndExperiences/HomesAndExperiences';
 import SearchDestination from './SearchDestination/SearchDestination';
 
 const Home = () => {
+    const location = useLocation();
+    sessionStorage.setItem("urls", JSON.stringify({ 'home': location.pathname }));
     const [homesAndExperiencesData, setHomesAndExperiencesData] = useState(null)
     const handleSearchResult = result => {
         setHomesAndExperiencesData(result);
     }
+
     return (
         <>
             <NavBar />

@@ -9,7 +9,31 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import NumberInput from '../NumberInput/NumberInput';
 import { UserContext } from '../../../App';
 
+const pathName = [{
+    "home": "/",
+    "houseRules": "/houseRules",
+    "roomDetail": "/roomDetail",
+    "selectRoom": "/division",
+    "whoComing": "/whoComing",
+}];
 const Login = () => {
+    // let pageUrls = JSON.parse(sessionStorage.getItem("urls"));
+    // console.log(pageUrls)
+    // if (pathName.every(r => pageUrls.home && pageUrls.selectRoom && pageUrls.roomDetail && pageUrls.houseRules && pageUrls.whoComing.includes(r.home, r.selectRoom, r.roomDetail, r.houseRules, r.whoComing))) {
+    //     // let che = pageUrls.home && pageUrls.selectRoom && pageUrls.roomDetail && pageUrls.houseRules && pageUrls.whoComing == pathName.home && pathName.selectRoom && pathName.roomDetail && pathName.houseRules && pathName.whoComing;
+    //     //item.home && item.selectRoom && item.roomDetail && item.houseRules &&   pageUrls.home && pageUrls.selectRoom && pageUrls.roomDetail && pageUrls.houseRules && 
+    //     // let chkk = pathName.some(item => item.houseRules == pageUrls.houseRules);
+    //     console.log('status 200')
+    // } else {
+    //     console.log("status not found")
+    // };
+
+    // if (ar1.every(r => ar2.includes(r))) {
+    //     console.log('Found all of', ar1, 'in', ar2);
+    // } else {
+    //     console.log('Did not find all of', ar1, 'in', ar2);
+    // }
+
     const { signUpAndLoggedInUser, setSignUpAndLoggedInUser } = useContext(UserContext);
     const [verifyLoginNumber, setVerifyLoginNumber] = useState(false);
     const [loginNumber, setLoginNumber] = useState(false);
@@ -42,9 +66,9 @@ const Login = () => {
                 .then(result => {
                     if (result.length > 0) {
                         setSignUpAndLoggedInUser(result[0].number);
-                        sessionStorage.setItem("number", JSON.stringify(result[0]));
+                        sessionStorage.setItem("number", JSON.stringify(result));
                         history.replace(from);
-                        history.push('/paymentGateWays')
+                        // history.push('/paymentGateWays')
                     }
                     else {
                         setVerifyLoginNumber('Phone number do not match. Please try again')

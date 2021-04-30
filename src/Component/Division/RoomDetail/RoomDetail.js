@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import rowdra from "../../../images/air-cnc-master/images/rowdra.jpg";
 import './RoomDetail.css';
 import { Col, Container, Row } from 'react-bootstrap';
-import { useParams } from 'react-router';
+import { useLocation, useParams } from 'react-router';
 import DivisionNavbar from '../../Shred/DivisionNavbar/DivisionNavbar';
 import Card from '../../Shred/Card/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -196,6 +196,17 @@ import { Link } from '@material-ui/core';
 
 
 const RoomDetail = () => {
+    const location = useLocation();
+    const sliceLoc = location.pathname.substring(0, 11);
+    const previousUrls = JSON.parse(sessionStorage.getItem('urls'));
+    sessionStorage.setItem("urls", JSON.stringify(
+        {
+            "home": previousUrls.home,
+            "selectRoom": previousUrls.selectRoom,
+            "roomDetail": sliceLoc,
+
+        }
+    ))
     const [roomInfo, setRoomInfo] = useState(null);
     if (roomInfo) {
         const price_review = { price: roomInfo.price, review: roomInfo.review, img: roomInfo.img };

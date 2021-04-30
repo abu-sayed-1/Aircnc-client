@@ -5,7 +5,7 @@ import { Button, DropdownButton, Dropdown } from 'react-bootstrap';
 import React, { useEffect, useReducer, } from 'react';
 import './SelectRoom.css';
 import { Col, Row } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 const rooms = {
     place: null,
@@ -34,6 +34,13 @@ const reducer = (roomsState, action) => {
 
 const SelectRoom = () => {
     const [roomsState, dispatch] = useReducer(reducer, rooms);
+    const location = useLocation();
+    const previousUrl = JSON.parse(sessionStorage.getItem('urls'));
+    sessionStorage.setItem('urls', JSON.stringify({
+        "selectRoom": location.pathname,
+        "home": previousUrl.home
+    }));
+
     const history = useHistory();
     // useEffect(() => {
     //     fetch('http://localhost:4000/allPlace', {

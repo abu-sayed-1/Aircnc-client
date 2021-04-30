@@ -6,11 +6,21 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from '@material-ui/core';
 import "./HouseRules.css"
 import HouseRulesAndPay from '../Shred/HouseRulesAndPay/HouseRulesAndPay';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import Card from '../Shred/Card/Card';
 
 const HouseRules = () => {
     const [readMore, setReadMore] = useState(null);
+    const location = useLocation();
+    const previousUrls = JSON.parse(sessionStorage.getItem('urls'));
+    sessionStorage.setItem("urls", JSON.stringify(
+        {
+            "home": previousUrls.home,
+            "selectRoom": previousUrls.selectRoom,
+            "roomDetail": previousUrls.roomDetail,
+            "houseRules": location.pathname
+        }
+    ));
     const gustsAndDates = JSON.parse(sessionStorage.getItem('gustsAndDates'));
     const city = JSON.parse(sessionStorage.getItem('countryAndCity'));
     return (

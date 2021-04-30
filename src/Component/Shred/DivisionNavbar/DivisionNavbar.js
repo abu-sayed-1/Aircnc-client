@@ -3,13 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext, useEffect, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { UserContext } from '../../../App';
+// import { UserContext } from '../../../App';
 
 const DivisionNavbar = () => {
-    const { signUpAndLoggedInUser, setSignUpAndLoggedInUser } = useContext(UserContext);
+    // const { signUpAndLoggedInUser, setSignUpAndLoggedInUser } = useContext(UserContext);
     const userInfo = JSON.parse(sessionStorage.getItem("number"));
-    console.log(userInfo, "[userInfo sessionStorage]")
-    console.log(signUpAndLoggedInUser, "[signUpAndLoggedInUser]")
     const [gustsAndDates, setGustsAndDates] = useState(null);
     const destination_countryAndCity = JSON.parse(sessionStorage.getItem('countryAndCity'));
     const id = sessionStorage.getItem("uniqueId");
@@ -54,13 +52,13 @@ const DivisionNavbar = () => {
                         <Nav>
                             <Nav.Link className="mr-3 pt-3 btn_list" href="/">Help</Nav.Link>
                             {
-                                (signUpAndLoggedInUser || userInfo) ? <>
+                                userInfo ? <>
                                     <div className="loggedUser_content px-3 pb-1">
                                         <h6 className="logged_user btn_list">
                                             <FontAwesomeIcon
                                                 className="mr-2 logged_icon"
                                                 icon={faUserCircle} />
-                                            {userInfo.firstName} {userInfo.lastName}
+                                            {userInfo[0].firstName} {userInfo[0].lastName}
                                         </h6>
                                     </div>
                                 </> :

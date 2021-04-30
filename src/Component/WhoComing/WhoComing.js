@@ -8,9 +8,18 @@ import rowdra from "../../images/air-cnc-master/images/rowdra.jpg"
 import Card from '../Shred/Card/Card';
 import HouseRulesAndPay from '../Shred/HouseRulesAndPay/HouseRulesAndPay';
 import { Shake } from "react-reveal";
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 
 const WhoComing = () => {
+    const location = useLocation();
+    const previousUrls = JSON.parse(sessionStorage.getItem('urls'));
+    sessionStorage.setItem("urls", JSON.stringify({
+        "home": previousUrls.home,
+        "selectRoom": previousUrls.selectRoom,
+        "roomDetail": previousUrls.roomDetail,
+        "houseRules": previousUrls.houseRules,
+        "whoComing": location.pathname
+    }))
     const history = useHistory();
     const { register, errors, handleSubmit } = useForm();
     console.log(errors)
