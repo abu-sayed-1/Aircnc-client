@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router';
 import NavBar from '../Shred/NavBar/NavBar';
 import HomesAndExperiences from './HomesAndExperiences/HomesAndExperiences';
 import SearchDestination from './SearchDestination/SearchDestination';
-
+import Fade from 'react-reveal/Fade';
 const Home = () => {
     const location = useLocation();
     sessionStorage.setItem("urls", JSON.stringify({ 'home': location.pathname }));
@@ -19,10 +19,14 @@ const Home = () => {
             <Container fluid className="px-md-5 my-md-5">
                 <Row>
                     <Col sm={12} md={12} lg={5} xl={5}>
-                        <SearchDestination handleSearchResult={handleSearchResult} />
+                        <Fade top>
+                            <SearchDestination handleSearchResult={handleSearchResult} />
+                        </Fade>
                     </Col>
                     <Col sm={12} md={12} lg={7} xl={7}>
-                        <HomesAndExperiences homesAndExperiencesData={homesAndExperiencesData} />
+                        {/* {homesAndExperiencesData ? <Fade right> */}
+                            <HomesAndExperiences homesAndExperiencesData={homesAndExperiencesData} />
+                        {/* </Fade> : ''} */}
                     </Col>
                 </Row>
             </Container>

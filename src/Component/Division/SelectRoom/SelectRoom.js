@@ -307,7 +307,13 @@ const reducer = (roomsState, action) => {
         case 'SHOW_ALL':
             return { ...roomsState, price: [] };
         case 'MORE_FILTERS':
-            return { ...roomsState, moreFilters: true, sliceRoomInfo: roomsState.roomsData[0].rooms };
+            return {
+                ...roomsState,
+                moreFilters: true,
+                sliceRoomInfo:
+                    roomsState.roomsData.length > 0
+                    && roomsState.roomsData[0].rooms
+            };
         case 'PREVIOUS_ROOMS':
             const previousData = roomsState.roomsData[0].rooms.slice(0, 3);
             return { ...roomsState, moreFilters: false, sliceRoomInfo: previousData }
@@ -326,8 +332,7 @@ const SelectRoom = () => {
         "home": previousUrl.home
     }));
 
-    // const checkLength = roomsState.roomsData.length > 0 ? roomsState.roomsData[0].rooms : false;
-    const checkout = roomsState.price.length === 1 ? roomsState.price : roomsState.sliceRoomInfo;
+    const checkout = roomsState.price.length >= 1 ? roomsState.price : roomsState.sliceRoomInfo;
     const gustsAndDate = JSON.parse(sessionStorage.getItem("gustsAndDates"));
     const convert = JSON.parse(sessionStorage.getItem('countryAndCity'));
     const verify = roomsState.place === null || roomsState.place === [] ? false : roomsState.place;
@@ -439,7 +444,6 @@ const SelectRoom = () => {
                             )
                         }
                     </DropdownButton>{' '}
-                    <Button disabled variant="outline-0 btn_Lists mr-2 mt-2">Instant Book</Button>{' '}
                     {roomsState.moreFilters ?
                         <Button
                             onClick={() => dispatch({
@@ -456,6 +460,7 @@ const SelectRoom = () => {
                             More Filters
                          </Button>
                     }
+                    <Button disabled variant="outline-0 btn_Lists mr-2 mt-2">Instant Book</Button>{' '}
                 </Row>
             </div>
             <>

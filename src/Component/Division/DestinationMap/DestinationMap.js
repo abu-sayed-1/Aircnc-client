@@ -1,5 +1,6 @@
 import { DirectionsRenderer, DirectionsService, GoogleMap, LoadScript } from '@react-google-maps/api';
 import React, { useState } from 'react';
+//https://console.cloud.google.com/apis/credentials?authuser=1&project=kdjlii
 
 const containerStyle = {
   width: '100%',
@@ -15,7 +16,9 @@ function DestinationMap() {
   const destination = JSON.parse(sessionStorage.getItem('countryAndCity'));
   return (
     <LoadScript
-      googleMapsApiKey="AIzaSyD2-nrDZp4YnXXjvkFcrJlF8Ap2V-10P50"
+      // googleMapsApiKey="AIzaSyD2-nrDZp4YnXXjvkFcrJlF8Ap2V-10P50"
+      googleMapsApiKey="AIzaSyA6sgYX65soqdR8NgTjdg3D8623-Krirvk"
+      //AIzaSyA6sgYX65soqdR8NgTjdg3D8623-Krirvk
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
