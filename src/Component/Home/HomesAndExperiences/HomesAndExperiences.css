@@ -17,7 +17,8 @@
     font-size: 1.3rem;
 }
 
-/* .css-ux1hnf { */
-    /* position: inherit !important; */
-/* } */
-
+.hash_loader {
+    height: 366px;
+    background: rgba(0, 0, 0, 0.014) !important;
+    align-items: center;
+}

@@ -2235,6 +2235,7 @@ import Shake from 'react-reveal/Shake';
 //     }
 // ]
 
+
 const SearchDestination = ({ handleSearchResult }) => {
     const [locationNotFound, setLocationNotFound] = useState(false);
     const [isEmpty, setEmpty] = useState(false);
@@ -2360,29 +2361,16 @@ const SearchDestination = ({ handleSearchResult }) => {
                                 : ''
                         }
                     </>
-                    <>
-                        <div className="autocomplete_lest">
-                            {
-                                autocomplete.length > 1 ? autocomplete.map(item =>
-                                    <div onClick={(e) => handleSuggestion(e)}
-                                        key={item.id} className="d-flex">
-                                        <img src={item.img} alt="" />
-                                        <p className="mt-auto mb-auto pl-5">{item.countryAndCity}</p>
-                                    </div>) : ''
-                            }
-                        </div>
-                        <div className="autocomplete_lest">
-                            {
-                                autocomplete.length === 1 ? <div
-                                    onClick={(e) => handleSuggestion(e)}
-                                    className="d-flex"
-                                >
-                                    <img src={autocomplete[0].img} alt="" />
-                                    <p className="mt-auto mb-auto pl-5">{autocomplete[0].countryAndCity}</p>
-                                </div> : ''
-                            }
-                        </div>
-                    </>
+                    <div className="autocomplete_lest mt-4">
+                        {
+                            autocomplete.length > 0 ? autocomplete.map(item =>
+                                <div onClick={(e) => handleSuggestion(e)}
+                                    key={item.id} className="d-flex">
+                                    <img src={item.img} alt="" />
+                                    <p className="mt-auto mb-auto pl-5">{item.countryAndCity}</p>
+                                </div>) : ''
+                        }
+                    </div>
                 </div>
             </form>
             <CountMembersAndSetDates />

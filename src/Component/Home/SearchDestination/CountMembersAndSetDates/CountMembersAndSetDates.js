@@ -121,7 +121,7 @@ const CountMembersAndSetDates = () => {
 
 
     return (
-        <div>
+        <>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <Grid className="mx-2">
                     <Row className="mt-4 px-2">
@@ -227,7 +227,7 @@ const CountMembersAndSetDates = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

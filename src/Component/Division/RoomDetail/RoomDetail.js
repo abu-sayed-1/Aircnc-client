@@ -8,6 +8,7 @@ import Card from '../../Shred/Card/Card';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckSquare, faChevronDown, faChevronUp, faHome, faSprayCan, faStar, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from '@material-ui/core';
+import { Fade } from 'react-reveal';
 
 // const serviceAndCountryInfo = [
 //     {
@@ -258,10 +259,14 @@ const RoomDetail = () => {
                         <Container fluid className="mb-5">
                             <Row>
                                 <Col sm={12} md={6} lg={6} xl={6} className="p-0">
-                                    <img src={roomInfo.building} className="img-fluid roomAndBed" alt="" />
+                                    <Fade left>
+                                        <img src={roomInfo.building} className="img-fluid roomAndBed" alt="" />
+                                    </Fade>
                                 </Col>
                                 <Col sm={12} md={6} lg={6} xl={6} className="p-0 ">
-                                    <img src={roomInfo.img} className="img-fluid roomAndBed" alt="" />
+                                    <Fade right>
+                                        <img src={roomInfo.img} className="img-fluid roomAndBed" alt="" />
+                                    </Fade>
                                 </Col>
                             </Row>
                         </Container> : 'loading'
@@ -269,7 +274,7 @@ const RoomDetail = () => {
                 <Container className='pt-3 pb-5 mb-4'>
                     <Row>
                         <Col sm={12} md={12} lg={6} xl={6}>
-                            <>
+                            <Fade left>
                                 {
                                     roomInfo ? <>
                                         <div className="d-flex border-bottom pb-2">
@@ -349,10 +354,12 @@ const RoomDetail = () => {
 
                                     </div> : 'loading...'
                                 }
-                            </>
+                            </Fade>
                         </Col>
                         <Col sm={12} md={12} lg={6} xl={6}>
-                            <Card />
+                            <Fade right>
+                                <Card />
+                            </Fade>
                         </Col>
                     </Row>
                 </Container>

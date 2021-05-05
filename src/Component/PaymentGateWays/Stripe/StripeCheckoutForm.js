@@ -12,7 +12,8 @@ import { toast } from 'react-toastify';
 import { Col, Row } from 'react-bootstrap';
 
 toast.configure()
-const StripeCheckoutForm = ({ handleStripeProcess, total_amount }) => {
+const StripeCheckoutForm = ({ handleStripeProcess, total_amount, checkout }) => {
+    console.log(checkout)
     const history = useHistory()
     const stripe = useStripe();
     const elements = useElements();
@@ -23,12 +24,14 @@ const StripeCheckoutForm = ({ handleStripeProcess, total_amount }) => {
             type: 'card',
             card: elements.getElement(CardNumberElement, CardExpiryElement, CardCvcElement),
         });
-        handleStripeProcess(paymentMethod, true);
-        if (error) {
-            toast.error(error.message, { position: toast.POSITION.TOP_RIGHT });
+        if (!checkout.credit) {
+            toast.error('Please Choose Stripe Checkout!', { position: toast.POSITION.TOP_RIGHT });
+        } else {
+            toast.error(error && error.message, { position: toast.POSITION.TOP_RIGHT });
         }
-        if (!error) {
-            console.log(paymentMethod)
+
+        if (!error && checkout.credit) {
+            handleStripeProcess(true);
             try {
                 const { id } = paymentMethod;
                 const response = await axios.post(
@@ -40,16 +43,14 @@ const StripeCheckoutForm = ({ handleStripeProcess, total_amount }) => {
                 );
 
                 if (response.data.success === true) {
+                    handleStripeProcess(true)
                     toast.success('Payment successfully', { position: toast.POSITION.TOP_RIGHT });
                     setTimeout(() => { history.push('/') }, 5000);
-
-
                 }
                 if (response.data.success === false) {
                     handleStripeProcess(false)
                     toast.error(response.data.message, { position: toast.POSITION.TOP_RIGHT })
                 }
-
             }
             catch (error) {
                 console.log(error.message)

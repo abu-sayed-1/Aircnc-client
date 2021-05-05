@@ -279,6 +279,8 @@ import React, { useEffect, useReducer, } from 'react';
 import './SelectRoom.css';
 import { Col, Row } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router-dom';
+import { Fade } from 'react-reveal';
+import { HashLoader } from 'react-spinners';
 
 const rooms = {
     place: null,
@@ -307,12 +309,13 @@ const reducer = (roomsState, action) => {
         case 'SHOW_ALL':
             return { ...roomsState, price: [] };
         case 'MORE_FILTERS':
+            const roomsInfo = roomsState.roomsData.length > 0
+            console.log(roomsInfo)
             return {
                 ...roomsState,
-                moreFilters: true,
+                moreFilters: roomsInfo ? true : false,
                 sliceRoomInfo:
-                    roomsState.roomsData.length > 0
-                    && roomsState.roomsData[0].rooms
+                    roomsInfo ? roomsState.roomsData[0].rooms : []
             };
         case 'PREVIOUS_ROOMS':
             const previousData = roomsState.roomsData[0].rooms.slice(0, 3);
@@ -373,77 +376,89 @@ const SelectRoom = () => {
 
     return (
         <div className="pl-lg-5">
-            <h6 className="pb-2">
-                252 stays {gustsAndDate && gustsAndDate[0].Month} {gustsAndDate && gustsAndDate[0].numericStartDay}-{gustsAndDate && gustsAndDate[0].numericEndDay}  {gustsAndDate && gustsAndDate[0].gusts} Gusts
+            <Fade left>
+                <h6 className="pb-2">
+                    252 stays {gustsAndDate && gustsAndDate[0].Month} {gustsAndDate && gustsAndDate[0].numericStartDay}-{gustsAndDate && gustsAndDate[0].numericEndDay}  {gustsAndDate && gustsAndDate[0].gusts} Gusts
                     </h6>
-            <h2>Stay in {convert && convert[0].city} Division</h2>
+            </Fade>
+            <Fade left>
+                <h2>Stay in {convert && convert[0].city} Division</h2>
+            </Fade>
             <div>
                 <Row className="pt-4">
-                    <Button disabled variant="outline-0 btn_Lists mr-2 mt-2">Cancellation flexibility</Button>{' '}
-                    <DropdownButton variant="outline-0 btn_Lists mr-2 mt-2" title="Type of place">
-                        <Dropdown.ItemText className="text-uppercase bg-info text-white country_title">
-                            {country && country}
-                        </Dropdown.ItemText>
-                        {
-                            roomsState.placeName ? <>
-                                <div className="city_items mt-1">
-                                    <Dropdown.Item
-                                        className="rounded-0 places"
-                                        onClick={(e) => handlePlace(e)}
-                                        as="button">
-                                        {roomsState.placeName[0].place1}
-                                    </Dropdown.Item>
-                                </div>
-                                <div className="city_items ">
-                                    <Dropdown.Item className="places"
-                                        onClick={(e) => handlePlace(e)}
-                                        as="button">
-                                        {roomsState.placeName[0].place2}
-                                    </Dropdown.Item>
-                                </div>
-                                <div className="city_items ">
-                                    <Dropdown.Item className="places"
-                                        onClick={(e) => handlePlace(e)}
-                                        as="button">
-                                        {roomsState.placeName[0].place3}
-                                    </Dropdown.Item>
-                                </div>
-                            </> : ''
-                        }
+                    <Fade left>
+                        <Button disabled variant="outline-0 btn_Lists mr-2 mt-2">Cancellation flexibility</Button>
+                    </Fade>
+                    <Fade left>
+                        <DropdownButton variant="outline-0 btn_Lists mr-2 mt-2" title="Type of place">
+                            <Dropdown.ItemText className="text-uppercase bg-info text-white country_title">
+                                {country && country}
+                            </Dropdown.ItemText>
+                            {
+                                roomsState.placeName ? <>
+                                    <div className="city_items mt-1">
+                                        <Dropdown.Item
+                                            className="rounded-0 places"
+                                            onClick={(e) => handlePlace(e)}
+                                            as="button">
+                                            {roomsState.placeName[0].place1}
+                                        </Dropdown.Item>
+                                    </div>
+                                    <div className="city_items ">
+                                        <Dropdown.Item className="places"
+                                            onClick={(e) => handlePlace(e)}
+                                            as="button">
+                                            {roomsState.placeName[0].place2}
+                                        </Dropdown.Item>
+                                    </div>
+                                    <div className="city_items ">
+                                        <Dropdown.Item className="places"
+                                            onClick={(e) => handlePlace(e)}
+                                            as="button">
+                                            {roomsState.placeName[0].place3}
+                                        </Dropdown.Item>
+                                    </div>
+                                </> : ''
+                            }
 
-                    </DropdownButton>{' '}
-                    <DropdownButton
-                        variant="outline-0 btn_Lists mr-2 mt-2"
-                        title="Price"
-                        className="price_container">
-                        <Dropdown.ItemText className="price_title text-white">
-                            PRICE
+                        </DropdownButton>
+                    </Fade>
+                    <Fade left>
+                        <div>
+                            <DropdownButton
+                                variant="outline-0 btn_Lists mr-2 mt-2"
+                                title="Price"
+                                className="price_container">
+                                <Dropdown.ItemText className="price_title text-white">
+                                    PRICE
                         </Dropdown.ItemText>
-                        <div className="price_items">
-                            <Dropdown.Item
-                                className="show_all"
-                                onClick={() =>
-                                    dispatch({
-                                        type: 'SHOW_ALL', payload: true
-                                    })}
-                                as="button">Show-all
+                                <div className="price_items">
+                                    <Dropdown.Item
+                                        className="show_all"
+                                        onClick={() =>
+                                            dispatch({
+                                                type: 'SHOW_ALL', payload: true
+                                            })}
+                                        as="button">Show-all
                           </Dropdown.Item>
-                        </div>
-                        {
-                            roomsState.roomsData.length > 0 &&
-                            roomsState.roomsData[0].rooms.map(prices =>
-                                <div
-                                    className="price_items"
-                                    key={prices.id}
-                                    onClick={() => handlePrice(prices.price)}
-                                >
-                                    <Dropdown.Item as="button">
-                                        <p className="mb-0 border-left-0 prices">${prices.price}</p>
-                                    </Dropdown.Item>
                                 </div>
-                            )
-                        }
-                    </DropdownButton>{' '}
+                                {
+                                    roomsState.roomsData.length > 0 &&
+                                    roomsState.roomsData[0].rooms.map(prices =>
+                                        <div
+                                            className="price_items"
+                                            key={prices.id}
+                                            onClick={() => handlePrice(prices.price)}
+                                        >
+                                            <Dropdown.Item as="button">
+                                                <p className="mb-0 border-left-0 prices">${prices.price}</p>
+                                            </Dropdown.Item>
+                                        </div>
+                                    )
+                                }
+                            </DropdownButton>
+                        </div>
+                    </Fade>
                     {roomsState.moreFilters ?
                         <Button
                             onClick={() => dispatch({
@@ -452,49 +467,57 @@ const SelectRoom = () => {
                             variant="outline-0 btn_Lists mr-2 mt-2">
                             Previous
                     </Button> :
-                        <Button
-                            onClick={() => dispatch({
-                                type: 'MORE_FILTERS'
-                            })}
-                            variant="outline-0 btn_Lists mr-2 mt-2">
-                            More Filters
+                        <Fade left>
+                            <Button
+                                onClick={() => dispatch({
+                                    type: 'MORE_FILTERS'
+                                })}
+                                variant="outline-0 btn_Lists mr-2 mt-2">
+                                More Filters
                          </Button>
+                        </Fade>
                     }
-                    <Button disabled variant="outline-0 btn_Lists mr-2 mt-2">Instant Book</Button>{' '}
+                    <Fade left>
+                        <Button disabled variant="outline-0 btn_Lists mr-2 mt-2">Instant Book</Button>{' '}
+                    </Fade>
                 </Row>
             </div>
-            <>
+            <div className={checkout.length < 1 ? "d-flex justify-content-center selectRoom_loading mt-5" : "select_Rooms"}>
                 {
                     checkout.length > 0 ? checkout.map(item =>
-                        <Link key={item.id} style={{ cursor: 'pointer' }} onClick={() => roomDetail(item.id)}>
-                            <Row className='border-bottom py-5 rooms_container'>
-                                <Col sm={12} md={12} lg={12} xl={6}>
-                                    <img className="img-fluid rooms_img" src={item.img} alt="" />
-                                </Col>
-                                <Col sm={12} md={12} lg={12} xl={6}>
-                                    <div>
-                                        <h4>{item.title}</h4>
-                                        <p className="m-1">{item.GuestsAndRoomDetail}</p>
-                                        <p className="pt-1">{item.internat}</p>
-                                        <p className="pt-2">{item.cancellation}</p>
-                                        <div className="d-flex">
-                                            <h6 className="m-md-0 review_content">
-                                                <FontAwesomeIcon icon={faStar} className="rooms_reviewIcon" /> {item.review}
-                                            </h6>
-                                            <div className="pl-5">
+                        <Fade bottom>
+                            <Link key={item.id} style={{ cursor: 'pointer' }} onClick={() => roomDetail(item.id)}>
+                                <Row className='border-bottom py-5 rooms_container'>
+                                    <Col sm={12} md={12} lg={12} xl={6}>
+                                        <img className="img-fluid rooms_img" src={item.img} alt="" />
+                                    </Col>
+                                    <Col sm={12} md={12} lg={12} xl={6}>
+                                        <div>
+                                            <h4>{item.title}</h4>
+                                            <p className="m-1">{item.GuestsAndRoomDetail}</p>
+                                            <p className="pt-1">{item.internat}</p>
+                                            <p className="pt-2">{item.cancellation}</p>
+                                            <div className="d-flex">
+                                                <h6 className="m-md-0 review_content">
+                                                    <FontAwesomeIcon icon={faStar} className="rooms_reviewIcon" /> {item.review}
+                                                </h6>
                                                 <div className="pl-5">
-                                                    <h6 className="m-0"><span className="rooms_price">${item.price}/</span>night</h6>
-                                                    <small className='p-0 m-0 fw-light'>${item.totalPrice} total</small>
+                                                    <div className="pl-5">
+                                                        <h6 className="m-0"><span className="rooms_price">${item.price}/</span>night</h6>
+                                                        <small className='p-0 m-0 fw-light'>${item.totalPrice} total</small>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </Col>
-                            </Row>
-                        </Link>
-                    ) : 'Loading....'
+                                    </Col>
+                                </Row>
+                            </Link>
+                        </Fade>
+                    ) : <div>
+                        <HashLoader color="#437786" size={120} />
+                    </div>
                 }
-            </>
+            </div>
         </div >
     );
 };

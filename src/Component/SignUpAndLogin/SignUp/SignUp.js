@@ -9,6 +9,7 @@ import NavBar from '../../Shred/NavBar/NavBar';
 import { NavLink, useHistory } from 'react-router-dom';
 import { Link } from '@material-ui/core';
 import { UserContext } from '../../../App';
+import { Fade } from 'react-reveal';
 
 
 const pathNames = [{
@@ -100,7 +101,7 @@ const SignUp = () => {
         <>
             <NavBar />
             <div className="d-flex justify-content-center">
-                <>
+                <Fade right>
                     <div className="mt-5 login_container mx-2">
                         <h5 className="text-center login_title">Sign up</h5>
                         <Form onSubmit={handleSubmit(onSubmit)}>
@@ -161,7 +162,7 @@ const SignUp = () => {
                             </div>
                         </Form>
                     </div>
-                </>
+                </Fade>
             </div>
         </>
     );

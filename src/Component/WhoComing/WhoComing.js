@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form';
 import rowdra from "../../images/air-cnc-master/images/rowdra.jpg"
 import Card from '../Shred/Card/Card';
 import HouseRulesAndPay from '../Shred/HouseRulesAndPay/HouseRulesAndPay';
-import { Shake } from "react-reveal";
+import { Fade, Shake } from "react-reveal";
 import { useHistory, useLocation } from 'react-router';
 
 const WhoComing = () => {
@@ -40,37 +40,41 @@ const WhoComing = () => {
             <HouseRulesAndPay />
             <Row>
                 <Col sm={12} md={12} lg={6} xl={6}>
-                    <div className="py-5">
-                        <h4 className="py-3 pb-2 fw_bolder">Traveling for work?</h4>
-                        <h6 className=" self_check">Say hello to your host</h6>
-                        <div className="d-flex pt-2">
-                            <h5 className="pr-3 self_check">let Rowdra know a little about yourself why you're coming</h5>
-                            <div className="pl-3">
-                                <img className="img-fluid rounded-circle" src={rowdra} alt="" width="60px" />
-                                <h5 className="self_check">Rowdra</h5>
+                    <Fade top>
+                        <div className="py-5">
+                            <h4 className="py-3 pb-2 fw_bolder">Traveling for work?</h4>
+                            <h6 className=" self_check">Say hello to your host</h6>
+                            <div className="d-flex pt-2">
+                                <h5 className="pr-3 self_check">let Rowdra know a little about yourself why you're coming</h5>
+                                <div className="pl-3">
+                                    <img className="img-fluid rounded-circle" src={rowdra} alt="" width="60px" />
+                                    <h5 className="self_check">Rowdra</h5>
+                                </div>
                             </div>
-                        </div>
-                        <Form onSubmit={handleSubmit(onSubmit)}>
-                            <Form.Control
-                                ref={register({
-                                    required: true,
-                                    minLength: 6
-                                })}
-                                as="textarea"
-                                rows={8} className="w-75"
-                                name="whyComing"
-                                placeholder="Hello Rowdra! Can't wait to spend 4 night is your home"
-                            />
-                            {/* {errors.whyComing?.type === "required" && <Shake> <h6 className="text-danger">First Name is required <FontAwesomeIcon icon={faExclamationTriangle} className="ml-2" /></h6></Shake>} */}
-                            {/* {errors.whyComing?.type === "required" && <Shake> <h6 className="text-danger">feld is required <FontAwesomeIcon icon={faExclamationTriangle} className="ml-2" /></h6></Shake>} */}
-                            <button className="agree_btn px-4 py-2 mt-3 text-white">
-                                Continue
+                            <Form onSubmit={handleSubmit(onSubmit)}>
+                                <Form.Control
+                                    ref={register({
+                                        required: true,
+                                        minLength: 6
+                                    })}
+                                    as="textarea"
+                                    rows={8} className="w-75"
+                                    name="whyComing"
+                                    placeholder="Hello Rowdra! Can't wait to spend 4 night is your home"
+                                />
+                                {/* {errors.whyComing?.type === "required" && <Shake> <h6 className="text-danger">First Name is required <FontAwesomeIcon icon={faExclamationTriangle} className="ml-2" /></h6></Shake>} */}
+                                {/* {errors.whyComing?.type === "required" && <Shake> <h6 className="text-danger">feld is required <FontAwesomeIcon icon={faExclamationTriangle} className="ml-2" /></h6></Shake>} */}
+                                <button className="agree_btn px-4 py-2 mt-3 text-white">
+                                    Continue
                             </button>
-                        </Form>
-                    </div>
+                            </Form>
+                        </div>
+                    </Fade>
                 </Col>
                 <Col sm={12} md={12} lg={6} xl={6}>
-                    <Card />
+                    <Fade bottom>
+                        <Card />
+                    </Fade>
                 </Col>
             </Row>
         </Container>

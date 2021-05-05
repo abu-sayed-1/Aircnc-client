@@ -39,3 +39,14 @@
 .price_items :hover {
     border-left: 3px solid rgba(11, 138, 138, 0.918);
 }
+
+.selectRoom_loading {
+    height: 25rem;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.014) !important;
+}
+
+.select_Rooms {
+    position: absolute !important;
+    z-index: -1 !important;
+}
