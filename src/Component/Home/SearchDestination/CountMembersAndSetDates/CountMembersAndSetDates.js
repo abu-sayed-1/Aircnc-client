@@ -56,7 +56,7 @@ const CountMembersAndSetDates = () => {
     // date picker here ==============>
     const [selectedStartDate, setSelectedStartDate] = useState(new Date());
     const currentDate = new Date();
-    const futureDate = currentDate.setDate(currentDate.getDate() + 3)
+    currentDate.setDate(currentDate.getDate() + 3);
     const [selectedEndDate, setSelectedEndDate] = useState(currentDate);
 
     const handleStartDate = startDate => {
@@ -73,8 +73,8 @@ const CountMembersAndSetDates = () => {
         const verifyMembers = !state.adults && !state.child && state.babies ? 'Please make sure adult or child' : false;
         dispatch({ type: 'VERIFY_MEMBERS', payload: verifyMembers });
         const members = state.adults > 0 || state.child > 0;
-        const startDateCheckout = selectedStartDate == "Invalid Date" || !selectedStartDate;
-        const endDateCheckout = selectedEndDate == "Invalid Date" || !selectedEndDate;
+        const startDateCheckout = selectedStartDate === "Invalid Date" || !selectedStartDate;
+        const endDateCheckout = selectedEndDate === "Invalid Date" || !selectedEndDate;
 
         if (members && !startDateCheckout && !endDateCheckout) {
             const oneDay = 24 * 60 * 60 * 1000;
@@ -223,7 +223,12 @@ const CountMembersAndSetDates = () => {
                     </div>
                     <br />
                     <div id="apply_content">
-                        <button onClick={() => handleMembersAndDates()} className="p-2 px-5 mt-5 apply_btn">APPLY</button>
+                        <button
+                            onClick={() => handleMembersAndDates()}
+                            className="p-2 px-5 mt-5 apply_btn"
+                        >
+                            APPLY
+                        </button>
                     </div>
                 </div>
             </div>

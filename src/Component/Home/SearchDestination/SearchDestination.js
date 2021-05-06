@@ -2233,7 +2233,7 @@ import Shake from 'react-reveal/Shake';
 //         ]
 
 //     }
-// ]
+// ];
 
 
 const SearchDestination = ({ handleSearchResult }) => {
@@ -2244,25 +2244,11 @@ const SearchDestination = ({ handleSearchResult }) => {
     const [search, setSearch] = useState({ searchBox: '' });
     const [input, setInput] = useState(false);
     const [autocomplete, setAutocomplete] = useState([]);
-    const myRef = useRef(null);
-
-    // const myInput = useRef(null);
-
-    // console.log(myInput);
-
-    // useEffect(() => {
-    //     fetch('http://localhost:4000/homePagesAllData', {
-    //         method: "POST",
-    //         headers: { 'content-type': 'application/json' },
-    //         body: JSON.stringify(homeData)
-    //     })
-    //     .then(result => console.log(result))
-    // }, []);
+    const autocompleteArea = useRef(null);
 
     useEffect(() => {
-        const locationName = search.searchBox;
-        const condition = locationName ? locationName : "london"
-        fetch(`http://localhost:4000/destination${condition}`)
+        const locationName = search.searchBox ? search.searchBox : "london"
+        fetch(`http://localhost:4000/destination${locationName}`)
             .then(res => res.json())
             .then(result => {
                 if (result.length > 0) {
@@ -2277,16 +2263,17 @@ const SearchDestination = ({ handleSearchResult }) => {
                     setLocationNotFound('Location not found');
                 };
             });
-    }, [search])
+    }, [search]);
+
     // form func here ===================>
     const handleSubmit = (e) => {
         setSearch({ searchBox: e.target[0].defaultValue });
         setHandleErr(false);
         if (e.target[0].defaultValue === '') {
             setHandleErr("Destination is required");
-        }
+        };
         e.preventDefault()
-    }
+    };
 
     useEffect(() => {
         if (suggestion) {
@@ -2309,10 +2296,10 @@ const SearchDestination = ({ handleSearchResult }) => {
     }, []);
 
     const handleClickOutside = (e) => {
-        if (myRef.current && !myRef.current.contains(e.target)) {
+        if (autocompleteArea.current && !autocompleteArea.current.contains(e.target)) {
             setAutocomplete([]);
-        }
-    }
+        };
+    };
 
     const handleChange = (e) => {
         setSuggestion(e);
@@ -2325,10 +2312,10 @@ const SearchDestination = ({ handleSearchResult }) => {
             setSuggestion('fjkjeijlksfjejldksfelwkdfks');
             setAutocomplete([]);
         };
-    }
+    };
 
     const handleSuggestion = (e) => {
-        if (e.target.localName == 'img') {
+        if (e.target.localName === 'img') {
             setSuggestion(e.target.nextSibling.innerText);
         }
         else {
@@ -2341,7 +2328,7 @@ const SearchDestination = ({ handleSearchResult }) => {
         <>
             <h3 className="mb-5 pb-2 item mt-2">Where do you want to go</h3>
             <form onSubmit={(e) => handleSubmit(e)} id="destination_form">
-                <div ref={myRef} className="p-4 shadow-sm search_item">
+                <div ref={autocompleteArea} className="p-4 shadow-sm search_item">
                     <h5 className="pl-4 fw_bold">LOCATION</h5>
                     <div>
                         <FormControl
@@ -2354,11 +2341,14 @@ const SearchDestination = ({ handleSearchResult }) => {
                     </div>
                     <>
                         {handleErr ?
-                            <Shake> <h6 className="text-danger pt-2">{handleErr}</h6></Shake> : ''
+                            <Shake>
+                                <h6 className="text-danger pt-2">{handleErr}</h6>
+                            </Shake> : ''
                         }
                         {
-                            locationNotFound ? <Shake> <h6 className="text-danger pt-2">{locationNotFound}</h6></Shake>
-                                : ''
+                            locationNotFound ? <Shake>
+                                <h6 className="text-danger pt-2">{locationNotFound}</h6>
+                            </Shake> : ''
                         }
                     </>
                     <div className="autocomplete_lest mt-4">
