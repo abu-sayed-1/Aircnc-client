@@ -104,7 +104,7 @@ const CountMembersAndSetDates = () => {
                     ...state
                 }
             ];
-            fetch('http://localhost:4000/membersAndDates', {
+            fetch('https://dcd-aircnc.herokuapp.com/membersAndDates', {
                 method: "POST",
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(remaining)

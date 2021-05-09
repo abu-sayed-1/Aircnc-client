@@ -19,7 +19,7 @@ const SearchDestination = ({ handleSearchResult }) => {
 
     useEffect(() => {
         const locationName = search.searchBox ? search.searchBox : "london"
-        fetch(`http://localhost:4000/destination${locationName}`)
+        fetch(`https://dcd-aircnc.herokuapp.com/destination${locationName}`)
             .then(res => res.json())
             .then(result => {
                 if (result.length > 0) {
@@ -48,7 +48,7 @@ const SearchDestination = ({ handleSearchResult }) => {
 
     useEffect(() => {
         if (suggestion) {
-            fetch(`http://localhost:4000/autocomplete/info${suggestion}`)
+            fetch(`https://dcd-aircnc.herokuapp.com/autocomplete/info${suggestion}`)
                 .then(res => res.json())
                 .then(result => {
                     setAutocomplete(result);

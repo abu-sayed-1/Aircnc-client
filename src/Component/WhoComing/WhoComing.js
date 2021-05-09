@@ -24,7 +24,7 @@ const WhoComing = () => {
 
     const { register, errors, handleSubmit } = useForm();
     const onSubmit = (data) => {
-        fetch('http://localhost:4000/WhyComing', {
+        fetch('https://dcd-aircnc.herokuapp.com/WhyComing', {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

@@ -46,7 +46,7 @@ const SignUp = () => {
 
     useEffect(() => {
         if (isValid) {
-            fetch(`http://localhost:4000/verifySignUp${number}`)
+            fetch(`https://dcd-aircnc.herokuapp.com/verifySignUp${number}`)
                 .then(res => res.json())
                 .then(result => {
                     if (result.length > 0) {
@@ -65,7 +65,7 @@ const SignUp = () => {
     useEffect(() => {
         if (token) {
             setReCapError("");
-            axios.post("http://localhost:4000/signUpWith/ReCaptcha", {
+            axios.post("https://dcd-aircnc.herokuapp.com/signUpWith/ReCaptcha", {
                 token,
                 email: "abusayedrakib66@gamil.com"
             }).then(res => {
@@ -93,7 +93,7 @@ const SignUp = () => {
                 lastName: data.lastName,
                 number: number
             };
-            fetch('http://localhost:4000/signUp', {
+            fetch('https://dcd-aircnc.herokuapp.com/signUp', {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
                 body: JSON.stringify(signUpData)

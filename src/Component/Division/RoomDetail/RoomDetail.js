@@ -33,7 +33,7 @@ const RoomDetail = () => {
     const countryName = destination[0].country;
     const { id } = useParams()
     useEffect(() => {
-        fetch(`http://localhost:4000/roomDetail${id}`)
+        fetch(`https://dcd-aircnc.herokuapp.com/roomDetail${id}`)
             .then(res => res.json())
             .then(result => {
                 if (result.length > 0) {
@@ -45,7 +45,7 @@ const RoomDetail = () => {
     }, [id]);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/specificCountryInfo${countryName}`)
+        fetch(`https://dcd-aircnc.herokuapp.com/specificCountryInfo${countryName}`)
             .then(res => res.json())
             .then(result => setServiceAndCountryInfo(result))
     }, [countryName]);

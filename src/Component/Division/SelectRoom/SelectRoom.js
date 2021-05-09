@@ -89,7 +89,7 @@ const SelectRoom = () => {
     };
 
     useEffect(() => {
-        fetch(`http://localhost:4000/roomsByData${check}`)
+        fetch(`https://dcd-aircnc.herokuapp.com/roomsByData${check}`)
             .then(res => res.json())
             .then(result => {
                 if (result.length > 0) {
@@ -99,7 +99,7 @@ const SelectRoom = () => {
     }, [check]);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/place${country}`)
+        fetch(`https://dcd-aircnc.herokuapp.com/place${country}`)
             .then(res => res.json())
             .then(result => {
                 if (result.length > 0) {

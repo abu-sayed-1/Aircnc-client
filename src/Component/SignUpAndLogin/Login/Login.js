@@ -50,7 +50,7 @@ const Login = () => {
     const handleLogin = () => {
         setCheckEvent(true);
         if (loginNumber) {
-            fetch(`http://localhost:4000/verifyLoginNumber${loginNumber}`)
+            fetch(`https://dcd-aircnc.herokuapp.com/verifyLoginNumber${loginNumber}`)
                 .then(res => res.json())
                 .then(result => {
                     if (result.length > 0) {

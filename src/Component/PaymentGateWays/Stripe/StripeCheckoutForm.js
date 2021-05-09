@@ -34,7 +34,7 @@ const StripeCheckoutForm = ({ handleStripeProcess, total_amount, checkout }) => 
             try {
                 const { id } = paymentMethod;
                 const response = await axios.post(
-                    "http://localhost:4000/stripe/charge",
+                    "https://dcd-aircnc.herokuapp.com/stripe/charge",
                     {
                         amount: total_amount + '00',
                         id: id,

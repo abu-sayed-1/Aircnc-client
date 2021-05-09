@@ -11,7 +11,7 @@ const DivisionNavbar = () => {
     const country_city = destination_countryAndCity && destination_countryAndCity[0];
     const id = sessionStorage.getItem("uniqueId");
     useEffect(() => {
-        fetch(`http://localhost:4000/gustsAndDates${id}`)
+        fetch(`https://dcd-aircnc.herokuapp.com/gustsAndDates${id}`)
             .then(res => res.json())
             .then(result => {
                 if (result.length > 0) {
