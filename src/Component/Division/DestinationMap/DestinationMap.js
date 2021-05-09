@@ -1,6 +1,5 @@
 import { DirectionsRenderer, DirectionsService, GoogleMap, LoadScript } from '@react-google-maps/api';
 import React, { useState } from 'react';
-//https://console.cloud.google.com/apis/credentials?authuser=1&project=kdjlii
 
 const containerStyle = {
   width: '100%',

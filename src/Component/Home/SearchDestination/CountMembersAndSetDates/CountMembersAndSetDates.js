@@ -119,7 +119,6 @@ const CountMembersAndSetDates = () => {
 
     };
 
-
     return (
         <>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -140,14 +139,13 @@ const CountMembersAndSetDates = () => {
                                     }}
                                 />
                                 {
-                                    selectedStartDate == null &&
+                                    selectedStartDate === null &&
                                     <Shake>
                                         <p className="text-danger">Start date is required</p>
                                     </Shake>
                                 }
                             </div>
                         </Col>
-
                         <Col className="p-2 ml-2 shadow search_item mt-2">
                             <div>
                                 <KeyboardDatePicker
@@ -163,7 +161,7 @@ const CountMembersAndSetDates = () => {
                                     }}
                                 />
                                 {
-                                    selectedEndDate == null &&
+                                    selectedEndDate === null &&
                                     <Shake>
                                         <p className="text-danger">End date is required</p>
                                     </Shake>
@@ -174,7 +172,11 @@ const CountMembersAndSetDates = () => {
                 </Grid>
             </MuiPickersUtilsProvider>
             <br />
-            <div className="container-fluid px-md-5 px-lg-3 shadow count_content">
+            <div className="
+                    container-fluid
+                    px-md-5 px-lg-3
+                    shadow count_content"
+            >
                 {
                     state.membersErr ? <Shake>
                         <h6 className="text-center text-danger">{state.membersErr}</h6>
@@ -195,31 +197,63 @@ const CountMembersAndSetDates = () => {
                 <div className="pt-5">
                     <h5 className="d-inline-block">ADULTS</h5>
                     <div className="btn_items">
-                        <button onClick={() => dispatch({ type: 'DECREMENT1' })} className="border-0 bg-white"> <FontAwesomeIcon icon={faMinus} /></button>
-                        <label className="px-4 label_item" htmlFor="">{state.adults}</label>
-                        <button onClick={() => dispatch({ type: 'INCREMENT1' })} className="border-0 bg-white"> <FontAwesomeIcon icon={faPlus} /></button>
+                        <button onClick={() =>
+                            dispatch({ type: 'DECREMENT1' })}
+                            className="border-0 bg-white">
+                            <FontAwesomeIcon icon={faMinus} />
+                        </button>
+                        <label className="px-4 label_item" htmlFor="">
+                            {state.adults}
+                        </label>
+                        <button onClick={() =>
+                            dispatch({ type: 'INCREMENT1' })}
+                            className="border-0 bg-white">
+                            <FontAwesomeIcon icon={faPlus} />
+                        </button>
                     </div>
                 </div>
+
                 <div className="pt-5 mt-3">
                     <div className="d-inline-block">
                         <h5>CHILD</h5>
                         <h6 className="text-muted">Age 2-12</h6>
                     </div>
                     <div className="btn_items ml-3">
-                        <button onClick={() => dispatch({ type: 'DECREMENT2' })} className="border-0 bg-white"> <FontAwesomeIcon icon={faMinus} /></button>
-                        <label className="px-4 label_item" htmlFor="">{state.child}</label>
-                        <button onClick={() => dispatch({ type: 'INCREMENT2' })} className="border-0 bg-white"> <FontAwesomeIcon icon={faPlus} /></button>
+                        <button onClick={() =>
+                            dispatch({ type: 'DECREMENT2' })}
+                            className="border-0 bg-white">
+                            <FontAwesomeIcon icon={faMinus} />
+                        </button>
+                        <label className="px-4 label_item" htmlFor="">
+                            {state.child}
+                        </label>
+                        <button onClick={() =>
+                            dispatch({ type: 'INCREMENT2' })}
+                            className="border-0 bg-white">
+                            <FontAwesomeIcon icon={faPlus} />
+                        </button>
                     </div>
                 </div>
+
                 <div className="pt-5">
                     <div className="d-inline-block">
                         <h5>BABIES</h5>
                         <h6 className="text-muted">Younger tha 2</h6>
                     </div>
                     <div className="btn_items ml-2">
-                        <button onClick={() => dispatch({ type: 'DECREMENT3' })} className="border-0 bg-white"> <FontAwesomeIcon icon={faMinus} /></button>
-                        <label className="px-4 label_item" htmlFor="">{state.babies}</label>
-                        <button onClick={() => dispatch({ type: 'INCREMENT3' })} className="border-0 bg-white"> <FontAwesomeIcon icon={faPlus} /></button>
+                        <button onClick={() =>
+                            dispatch({ type: 'DECREMENT3' })}
+                            className="border-0 bg-white">
+                            <FontAwesomeIcon icon={faMinus} />
+                        </button>
+                        <label className="px-4 label_item" htmlFor="">
+                            {state.babies}
+                        </label>
+                        <button onClick={() =>
+                            dispatch({ type: 'INCREMENT3' })}
+                            className="border-0 bg-white">
+                            <FontAwesomeIcon icon={faPlus} />
+                        </button>
                     </div>
                     <br />
                     <div id="apply_content">

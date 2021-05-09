@@ -13,7 +13,6 @@ import { Col, Row } from 'react-bootstrap';
 
 toast.configure()
 const StripeCheckoutForm = ({ handleStripeProcess, total_amount, checkout }) => {
-    console.log(checkout)
     const history = useHistory()
     const stripe = useStripe();
     const elements = useElements();
@@ -53,7 +52,6 @@ const StripeCheckoutForm = ({ handleStripeProcess, total_amount, checkout }) => 
                 }
             }
             catch (error) {
-                console.log(error.message)
             }
         };
     };
@@ -79,4 +77,3 @@ const StripeCheckoutForm = ({ handleStripeProcess, total_amount, checkout }) => 
 };
 
 export default StripeCheckoutForm;
-

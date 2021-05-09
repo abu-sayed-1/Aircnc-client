@@ -1,8 +1,8 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import './HomesAndExperiences.css'
 import { Col, Container, Row } from 'react-bootstrap';
 import { Fade } from 'react-reveal';
-import { ClipLoader, HashLoader } from "react-spinners";
+import { HashLoader } from "react-spinners";
 
 const HomesAndExperiences = ({ homesAndExperiencesData }) => {
     const loading = homesAndExperiencesData.length > 0 ? true : false;
@@ -28,7 +28,7 @@ const HomesAndExperiences = ({ homesAndExperiencesData }) => {
                                     </div>
                                 </Fade>
                             </Col>
-                        ) : <div sm={12} md={6} lg={6} xl={4}>
+                        ) : <div>
                             <HashLoader color="#437786" size={120} />
                         </div>
                     }
@@ -53,7 +53,7 @@ const HomesAndExperiences = ({ homesAndExperiencesData }) => {
                                 </Fade>
                             </Col>
                         )
-                            : <div sm={12} md={6} lg={6} xl={4}>
+                            : <div>
                                 <HashLoader color="#437786" size={120} />
                             </div>
                     }

@@ -1,13 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './NavBar.css'
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
-// import { UserContext } from '../../../App';
 
 const NavBar = () => {
-    // const { signUpAndLoggedInUser, setSignUpAndLoggedInUser } = useContext(UserContext);
     const userInfo = JSON.parse(sessionStorage.getItem("number"));
     return (
         <>

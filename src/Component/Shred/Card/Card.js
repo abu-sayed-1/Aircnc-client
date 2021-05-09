@@ -10,13 +10,10 @@ const Card = () => {
     const location = useLocation();
     const sliceLocation = location.pathname.substring(0, 11);
     const gusts_dates = JSON.parse(sessionStorage.getItem('gustsAndDates'));
-    const {
-        startFullDate,
-        endFullDate,
-        gusts,
-        days
+    const { startFullDate, endFullDate, gusts, days
     } = gusts_dates && gusts_dates[0];
     const priceReview = JSON.parse(sessionStorage.getItem('priceAndReview'));
+    const priceReviewImg = priceReview ? priceReview : '';
     const convertDays = parseFloat(days);
     const convertPrice = parseFloat(priceReview && priceReview.price);
     const countPrice = convertPrice * convertDays;
@@ -41,25 +38,27 @@ const Card = () => {
                         }
                         <p className="pt-2">
                             <FontAwesomeIcon className='rooms_reviewIcon mr-2' icon={faStar} />
-                            {priceReview && priceReview.review} reviews
+                            {priceReviewImg.review} reviews
                         </p>
                     </div>
                     {
                         sliceLocation !== '/roomDetail' && <div>
-                            <img className="img-fluid rounded" src={priceReview && priceReview.img} alt="" width="170px" />
+                            <img className="img-fluid rounded"
+                                src={priceReviewImg.img}
+                                alt="" width="170px" />
                         </div>
                     }
                 </div>
-
                 <label className="pt-3 datesAndGests_item">Dates</label>
                 <div className="d-flex border p-3 rounded">
-                    <p className="mr-auto mb-0 Dates_item">{startFullDate && startFullDate}</p>
-                    <FontAwesomeIcon className="ml-auto mr-auto align-self-center" icon={faArrowRight} />
-                    <p className="ml-auto mb-0 Dates_item">{endFullDate && endFullDate}</p>
+                    <p className="mr-auto mb-0 Dates_item">{startFullDate}</p>
+                    <FontAwesomeIcon className="ml-auto mr-auto 
+                       align-self-center" icon={faArrowRight} />
+                    <p className="ml-auto mb-0 Dates_item">{endFullDate}</p>
                 </div>
                 <label className="py-2 datesAndGests_item">Guests</label>
                 <div className="d-flex border rounded p-3 guest">
-                    <p className='mb-0'>{gusts && gusts} guests</p>
+                    <p className='mb-0'>{gusts} guests</p>
                     <FontAwesomeIcon className="ml-auto" icon={faChevronDown} />
                 </div>
                 <div className="d-flex pt-4 border-bottom">
@@ -83,13 +82,18 @@ const Card = () => {
                     <div className="pt-4">
                         <NavLink to="/houseRules">
                             <button
-                                className="border-0 px-2 py-3 text-white rounded-lg w-100"
+                                className="border-0 px-2 py-3
+                                 text-white rounded-lg w-100"
                                 id="search_btn"
                             >
                                 Reserve
                        </button>
                         </NavLink>
-                        <p className="room_item room_list d-flex justify-content-center pt-3">You won't be charged yet</p>
+                        <p className="room_item room_list d-flex
+                         justify-content-center pt-3"
+                        >
+                            You won't be charged yet
+                         </p>
                     </div>
                 }
             </Container>

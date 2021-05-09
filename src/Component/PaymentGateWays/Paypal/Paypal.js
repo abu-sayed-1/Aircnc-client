@@ -30,9 +30,7 @@ const Paypal = ({ total_amount }) => {
                         setTimeout(() => { history.push('/') }, 5000);
                     }
                 },
-                onError: (err) => {
-                    console.log(err.message)
-                }
+                onError: (err) => {}
             })
             .render(paypal.current)
     }, [])

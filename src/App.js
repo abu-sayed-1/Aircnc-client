@@ -1,4 +1,3 @@
-import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,7 +16,9 @@ import PrivateRoute from './Component/PrivateRoute/PrivateRoute';
 import { createContext, useState } from 'react';
 
 export const UserContext = createContext();
-
+//https://www.google.com/recaptcha/admin/site/449585654/setup
+// client key = 6Lf2IcwaAAAAABGv7ePlL-tezK-MpMAVUSxruhzk
+// server key = 6Lf2IcwaAAAAAGwKe2LrxTe7lTn6DOhAKnPQ7Z_w
 function App() {
   const [signUpAndLoggedInUser, setSignUpAndLoggedInUser] = useState(false);
   return (

@@ -1,5 +1,5 @@
-import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Container, Form, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
@@ -11,6 +11,7 @@ import { Fade, Shake } from "react-reveal";
 import { useHistory, useLocation } from 'react-router';
 
 const WhoComing = () => {
+    const history = useHistory();
     const location = useLocation();
     const previousUrls = JSON.parse(sessionStorage.getItem('urls'));
     sessionStorage.setItem("urls", JSON.stringify({
@@ -20,7 +21,7 @@ const WhoComing = () => {
         "houseRules": previousUrls.houseRules,
         "whoComing": location.pathname
     }))
-    const history = useHistory();
+
     const { register, errors, handleSubmit } = useForm();
     const onSubmit = (data) => {
         fetch('http://localhost:4000/WhyComing', {

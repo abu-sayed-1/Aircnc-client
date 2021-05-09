@@ -20,11 +20,15 @@ const Home = () => {
                 <Row>
                     <Col sm={12} md={12} lg={5} xl={5}>
                         <Fade top>
-                            <SearchDestination handleSearchResult={handleSearchResult} />
+                            <SearchDestination
+                                handleSearchResult={handleSearchResult}
+                            />
                         </Fade>
                     </Col>
                     <Col sm={12} md={12} lg={7} xl={7}>
-                        <HomesAndExperiences homesAndExperiencesData={homesAndExperiencesData} />
+                        <HomesAndExperiences
+                            homesAndExperiencesData={homesAndExperiencesData}
+                        />
                     </Col>
                 </Row>
             </Container>

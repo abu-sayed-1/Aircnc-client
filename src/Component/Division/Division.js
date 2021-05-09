@@ -3,7 +3,7 @@ import './Division.css';
 import { Col, Container, Row } from 'react-bootstrap';
 import DivisionNavbar from '../Shred/DivisionNavbar/DivisionNavbar';
 import SelectRoom from './SelectRoom/SelectRoom';
-import DestinationMap from './DestinationMap/DestinationMap';
+// import DestinationMap from './DestinationMap/DestinationMap';
 
 const Division = () => {
     return (
@@ -16,7 +16,7 @@ const Division = () => {
                     </Col>
                     <Col sm={12} md={5} lg={6} xl={6} className="p-md-0">
                         {/* <DestinationMap /> */}
-                        map is coming soon...
+                             map is coming soon...
                     </Col>
                 </Row>
             </Container>

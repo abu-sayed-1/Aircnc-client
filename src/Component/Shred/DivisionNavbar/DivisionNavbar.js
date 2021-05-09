@@ -1,23 +1,25 @@
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-// import { UserContext } from '../../../App';
 
 const DivisionNavbar = () => {
-    // const { signUpAndLoggedInUser, setSignUpAndLoggedInUser } = useContext(UserContext);
-    const userInfo = JSON.parse(sessionStorage.getItem("number"));
     const [gustsAndDates, setGustsAndDates] = useState(null);
+    const userInfo = JSON.parse(sessionStorage.getItem("number"));
     const destination_countryAndCity = JSON.parse(sessionStorage.getItem('countryAndCity'));
+    const country_city = destination_countryAndCity && destination_countryAndCity[0];
     const id = sessionStorage.getItem("uniqueId");
     useEffect(() => {
         fetch(`http://localhost:4000/gustsAndDates${id}`)
             .then(res => res.json())
             .then(result => {
-                setGustsAndDates(result);
-                sessionStorage.setItem("gustsAndDates", JSON.stringify(result && result));
-            })
+                if (result.length > 0) {
+                    setGustsAndDates(result[0]);
+                    sessionStorage.setItem("gustsAndDates",
+                        JSON.stringify(result));
+                }
+            });
     }, [id]);
     return (
         <>
@@ -28,24 +30,23 @@ const DivisionNavbar = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <div className="shadow-sm rounded-lg px-md-5 ml-lg-auto mr-lg-auto">
                             <div className="d-md-flex">
-                                <h6 className="mr-3 pt-3 btn_list"> <span className="pr-3">{destination_countryAndCity && destination_countryAndCity[0].city} </span> Division,</h6>
-                                <h6 className="mr-3 pt-3 btn_list">{destination_countryAndCity && destination_countryAndCity[0].country}</h6>
+                                <h6 className="mr-3 pt-3 btn_list"> <span className="pr-3">{country_city.city} </span> Division,</h6>
+                                <h6 className="mr-3 pt-3 btn_list">{country_city.country}</h6>
                                 {
                                     gustsAndDates && <div className="d-flex px-md-3">
                                         {
-                                            gustsAndDates[0].startMonth === gustsAndDates[0].endMonth ?
+                                            gustsAndDates.startMonth === gustsAndDates.endMonth ?
                                                 <div className="d-flex">
-                                                    <h6 className="btn_list pt-3 mr-2">{gustsAndDates[0].startMonth}</h6>
-                                                    <p className="btn_list pt-3 mr-3">{gustsAndDates[0].numericStartDay}-{gustsAndDates[0].numericEndDay}</p>
+                                                    <h6 className="btn_list pt-3 mr-2">{gustsAndDates.startMonth}</h6>
+                                                    <p className="btn_list pt-3 mr-3">{gustsAndDates.numericStartDay}-{gustsAndDates.numericEndDay}</p>
                                                 </div> :
                                                 <div className="d-flex">
-                                                    <h6 className="btn_list pt-3 mr-2">{gustsAndDates[0].startMonth} {gustsAndDates[0].numericStartDay} -</h6>
-                                                    <p className="btn_list pt-3 mr-3">{gustsAndDates[0].endMonth} {gustsAndDates[0].numericEndDay}</p>
+                                                    <h6 className="btn_list pt-3 mr-2">{gustsAndDates.startMonth} {gustsAndDates.numericStartDay} -</h6>
+                                                    <p className="btn_list pt-3 mr-3">{gustsAndDates.endMonth} {gustsAndDates.numericEndDay}</p>
                                                 </div>
                                         }
-                                        <p className="btn_list pt-3 mr-3">{gustsAndDates[0].gusts} Gusts</p>
+                                        <p className="btn_list pt-3 mr-3">{gustsAndDates.gusts} Gusts</p>
                                     </div>
-
                                 }
                             </div>
                         </div>

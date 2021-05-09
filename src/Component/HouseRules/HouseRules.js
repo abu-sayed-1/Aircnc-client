@@ -1,4 +1,8 @@
-import { faPaw, faBabyCarriage, faSmokingBan, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import {
+    faPaw, faBabyCarriage,
+    faSmokingBan,
+    faChevronDown, faChevronUp
+} from '@fortawesome/free-solid-svg-icons';
 import noAlcohol from '../../images/air-cnc-master/images/download.jfif';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
@@ -22,7 +26,9 @@ const HouseRules = () => {
             "houseRules": location.pathname
         }
     ));
+
     const gustsAndDates = JSON.parse(sessionStorage.getItem('gustsAndDates'));
+    const gusts_dates = gustsAndDates && gustsAndDates[0];
     const city = JSON.parse(sessionStorage.getItem('countryAndCity'));
     return (
         <Container className="mb-5 pb-5">
@@ -33,12 +39,12 @@ const HouseRules = () => {
                         <Fade left>
                             <div className="border_bottom">
                                 <h1 className="fw_bolder">Review house rules</h1>
-                                <h5 className="pt-2">{gustsAndDates && gustsAndDates[0].days} nights in {city && city[0].city}</h5>
+                                <h5 className="pt-2">{gusts_dates.days} nights in {city && city[0].city}</h5>
                                 <div className="d-flex pt-4 py-md-3">
                                     <div className="d-flex mr-1 mr-md-0">
                                         <div className="px-2 h-75 rounded months_dates">
-                                            <h6 className="mb-0 pt-1">{gustsAndDates[0].startMonth}</h6>
-                                            <h6 className="pl-1">{gustsAndDates[0].numericStartDay}</h6>
+                                            <h6 className="mb-0 pt-1">{gusts_dates.startMonth}</h6>
+                                            <h6 className="pl-1">{gusts_dates.numericStartDay}</h6>
                                         </div>
                                         <div className="pl-3">
                                             <p className="mb-0 checkInAnd_checkout">check-in</p>
@@ -47,8 +53,8 @@ const HouseRules = () => {
                                     </div>
                                     <div className="d-flex pl-md-5 ml-md-2">
                                         <div className="px-2 h-75 rounded months_dates">
-                                            <h6 className="mb-0 pt-1">{gustsAndDates[0].endMonth}</h6>
-                                            <h6 className="mb-0 pl-1">{gustsAndDates[0].numericEndDay}</h6>
+                                            <h6 className="mb-0 pt-1">{gusts_dates.endMonth}</h6>
+                                            <h6 className="mb-0 pl-1">{gusts_dates.numericEndDay}</h6>
                                         </div>
                                         <div className="pl-3">
                                             <p className="mb-0 checkInAnd_checkout">checkout</p>

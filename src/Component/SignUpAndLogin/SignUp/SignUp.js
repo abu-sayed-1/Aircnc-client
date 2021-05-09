@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import NumberInput from '../NumberInput/NumberInput';
@@ -10,7 +10,8 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { Link } from '@material-ui/core';
 import { UserContext } from '../../../App';
 import { Fade } from 'react-reveal';
-
+import ReCAPTCHA from "react-google-recaptcha";
+import axios from 'axios';
 
 const pathNames = [{
     "home": "/",
@@ -21,7 +22,6 @@ const pathNames = [{
 }];
 
 const SignUp = () => {
-
     const { signUpAndLoggedInUser, setSignUpAndLoggedInUser } = useContext(UserContext);
     const [verifySignUpErr, setVerifySignUpErr] = useState(false);
     const [checkoutVerifySignUp, setCheckoutVerifySignUp] = useState(false);
@@ -29,14 +29,21 @@ const SignUp = () => {
     const [isValid, setIsValid] = useState(false);
     const [numberErr, setNumberErr] = useState(false);
     const [signUpErr, setSignUpErr] = useState('');
+    const [token, setToken] = useState("");
+    const [reCapError, setReCapError] = useState("");
+    const [reCaptchaRes, setReCaptchaRes] = useState(false);
+    console.log(token, "token");
+    console.log(reCapError)
+    const reCaptcha = useRef();
     const history = useHistory();
-    let pageUrls = JSON.parse(sessionStorage.getItem("urls"));
+    const pageUrls = JSON.parse(sessionStorage.getItem("urls"));
 
     const homepage = pathNames[0].home === pageUrls.home;
     const selectRoomPage = pathNames[0].selectRoom === pageUrls.selectRoom;
     const roomDetailPage = pathNames[0].roomDetail === pageUrls.roomDetail;
     const houseRulesPage = pathNames[0].houseRules === pageUrls.houseRules;
     const whoComingPage = pathNames[0].whoComing === pageUrls.whoComing;
+
     useEffect(() => {
         if (isValid) {
             fetch(`http://localhost:4000/verifySignUp${number}`)
@@ -55,9 +62,32 @@ const SignUp = () => {
 
     }, [isValid]);
 
+    useEffect(() => {
+        if (token) {
+            setReCapError("");
+            axios.post("http://localhost:4000/signUpWith/ReCaptcha", {
+                token,
+                email: "abusayedrakib66@gamil.com"
+            }).then(res => {
+                setReCaptchaRes(true);
+            }).catch(({ response }) => {
+                setReCapError(response.data.error);
+                setReCaptchaRes(false);
+            }).finally(() => {
+                // reCaptcha.current.reset();
+                // setToken("");
+            })
+
+        };
+    }, [token]);
+
     const { register, errors, handleSubmit } = useForm();
     const onSubmit = data => {
-        if (checkoutVerifySignUp) {
+        if (!token) {
+            setReCapError("You must verify the captcha!");
+            return;
+        }
+        if (checkoutVerifySignUp && reCaptchaRes) {
             const signUpData = {
                 firstName: data.firstName,
                 lastName: data.lastName,
@@ -83,8 +113,10 @@ const SignUp = () => {
                         }
                     }
                 });
-        }
-    }
+        };
+
+    };
+
     const err = (errMassage) => {
         setSignUpErr(errMassage);
         setVerifySignUpErr(false);
@@ -100,9 +132,9 @@ const SignUp = () => {
     return (
         <>
             <NavBar />
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center pb-5">
                 <Fade right>
-                    <div className="mt-5 login_container mx-2">
+                    <div className="mt-5 loginAndSignUp_container mx-2">
                         <h5 className="text-center login_title">Sign up</h5>
                         <Form onSubmit={handleSubmit(onSubmit)}>
                             <Form.Control
@@ -143,6 +175,19 @@ const SignUp = () => {
                                     <h6 className="text-danger pb-2">{verifySignUpErr}</h6>
                                 </Shake> : ''
                             }
+                            <div className="my-3">
+                                <ReCAPTCHA
+                                    ref={reCaptcha}
+                                    sitekey="6Lf2IcwaAAAAABGv7ePlL-tezK-MpMAVUSxruhzk"
+                                    onChange={token => setToken(token)}
+                                    onExpired={e => setToken("")}
+                                />
+                                {
+                                    reCapError && <Shake>
+                                        <h6 className="text-danger pb-2"> {reCapError}!</h6>
+                                    </Shake>
+                                }
+                            </div>
                             <p className="login_dis">We'll call or text you to confirm your number Standard message and data rates apply.</p>
                             <button type="submit" className="
                                     border-0 px-2 py-3 

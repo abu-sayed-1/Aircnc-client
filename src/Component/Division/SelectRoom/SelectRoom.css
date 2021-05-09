@@ -21,7 +21,7 @@
 }
 
 .city_items :hover {
-    border-left: 3.5px solid #17a2b8;
+    border-left: 3.5px solid #17a2b8 !important;
 }
 
 .price_title {

@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import PhoneInput, { formatPhoneNumber, formatPhoneNumberIntl, isValidPhoneNumber } from 'react-phone-number-input';
+import PhoneInput, {
+    formatPhoneNumberIntl,
+    isValidPhoneNumber
+} from 'react-phone-number-input';
 import { useLocation } from 'react-router';
 
 const NumberInput = ({ err, numberTrue, phoneNumber }) => {
     const [value, setValue] = useState(null);
-    const verifyNumber = value && isValidPhoneNumber(value)
+    const verifyNumber = value && isValidPhoneNumber(value);
     const location = useLocation();
     useEffect(() => {
         if (location.pathname === "/signUp") {
