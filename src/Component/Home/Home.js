@@ -17,6 +17,7 @@ const Home = () => {
         <>
             <NavBar />
             <Container fluid className="px-md-5 my-md-5">
+                <h1>this is home</h1>
                 <Row>
                     <Col sm={12} md={12} lg={5} xl={5}>
                         <Fade top>
