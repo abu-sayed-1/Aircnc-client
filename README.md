@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# Aircnc/ Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[**visit-website**](https://aircnc-application.herokuapp.com/)
 
-## Available Scripts
+![Aircnc-demo](https://i.ibb.co/7GfvBqt/Web-1920-3.png)
 
-In the project directory, you can run:
+Aircnc is an International hotel agency. They have hotels in thirty cities in
+ten countries of the world. users can choose any country by searching and seeing the all rooms in that country. and users can select the specific room then see the room detail and room rules 
+and also implemented signUp, login, authentication, payment method, and much more...
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+   npm start or yarn start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h3 align="left">Frontend Technology Used:</h3>
+<p>
+  <img src="https://img.shields.io/badge/React.js-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" />
+  <img src="https://img.shields.io/badge/Material-UI-1572B6?style=for-the-badge&logo=Material-UI&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-Reveal-c8885c?style=for-the-badge&logo=React-Reveal&logoColor=white" />
+  <img src="https://img.shields.io/badge/axios-854196?style=for-the-badge&logo=axios&logoColor=white" />
+  <img src="https://img.shields.io/badge/reactbootstrap-563D7C?style=for-the-badge&logo=reactbootstrap&logoColor=white" />
+  <img src="https://img.shields.io/badge/stripe-635bff?style=for-the-badge&logo=stripe&logoColor=white" />
+  <img src="https://img.shields.io/badge/paypal-854196?style=for-the-badge&logo=paypal&logoColor=white" />
+  <img src="https://img.shields.io/badge/reacttoastify-d65746?style=for-the-badge&logo=reacttoastify&logoColor=white" />
+  <img src="https://img.shields.io/badge/google-recaptcha-1d38a9?style=for-the-badge&logo=googlerecaptcha&logoColor=white" /> 
+</p>
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h3 align="left">Backend Technology Used:</h3>
+<p>
+    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+    <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
+    <img src="https://img.shields.io/badge/express.js-828282?style=for-the-badge&logo=expressdotjs&logoColor=white" />
+    <img src="https://img.shields.io/badge/stripe-635bff?style=for-the-badge&logo=stripe&logoColor=white" />
+    <img src="https://img.shields.io/badge/axios-854196?style=for-the-badge&logo=axios&logoColor=white" />
+    <img src="https://img.shields.io/badge/heroku-6567a5?style=for-the-badge&logo=heroku&logoColor=white" />
+</p>
 
-### `yarn build`
+[**Backend repo**](https://github.com/abu-sayed-1/Aircnc-server)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h5 align="left">Contact with Me</h5>
+<a href="https://www.linkedin.com/in/dev-abu-sayed"  target="blank">
+ <img src="https://img.shields.io/badge/linkedin-0e76a8?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+<a href="https://abu-sayed.netlify.app/"  target="blank">
+ <img src="https://img.shields.io/badge/Website-204895?style=for-the-badge&logo=Website&logoColor=white" />
+</a>
+<a href="mailto:devabusayed69@gmail.com"  target="blank">
+ <img src="https://img.shields.io/badge/email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
+</a>
