@@ -178,7 +178,7 @@ const SignUp = () => {
                             <div className="my-3">
                                 <ReCAPTCHA
                                     ref={reCaptcha}
-                                    sitekey="6Lf2IcwaAAAAABGv7ePlL-tezK-MpMAVUSxruhzk"
+                                    sitekey="6Lc06XYfAAAAAHo-LwFzgUAOwJVTLgIORk1R-eCS"
                                     onChange={token => setToken(token)}
                                     onExpired={e => setToken("")}
                                 />
